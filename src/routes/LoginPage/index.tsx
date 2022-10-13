@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import Typography from '@mui/material/Typography';
 
-const Login: FC = () => (
+const LoginPage: FC = () => (
   <Typography component="h1" variant="h5">
     Login page 😼
   </Typography>
 );
 
-export default Login;
+export default LoginPage;

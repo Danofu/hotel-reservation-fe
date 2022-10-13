@@ -8,6 +8,10 @@ import { isRouteErrorResponse, Link as RouterLink, useRouteError } from 'react-r
 const ErrorPage: FC = () => {
   const error = useRouteError();
 
+  const errorText = isRouteErrorResponse(error)
+    ? `${error.status} ${error.statusText}`
+    : 'Sorry, an unexpected error has occurred.';
+
   return (
     <Container
       maxWidth={false}
@@ -27,9 +31,7 @@ const ErrorPage: FC = () => {
           Oops... Something went wrong !
         </Typography>
         <Typography component="h2" variant="h5">
-          {isRouteErrorResponse(error)
-            ? `${error.status} ${error.statusText}`
-            : 'Sorry, an unexpected error has occurred.'}
+          {errorText}
         </Typography>
         <Typography component="p" variant="body1">
           Try our&nbsp;

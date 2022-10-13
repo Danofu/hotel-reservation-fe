@@ -3,6 +3,6 @@ import { Outlet } from 'react-router-dom';
 
 import './index.css';
 
-const App: FC = () => <Outlet />;
+const AppLayout: FC = () => <Outlet />;
 
-export default App;
+export default AppLayout;

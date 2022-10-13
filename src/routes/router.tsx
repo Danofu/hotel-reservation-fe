@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import App from 'src/routes/App';
+import AppLayout from 'src/routes/AppLayout';
 import ErrorPage from 'src/routes/ErrorPage';
-import Login from 'src/routes/Login';
+import LoginPage from 'src/routes/LoginPage';
 
 export default createBrowserRouter([
-  { children: [{ element: <Login />, path: 'login' }], element: <App />, errorElement: <ErrorPage />, path: '/' },
+  { children: [{ element: <LoginPage />, path: 'login' }], element: <AppLayout />, errorElement: <ErrorPage />, path: '/' },
 ]);
