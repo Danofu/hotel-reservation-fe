@@ -6,5 +6,5 @@ import ErrorPage from 'src/routes/ErrorPage';
 
 export default createBrowserRouter([
   { element: <App />, path: '/home' },
-  { element: <Navigate to="home" />, errorElement: <ErrorPage />, path: '/' },
+  { element: <Navigate to="home" replace />, errorElement: <ErrorPage />, path: '/' },
 ]);
