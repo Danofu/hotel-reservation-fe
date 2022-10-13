@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import './index.css';
 
-const App: FC = () => <h1>Home Page 😼</h1>;
+const App: FC = () => <Outlet />;
 
 export default App;

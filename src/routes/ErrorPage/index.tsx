@@ -26,18 +26,18 @@ const ErrorPage: FC = () => {
         <Typography component="h1" variant="h4">
           Oops... Something went wrong !
         </Typography>
-        <Typography component="h3" variant="h5">
+        <Typography component="h2" variant="h5">
           {isRouteErrorResponse(error)
             ? `${error.status} ${error.statusText}`
             : 'Sorry, an unexpected error has occurred.'}
         </Typography>
         <Typography component="p" variant="body1">
           Try our&nbsp;
-          <Link component={RouterLink} to="home" underline="hover">
+          <Link component={RouterLink} to="/" underline="hover">
             home
           </Link>
           &nbsp;or&nbsp;
-          <Link component={RouterLink} to="#" underline="hover">
+          <Link component={RouterLink} to="login" underline="hover">
             login
           </Link>
           &nbsp;page

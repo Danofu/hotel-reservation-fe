@@ -1,10 +1,10 @@
 import React from 'react';
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import App from 'src/routes/App';
 import ErrorPage from 'src/routes/ErrorPage';
+import Login from 'src/routes/Login';
 
 export default createBrowserRouter([
-  { element: <App />, path: '/home' },
-  { element: <Navigate to="home" replace />, errorElement: <ErrorPage />, path: '/' },
+  { children: [{ element: <Login />, path: 'login' }], element: <App />, errorElement: <ErrorPage />, path: '/' },
 ]);
