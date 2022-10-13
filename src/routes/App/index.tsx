@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import './App.css';
+import './index.css';
 
 const App: FC = () => <h1>Hello, World !</h1>;
 
