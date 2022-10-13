@@ -23,7 +23,7 @@ const ErrorPage: FC = () => {
         justifyContent: 'center',
         py: 3,
         textAlign: 'center',
-        width: '100%',
+        width: 1,
       }}
     >
       <Stack spacing={3}>
