@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import Typography from '@mui/material/Typography';
 
-const LoginPage: FC = () => (
+const IndexPage: FC = () => (
   <Typography align="center" component="h1" variant="h5">
-    Login page 😼
+    Home Page 😼
   </Typography>
 );
 
-export default LoginPage;
+export default IndexPage;
