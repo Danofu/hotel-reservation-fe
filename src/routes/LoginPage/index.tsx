@@ -20,7 +20,6 @@ const LoginPage: FC = () => {
       maxWidth={false}
       sx={{
         alignItems: 'center',
-        bgcolor: '#EFEFEF',
         display: 'flex',
         height: '100vh',
         justifyContent: 'center',

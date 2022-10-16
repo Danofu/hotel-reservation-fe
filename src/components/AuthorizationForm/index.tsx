@@ -21,7 +21,9 @@ export type FormValues = {
   remember: boolean;
 };
 
-const InnerAuthorizationForm: FC<FormikProps<FormValues>> = ({
+type InnerAuthorizationFormProps = FormikProps<FormValues>;
+
+const InnerAuthorizationForm: FC<InnerAuthorizationFormProps> = ({
   errors,
   handleBlur,
   handleChange,
@@ -42,6 +44,7 @@ const InnerAuthorizationForm: FC<FormikProps<FormValues>> = ({
     <Stack component={Form} noValidate spacing={3}>
       <TextField
         autoComplete="email"
+        color="primary"
         error={isEmailValid}
         fullWidth
         helperText={isEmailValid && errors.email}
@@ -54,7 +57,15 @@ const InnerAuthorizationForm: FC<FormikProps<FormValues>> = ({
         type="email"
         value={values.email}
       />
-      <FormControl error={isPasswordValid} fullWidth margin="none" onChange={handleChange} required variant="outlined">
+      <FormControl
+        color="primary"
+        error={isPasswordValid}
+        fullWidth
+        margin="none"
+        onChange={handleChange}
+        required
+        variant="outlined"
+      >
         <InputLabel htmlFor="InnerAuthorizationForm__password-input">Password</InputLabel>
         <OutlinedInput
           autoComplete="current-password"
@@ -75,14 +86,21 @@ const InnerAuthorizationForm: FC<FormikProps<FormValues>> = ({
         {isPasswordValid && <FormHelperText>{errors.password}</FormHelperText>}
       </FormControl>
       <FormControlLabel
-        control={<Checkbox checked={values.remember} />}
+        control={<Checkbox checked={values.remember} color="primary" />}
         label="Remember me"
         labelPlacement="start"
         name="remember"
         onBlur={handleBlur}
         onChange={handleChange}
       />
-      <LoadingButton disabled={isSubmitting} fullWidth loading={isSubmitting} type="submit" variant="contained">
+      <LoadingButton
+        color="primary"
+        disabled={isSubmitting}
+        fullWidth
+        loading={isSubmitting}
+        type="submit"
+        variant="contained"
+      >
         Sign in
       </LoadingButton>
     </Stack>
