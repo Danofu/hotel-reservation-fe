@@ -1,14 +1,18 @@
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
-import React, { FC } from 'react';
+import React from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { FormikHelpers } from 'formik';
 
-import AuthorizationForm, { FormValues } from 'src/components/AuthorizationForm';
+import AuthorizationForm from 'src/components/AuthorizationForm';
+import { AuthorizationFormValues } from 'src/components/AuthorizationForm/types';
 
-const LoginPage: FC = () => {
-  const handleSubmit = async (values: FormValues, formikHelpers: FormikHelpers<FormValues>) => {
+const LoginPage = () => {
+  const handleSubmit = async (
+    values: AuthorizationFormValues,
+    formikHelpers: FormikHelpers<AuthorizationFormValues>
+  ) => {
     // TODO: make authorize request
     console.log(values);
     await new Promise((r) => setTimeout(r, 10 * 1000));
@@ -30,7 +34,7 @@ const LoginPage: FC = () => {
     >
       <Paper elevation={3} sx={{ px: 5, py: 4, width: 500 }}>
         <Stack spacing={6}>
-          <Typography align="center" component="h1" sx={{ textTransform: 'capitalize' }} variant="h5">
+          <Typography align="center" component="h1" variant="h5">
             Authorization 😼
           </Typography>
           <AuthorizationForm onSubmit={handleSubmit} />

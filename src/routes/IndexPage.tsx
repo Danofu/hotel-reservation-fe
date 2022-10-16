@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Typography from '@mui/material/Typography';
 
-const IndexPage: FC = () => (
+const IndexPage = () => (
   <Typography align="center" component="h1" variant="h5">
     Home Page 😼
   </Typography>

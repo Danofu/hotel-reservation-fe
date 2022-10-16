@@ -1,17 +1,14 @@
-import React, { createContext, FC, ReactNode, useMemo, useState } from 'react';
+import React, { createContext, FC, useMemo, useState } from 'react';
 import { ThemeProvider as MUIThemeProvider, useMediaQuery } from '@mui/material';
 
 import createTheme from 'src/providers/ColorModeProvider/theme';
+import { ColorModeProviderProps } from 'src/providers/ColorModeProvider/types';
 
 export const ThemeContext = createContext({
   toggleColorMode: () => {},
 });
 
-type Props = {
-  children: ReactNode;
-};
-
-const ThemeProvider: FC<Props> = ({ children }) => {
+const ThemeProvider: FC<ColorModeProviderProps> = ({ children }) => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const [mode, setMode] = useState<'light' | 'dark'>(prefersDarkMode ? 'dark' : 'light');
 

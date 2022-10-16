@@ -13,15 +13,13 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Form, Formik, FormikHelpers, FormikProps } from 'formik';
+import { Form, Formik } from 'formik';
 
-export type FormValues = {
-  email: string;
-  password: string;
-  remember: boolean;
-};
-
-type InnerAuthorizationFormProps = FormikProps<FormValues>;
+import {
+  InnerAuthorizationFormProps,
+  AuthorizationFormProps,
+  AuthorizationFormValues,
+} from 'src/components/AuthorizationForm/types';
 
 const InnerAuthorizationForm: FC<InnerAuthorizationFormProps> = ({
   errors,
@@ -107,13 +105,7 @@ const InnerAuthorizationForm: FC<InnerAuthorizationFormProps> = ({
   );
 };
 
-type Props = {
-  initialValues?: FormValues;
-  onSubmit: (values: FormValues, formikHelpers: FormikHelpers<FormValues>) => void | Promise<unknown>;
-  validationSchema?: unknown | (() => unknown);
-};
-
-const defaultInitialValues: FormValues = {
+const defaultInitialValues: AuthorizationFormValues = {
   email: '',
   password: '',
   remember: false,
@@ -125,7 +117,7 @@ const defaultValidationSchema = Yup.object({
   remember: Yup.boolean(),
 });
 
-const AuthorizationForm: FC<Props> = ({
+const AuthorizationForm: FC<AuthorizationFormProps> = ({
   initialValues = defaultInitialValues,
   onSubmit,
   validationSchema = defaultValidationSchema,

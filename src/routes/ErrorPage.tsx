@@ -1,11 +1,11 @@
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
-import React, { FC } from 'react';
+import React from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { isRouteErrorResponse, Link as RouterLink, useRouteError } from 'react-router-dom';
 
-const ErrorPage: FC = () => {
+const ErrorPage = () => {
   const error = useRouteError();
 
   const errorText = isRouteErrorResponse(error)
