@@ -4,6 +4,7 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { FormikHelpers } from 'formik';
+import { Helmet } from 'react-helmet';
 
 import AuthorizationForm from 'src/components/AuthorizationForm';
 import { AuthorizationFormValues } from 'src/components/AuthorizationForm/types';
@@ -20,27 +21,32 @@ const LoginPage = () => {
   };
 
   return (
-    <Container
-      maxWidth={false}
-      sx={{
-        alignItems: 'center',
-        display: 'flex',
-        height: '100vh',
-        justifyContent: 'center',
-        py: 3,
-        textAlign: 'center',
-        width: 1,
-      }}
-    >
-      <Paper elevation={3} sx={{ px: 5, py: 4, width: 500 }}>
-        <Stack spacing={6}>
-          <Typography align="center" component="h1" variant="h5">
-            Authorization 😼
-          </Typography>
-          <AuthorizationForm onSubmit={handleSubmit} />
-        </Stack>
-      </Paper>
-    </Container>
+    <>
+      <Helmet>
+        <title>Login Page</title>
+      </Helmet>
+      <Container
+        maxWidth={false}
+        sx={{
+          alignItems: 'center',
+          display: 'flex',
+          height: '100vh',
+          justifyContent: 'center',
+          py: 3,
+          textAlign: 'center',
+          width: 1,
+        }}
+      >
+        <Paper elevation={3} sx={{ px: 5, py: 4, width: 500 }}>
+          <Stack spacing={6}>
+            <Typography align="center" component="h1" variant="h5">
+              Authorization 😼
+            </Typography>
+            <AuthorizationForm onSubmit={handleSubmit} />
+          </Stack>
+        </Paper>
+      </Container>
+    </>
   );
 };
 
