@@ -31,14 +31,14 @@ const LoginPage = () => {
     if (email === 'danofu13@gmail.com' && password === '752984136') {
       const storage = remember ? localStorage : sessionStorage;
 
+      toast.success('Authorization Succeeded');
       storage.setItem('user.token', 'mock-token');
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      navigate(search.has('callback-pathname') ? search.get('callback-pathname')! : '/');
+      navigate(search.has('callback-pathname') ? (search.get('callback-pathname') as string) : '/');
 
       return;
     }
 
-    toast.error('Authorization failed !');
+    toast.error('Authorization Failed');
   };
 
   return (
