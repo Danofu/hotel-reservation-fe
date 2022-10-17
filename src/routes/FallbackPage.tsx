@@ -1,14 +1,13 @@
+import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
-import Container from '@mui/material/Container';
 import React from 'react';
 import { colord } from 'colord';
 
 const FallbackPage = () => (
-  <Container
-    maxWidth={false}
+  <Box
     sx={{
       alignItems: 'center',
-      bgcolor: (theme) => colord(theme.palette.background.default).alpha(0.7).toHex(),
+      bgcolor: (theme) => colord(theme.palette.background.default).alpha(0.9).toHex(),
       display: 'flex',
       height: '100vh',
       inset: 0,
@@ -19,6 +18,6 @@ const FallbackPage = () => (
     }}
   >
     <CircularProgress />
-  </Container>
+  </Box>
 );
 export default FallbackPage;

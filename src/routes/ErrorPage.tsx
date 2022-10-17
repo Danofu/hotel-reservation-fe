@@ -1,4 +1,4 @@
-import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import React from 'react';
 import Stack from '@mui/material/Stack';
@@ -18,8 +18,7 @@ const ErrorPage = () => {
       <Helmet>
         <title>Error Page</title>
       </Helmet>
-      <Container
-        maxWidth={false}
+      <Box
         sx={{
           alignItems: 'center',
           display: 'flex',
@@ -49,7 +48,7 @@ const ErrorPage = () => {
             &nbsp;page
           </Typography>
         </Stack>
-      </Container>
+      </Box>
     </>
   );
 };

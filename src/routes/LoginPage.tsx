@@ -1,4 +1,3 @@
-import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import React from 'react';
 import Stack from '@mui/material/Stack';
@@ -11,6 +10,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import AuthorizationForm from 'src/components/AuthenticationForm';
 import sleep from 'src/utils/sleep';
 import { AuthenticationFormValues } from 'src/components/AuthenticationForm/types';
+import Box from '@mui/material/Box';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -47,8 +47,7 @@ const LoginPage = () => {
       <Helmet>
         <title>Login Page</title>
       </Helmet>
-      <Container
-        maxWidth={false}
+      <Box
         sx={{
           alignItems: 'center',
           display: 'flex',
@@ -67,7 +66,7 @@ const LoginPage = () => {
             <AuthorizationForm onSubmit={handleSubmit} />
           </Stack>
         </Paper>
-      </Container>
+      </Box>
     </>
   );
 };
