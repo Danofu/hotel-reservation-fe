@@ -4,6 +4,7 @@ import { RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
 import Providers from 'src/providers/Providers';
+import ThemeProvider from './providers/ThemeProvider';
 import ToastContainer from 'src/components/ToastContainer';
 import router from 'src/routes/router';
 
@@ -19,4 +20,8 @@ root.render(
   </Providers>
 );
 
-toastContainer.render(<ToastContainer />);
+toastContainer.render(
+  <ThemeProvider>
+    <ToastContainer />
+  </ThemeProvider>
+);
