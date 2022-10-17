@@ -4,10 +4,10 @@ import Portal from '@mui/material/Portal';
 import React from 'react';
 import { grey } from '@mui/material/colors';
 
-const loading = document.getElementById('loading') as HTMLElement;
+import { loadingContainer } from 'src/components/LoadingBackdrop/constants';
 
 const LoadingBackdrop = () => (
-  <Portal container={loading}>
+  <Portal container={loadingContainer}>
     <Backdrop open sx={{ color: grey[50], zIndex: (theme) => theme.zIndex.drawer + 1 }}>
       <CircularProgress color="inherit" />
     </Backdrop>

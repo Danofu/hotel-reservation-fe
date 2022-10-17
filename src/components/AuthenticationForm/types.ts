@@ -1,18 +1,15 @@
 import { FormikHelpers, FormikProps } from 'formik';
 
-export type AuthenticationFormValues = {
+export type InnerProps = FormikProps<IValues>;
+
+export type Props = {
+  initialValues?: IValues;
+  onSubmit: (values: IValues, formikHelpers: FormikHelpers<IValues>) => void | Promise<unknown>;
+  validationSchema?: unknown | (() => unknown);
+};
+
+export interface IValues {
   email: string;
   password: string;
   remember: boolean;
-};
-
-export type InnerAuthenticationFormProps = FormikProps<AuthenticationFormValues>;
-
-export type AuthenticationFormProps = {
-  initialValues?: AuthenticationFormValues;
-  onSubmit: (
-    values: AuthenticationFormValues,
-    formikHelpers: FormikHelpers<AuthenticationFormValues>
-  ) => void | Promise<unknown>;
-  validationSchema?: unknown | (() => unknown);
-};
+}

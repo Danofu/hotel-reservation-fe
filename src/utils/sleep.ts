@@ -1,1 +1,1 @@
-export default async (millis: number) => new Promise((r) => setTimeout(r, millis));
+export default async (millis: number) => new Promise((resolve) => setTimeout(resolve, millis));

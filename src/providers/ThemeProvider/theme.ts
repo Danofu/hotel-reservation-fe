@@ -1,7 +1,7 @@
 import { createTheme, ThemeOptions } from '@mui/material';
 import { grey, teal } from '@mui/material/colors';
 
-import { CreateThemeArgs } from 'src/providers/ColorModeProvider/types';
+import { CreateThemeArgs } from 'src/providers/ThemeProvider/types';
 
 const lightThemeOptions: ThemeOptions = {
   palette: {

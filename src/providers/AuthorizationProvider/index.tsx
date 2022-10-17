@@ -1,17 +1,12 @@
 import React, { createContext, FC, useCallback, useMemo, useState } from 'react';
 
 import sleep from 'src/utils/sleep';
-import { AuthorizationContextType, AuthorizationProviderProps } from 'src/providers/AuthorizationProvider/types';
+import { IAuthorizationContext, Props } from 'src/providers/AuthorizationProvider/types';
 import { getStorageItem, removeStorageItem } from 'src/utils/storage';
 
-export const AuthorizationContext = createContext<AuthorizationContextType>({
-  isAuthorized: false,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  login: async (email, password, remember) => false,
-  logout: () => {},
-});
+export const AuthorizationContext = createContext<IAuthorizationContext>({} as IAuthorizationContext);
 
-const AuthorizationProvider: FC<AuthorizationProviderProps> = ({ children }) => {
+const AuthorizationProvider: FC<Props> = ({ children }) => {
   const [isAuthorized, setIsAuthorized] = useState<boolean>(!!getStorageItem('user.token'));
 
   const login = useCallback(async (email: string, password: string, remember: boolean) => {
@@ -35,7 +30,7 @@ const AuthorizationProvider: FC<AuthorizationProviderProps> = ({ children }) => 
     setIsAuthorized(false);
   }, []);
 
-  const value = useMemo(() => ({ login, logout, isAuthorized }), [isAuthorized]);
+  const value = useMemo<IAuthorizationContext>(() => ({ isAuthorized, login, logout }), [isAuthorized]);
 
   return <AuthorizationContext.Provider value={value}>{children}</AuthorizationContext.Provider>;
 };

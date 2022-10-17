@@ -9,20 +9,18 @@ import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import AuthenticationForm from 'src/components/AuthenticationForm';
-import { AuthenticationFormValues } from 'src/components/AuthenticationForm/types';
 import { AuthorizationContext } from 'src/providers/AuthorizationProvider';
+import { IAuthorizationContext } from 'src/providers/AuthorizationProvider/types';
+import { IValues } from 'src/components/AuthenticationForm/types';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { login } = useContext(AuthorizationContext);
+  const { login } = useContext<IAuthorizationContext>(AuthorizationContext);
   const { search: rawSearch } = useLocation();
 
   const search = new URLSearchParams(rawSearch);
 
-  const handleSubmit = async (
-    values: AuthenticationFormValues,
-    formikHelpers: FormikHelpers<AuthenticationFormValues>
-  ) => {
+  const handleSubmit = async (values: IValues, formikHelpers: FormikHelpers<IValues>) => {
     const { email, password, remember } = values;
     const result = await login(email, password, remember);
 
@@ -30,8 +28,7 @@ const LoginPage = () => {
 
     if (result) {
       toast.success('Authorization Succeeded');
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      navigate(search.has('callback-pathname') ? search.get('callback-pathname')! : '/');
+      navigate(search.get('callback-pathname') ?? '/');
 
       return;
     }

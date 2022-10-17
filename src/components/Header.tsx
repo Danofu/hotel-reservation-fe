@@ -1,5 +1,6 @@
 import AppBar from '@mui/material/AppBar';
 import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import React, { MouseEvent, useContext, useState } from 'react';
@@ -7,11 +8,11 @@ import Typography from '@mui/material/Typography';
 import { AccountCircle } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 
-import Link from '@mui/material/Link';
 import { AuthorizationContext } from 'src/providers/AuthorizationProvider';
+import { IAuthorizationContext } from 'src/providers/AuthorizationProvider/types';
 
 const Header = () => {
-  const { isAuthorized, logout } = useContext(AuthorizationContext);
+  const { isAuthorized, logout } = useContext<IAuthorizationContext>(AuthorizationContext);
   const [menuAnchorEl, setMenuAnchorEl] = useState<HTMLElement | null>(null);
 
   const handleAccountButtonClick = (event: MouseEvent<HTMLElement>) => setMenuAnchorEl(event.currentTarget);
