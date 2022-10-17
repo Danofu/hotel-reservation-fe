@@ -1,21 +1,49 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import AppLayout from 'src/routes/AppLayout';
-import ErrorPage from 'src/routes/ErrorPage';
-import IndexPage from 'src/routes/IndexPage';
-import LoginPage from 'src/routes/LoginPage';
+import FallbackPage from 'src/routes/FallbackPage';
 import ProtectedRoutes from 'src/utils/ProtectedRoutes';
+
+const AppLayout = lazy(() => import('src/routes/AppLayout'));
+const ErrorPage = lazy(() => import('src/routes/ErrorPage'));
+const IndexPage = lazy(() => import('src/routes/IndexPage'));
+const LoginPage = lazy(() => import('src/routes/LoginPage'));
 
 export default createBrowserRouter([
   {
-    children: [{ children: [{ element: <IndexPage />, index: true }], element: <AppLayout /> }],
+    children: [
+      {
+        children: [
+          {
+            element: (
+              <Suspense fallback={<FallbackPage />}>
+                <IndexPage />
+              </Suspense>
+            ),
+            index: true,
+          },
+        ],
+        element: (
+          <Suspense fallback={<FallbackPage />}>
+            <AppLayout />
+          </Suspense>
+        ),
+      },
+    ],
     element: <ProtectedRoutes />,
-    errorElement: <ErrorPage />,
+    errorElement: (
+      <Suspense fallback={<FallbackPage />}>
+        <ErrorPage />
+      </Suspense>
+    ),
     path: '/',
   },
   {
-    element: <LoginPage />,
+    element: (
+      <Suspense fallback={<FallbackPage />}>
+        <LoginPage />
+      </Suspense>
+    ),
     path: '/login',
   },
 ]);

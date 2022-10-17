@@ -22,18 +22,19 @@ const LoginPage = () => {
     values: AuthenticationFormValues,
     formikHelpers: FormikHelpers<AuthenticationFormValues>
   ) => {
-    // NOTE: fake request
-    await sleep(2 * 1000);
-
     formikHelpers.setSubmitting(false);
+
     const { email, password, remember } = values;
 
+    // NOTE: fake request
+    await sleep(2 * 1000);
     if (email === 'danofu13@gmail.com' && password === '752984136') {
       const storage = remember ? localStorage : sessionStorage;
 
       toast.success('Authorization Succeeded');
       storage.setItem('user.token', 'mock-token');
-      navigate(search.has('callback-pathname') ? (search.get('callback-pathname') as string) : '/');
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      navigate(search.has('callback-pathname') ? search.get('callback-pathname')! : '/');
 
       return;
     }

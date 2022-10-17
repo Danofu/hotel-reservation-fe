@@ -7,7 +7,7 @@ const IndexPage = () => (
     <Helmet>
       <title>Home Page</title>
     </Helmet>
-    <Typography align="center" component="h1" variant="h5">
+    <Typography align="center" component="h1" m={3} variant="h5">
       Home Page 😼
     </Typography>
   </>
