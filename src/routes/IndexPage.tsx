@@ -4,7 +4,9 @@ import { Helmet } from 'react-helmet';
 
 const IndexPage = () => (
   <>
-    <Helmet>Home Page</Helmet>
+    <Helmet>
+      <title>Home Page</title>
+    </Helmet>
     <Typography align="center" component="h1" variant="h5">
       Home Page 😼
     </Typography>

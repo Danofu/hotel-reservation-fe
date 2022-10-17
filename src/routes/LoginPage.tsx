@@ -5,19 +5,36 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { FormikHelpers } from 'formik';
 import { Helmet } from 'react-helmet';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { useTheme } from '@mui/material';
 
 import AuthorizationForm from 'src/components/AuthorizationForm';
+import sleep from 'src/utils/sleep';
 import { AuthorizationFormValues } from 'src/components/AuthorizationForm/types';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const theme = useTheme();
+
   const handleSubmit = async (
     values: AuthorizationFormValues,
     formikHelpers: FormikHelpers<AuthorizationFormValues>
   ) => {
-    // TODO: make authorize request
-    console.log(values);
-    await new Promise((r) => setTimeout(r, 10 * 1000));
-    formikHelpers.resetForm();
+    // fake request
+    await sleep(2 * 1000);
+
+    formikHelpers.setSubmitting(false);
+    const { email, password, remember } = values;
+
+    if (email === 'danofu13@gmail.com' && password === '752984136') {
+      const storage = remember ? localStorage : sessionStorage;
+      storage.setItem('user.token', 'mock-token');
+      navigate('/');
+      return;
+    }
+
+    toast.error('Authorization failed !', { theme: theme.palette.mode });
   };
 
   return (

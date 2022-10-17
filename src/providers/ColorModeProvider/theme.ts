@@ -1,9 +1,7 @@
 import { createTheme, ThemeOptions } from '@mui/material';
 import { grey, teal } from '@mui/material/colors';
 
-type Args = {
-  mode: 'light' | 'dark';
-};
+import { CreateThemeArgs } from 'src/providers/ColorModeProvider/types';
 
 const lightThemeOptions: ThemeOptions = {
   palette: {
@@ -21,4 +19,4 @@ const darkThemeOptions: ThemeOptions = {
   },
 };
 
-export default ({ mode }: Args) => createTheme(mode === 'light' ? lightThemeOptions : darkThemeOptions);
+export default ({ mode }: CreateThemeArgs) => createTheme(mode === 'light' ? lightThemeOptions : darkThemeOptions);
