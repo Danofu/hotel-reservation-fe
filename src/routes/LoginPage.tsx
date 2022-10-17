@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { FormikHelpers } from 'formik';
 import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import AuthorizationForm from 'src/components/AuthenticationForm';
 import sleep from 'src/utils/sleep';
@@ -14,6 +14,9 @@ import { AuthenticationFormValues } from 'src/components/AuthenticationForm/type
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const { search: rawSearch } = useLocation();
+
+  const search = new URLSearchParams(rawSearch);
 
   const handleSubmit = async (
     values: AuthenticationFormValues,
@@ -27,8 +30,11 @@ const LoginPage = () => {
 
     if (email === 'danofu13@gmail.com' && password === '752984136') {
       const storage = remember ? localStorage : sessionStorage;
+
       storage.setItem('user.token', 'mock-token');
-      navigate('/');
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      navigate(search.has('callback-pathname') ? search.get('callback-pathname')! : '/');
+
       return;
     }
 
