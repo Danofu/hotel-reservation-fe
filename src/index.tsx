@@ -3,6 +3,7 @@ import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
+import AuthorizationProvider from 'src/providers/AuthorizationProvider';
 import ThemeProvider from 'src/providers/ColorModeProvider';
 import ToastContainer from 'src/components/ToastContainer';
 import router from 'src/routes/router';
@@ -13,10 +14,12 @@ const root = createRoot(document.getElementById('root') as HTMLElement);
 const toast = createRoot(document.getElementById('toast') as HTMLElement);
 
 root.render(
-  <ThemeProvider>
-    <CssBaseline />
-    <RouterProvider router={router} />
-  </ThemeProvider>
+  <AuthorizationProvider>
+    <ThemeProvider>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </AuthorizationProvider>
 );
 
 toast.render(<ToastContainer />);

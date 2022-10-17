@@ -1,5 +1,6 @@
+import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import React from 'react';
+import React, { useContext } from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { FormikHelpers } from 'formik';
@@ -7,13 +8,13 @@ import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import AuthorizationForm from 'src/components/AuthenticationForm';
-import sleep from 'src/utils/sleep';
+import AuthenticationForm from 'src/components/AuthenticationForm';
 import { AuthenticationFormValues } from 'src/components/AuthenticationForm/types';
-import Box from '@mui/material/Box';
+import { AuthorizationContext } from 'src/providers/AuthorizationProvider';
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const { login } = useContext(AuthorizationContext);
   const { search: rawSearch } = useLocation();
 
   const search = new URLSearchParams(rawSearch);
@@ -22,18 +23,13 @@ const LoginPage = () => {
     values: AuthenticationFormValues,
     formikHelpers: FormikHelpers<AuthenticationFormValues>
   ) => {
-    // NOTE: fake request
-    await sleep(2 * 1000);
-
     const { email, password, remember } = values;
+    const result = await login(email, password, remember);
 
     formikHelpers.setSubmitting(false);
 
-    if (email === 'danofu13@gmail.com' && password === '752984136') {
-      const storage = remember ? localStorage : sessionStorage;
-
+    if (result) {
       toast.success('Authorization Succeeded');
-      storage.setItem('user.token', 'mock-token');
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       navigate(search.has('callback-pathname') ? search.get('callback-pathname')! : '/');
 
@@ -64,7 +60,7 @@ const LoginPage = () => {
             <Typography align="center" component="h1" variant="h5">
               Authentication 😼
             </Typography>
-            <AuthorizationForm onSubmit={handleSubmit} />
+            <AuthenticationForm onSubmit={handleSubmit} />
           </Stack>
         </Paper>
       </Box>

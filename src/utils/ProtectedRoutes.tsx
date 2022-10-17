@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
+
+import { AuthorizationContext } from 'src/providers/AuthorizationProvider';
 
 const ProtectedRoutes = () => {
   const { pathname } = useLocation();
 
-  const storage = [localStorage, sessionStorage].find((storage) => !!storage.getItem('user.token'));
-  const token = storage?.getItem('user.token');
+  const { isAuthorized } = useContext(AuthorizationContext);
 
-  return token ? <Outlet /> : <Navigate replace to={`/login?callback-pathname=${pathname}`} />;
+  return isAuthorized ? <Outlet /> : <Navigate replace to={`/login?callback-pathname=${pathname}`} />;
 };
 
 export default ProtectedRoutes;

@@ -1,4 +1,4 @@
-import React, { createContext, FC, useEffect, useMemo, useState } from 'react';
+import React, { createContext, FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { ThemeProvider as MUIThemeProvider, useMediaQuery } from '@mui/material';
 
 import createTheme from 'src/providers/ColorModeProvider/theme';
@@ -12,10 +12,9 @@ const ThemeProvider: FC<ColorModeProviderProps> = ({ children }) => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const [mode, setMode] = useState<'light' | 'dark'>(prefersDarkMode ? 'dark' : 'light');
 
-  const value = useMemo(
-    () => ({ toggleColorMode: () => setMode((prev) => (prev === 'light' ? 'dark' : 'light')) }),
-    []
-  );
+  const toggleColorMode = useCallback(() => setMode((prev) => (prev === 'light' ? 'dark' : 'light')), []);
+
+  const value = useMemo(() => ({ toggleColorMode }), []);
 
   const theme = useMemo(() => createTheme({ mode }), [mode]);
 
