@@ -7,7 +7,6 @@ import { FormikHelpers } from 'formik';
 import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { useTheme } from '@mui/material';
 
 import AuthorizationForm from 'src/components/AuthenticationForm';
 import sleep from 'src/utils/sleep';
@@ -15,13 +14,12 @@ import { AuthenticationFormValues } from 'src/components/AuthenticationForm/type
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const theme = useTheme();
 
   const handleSubmit = async (
     values: AuthenticationFormValues,
     formikHelpers: FormikHelpers<AuthenticationFormValues>
   ) => {
-    // fake request
+    // NOTE: fake request
     await sleep(2 * 1000);
 
     formikHelpers.setSubmitting(false);
@@ -34,7 +32,7 @@ const LoginPage = () => {
       return;
     }
 
-    toast.error('Authorization failed !', { theme: theme.palette.mode });
+    toast.error('Authorization failed !');
   };
 
   return (
