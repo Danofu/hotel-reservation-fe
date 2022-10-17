@@ -28,7 +28,7 @@ const LoginPage = () => {
 
     if (result) {
       toast.success('Authorization Succeeded');
-      navigate(search.get('callback-pathname') ?? '/');
+      navigate(decodeURI(search.get('callbackUrl') ?? '/'));
 
       return;
     }
