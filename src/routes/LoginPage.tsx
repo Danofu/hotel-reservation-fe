@@ -9,17 +9,17 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material';
 
-import AuthorizationForm from 'src/components/AuthorizationForm';
+import AuthorizationForm from 'src/components/AuthenticationForm';
 import sleep from 'src/utils/sleep';
-import { AuthorizationFormValues } from 'src/components/AuthorizationForm/types';
+import { AuthenticationFormValues } from 'src/components/AuthenticationForm/types';
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const theme = useTheme();
 
   const handleSubmit = async (
-    values: AuthorizationFormValues,
-    formikHelpers: FormikHelpers<AuthorizationFormValues>
+    values: AuthenticationFormValues,
+    formikHelpers: FormikHelpers<AuthenticationFormValues>
   ) => {
     // fake request
     await sleep(2 * 1000);
@@ -57,7 +57,7 @@ const LoginPage = () => {
         <Paper elevation={3} sx={{ px: 5, py: 4, width: 500 }}>
           <Stack spacing={6}>
             <Typography align="center" component="h1" variant="h5">
-              Authorization 😼
+              Authentication 😼
             </Typography>
             <AuthorizationForm onSubmit={handleSubmit} />
           </Stack>

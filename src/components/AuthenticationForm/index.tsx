@@ -16,12 +16,12 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Form, Formik } from 'formik';
 
 import {
-  InnerAuthorizationFormProps,
-  AuthorizationFormProps,
-  AuthorizationFormValues,
-} from 'src/components/AuthorizationForm/types';
+  InnerAuthenticationFormProps,
+  AuthenticationFormProps,
+  AuthenticationFormValues,
+} from 'src/components/AuthenticationForm/types';
 
-const InnerAuthorizationForm: FC<InnerAuthorizationFormProps> = ({
+const InnerAuthorizationForm: FC<InnerAuthenticationFormProps> = ({
   errors,
   handleBlur,
   handleChange,
@@ -105,7 +105,7 @@ const InnerAuthorizationForm: FC<InnerAuthorizationFormProps> = ({
   );
 };
 
-const defaultInitialValues: AuthorizationFormValues = {
+const defaultInitialValues: AuthenticationFormValues = {
   email: '',
   password: '',
   remember: false,
@@ -117,7 +117,7 @@ const defaultValidationSchema = Yup.object({
   remember: Yup.boolean(),
 });
 
-const AuthorizationForm: FC<AuthorizationFormProps> = ({
+const AuthorizationForm: FC<AuthenticationFormProps> = ({
   initialValues = defaultInitialValues,
   onSubmit,
   validationSchema = defaultValidationSchema,
