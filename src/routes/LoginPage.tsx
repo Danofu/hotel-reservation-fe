@@ -22,12 +22,13 @@ const LoginPage = () => {
     values: AuthenticationFormValues,
     formikHelpers: FormikHelpers<AuthenticationFormValues>
   ) => {
-    formikHelpers.setSubmitting(false);
+    // NOTE: fake request
+    await sleep(2 * 1000);
 
     const { email, password, remember } = values;
 
-    // NOTE: fake request
-    await sleep(2 * 1000);
+    formikHelpers.setSubmitting(false);
+
     if (email === 'danofu13@gmail.com' && password === '752984136') {
       const storage = remember ? localStorage : sessionStorage;
 
