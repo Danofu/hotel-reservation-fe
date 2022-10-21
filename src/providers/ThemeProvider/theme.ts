@@ -1,21 +1,19 @@
 import { createTheme, ThemeOptions } from '@mui/material';
-import { green, lightGreen, teal } from '@mui/material/colors';
+import { green } from '@mui/material/colors';
 
 import { CreateThemeArgs } from 'src/providers/ThemeProvider/types';
 
 const lightThemeOptions: ThemeOptions = {
   palette: {
     mode: 'light',
-    primary: { main: green[700] },
-    secondary: { main: teal[50] },
+    primary: { main: green[600] },
   },
 };
 
 const darkThemeOptions: ThemeOptions = {
   palette: {
     mode: 'dark',
-    primary: { main: green[100] },
-    secondary: { main: lightGreen[800] },
+    primary: { main: green[500] },
   },
 };
 

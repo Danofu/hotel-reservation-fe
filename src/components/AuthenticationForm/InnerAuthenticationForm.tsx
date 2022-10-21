@@ -33,6 +33,7 @@ const InnerAuthenticationForm: FC<InnerProps> = ({
 
   const handleShowPasswordMouseDown = (event: MouseEvent<HTMLButtonElement>) => event.preventDefault();
 
+  // TODO: split onto components
   return (
     <Stack component={Form} noValidate spacing={3}>
       <TextField

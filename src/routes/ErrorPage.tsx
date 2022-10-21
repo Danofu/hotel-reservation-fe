@@ -1,10 +1,12 @@
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import React from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Helmet } from 'react-helmet';
-import { isRouteErrorResponse, Link as RouterLink, useRouteError } from 'react-router-dom';
+import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+
+import Link from 'src/components/Link';
+import { PATH_HOME, PATH_LOGIN } from 'src/routes/constants';
 
 const ErrorPage = () => {
   const error = useRouteError();
@@ -38,11 +40,11 @@ const ErrorPage = () => {
           </Typography>
           <Typography component="p" variant="body1">
             Try our&nbsp;
-            <Link component={RouterLink} to="/" underline="hover">
+            <Link to={PATH_HOME} underline="hover">
               home
             </Link>
             &nbsp;or&nbsp;
-            <Link component={RouterLink} to="login" underline="hover">
+            <Link to={PATH_LOGIN} underline="hover">
               login
             </Link>
             &nbsp;page
