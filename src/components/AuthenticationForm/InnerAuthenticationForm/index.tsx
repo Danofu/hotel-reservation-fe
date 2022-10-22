@@ -2,7 +2,6 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormHelperText from '@mui/material/FormHelperText';
-import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import InputLabel from '@mui/material/InputLabel';
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -10,11 +9,10 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import React, { FC, MouseEvent, useState } from 'react';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Form } from 'formik';
 
 import { Props } from 'src/components/AuthenticationForm/InnerAuthenticationForm/types';
+import VisibilityButton from '../VisibilityButton';
 
 const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -58,9 +56,13 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
           autoComplete="current-password"
           endAdornment={
             <InputAdornment position="end">
-              <IconButton edge="end" onClick={handleShowPasswordClick} onMouseDown={handleShowPasswordMouseDown}>
-                {showPassword ? <VisibilityOff color="primary" /> : <Visibility color="primary" />}
-              </IconButton>
+              <VisibilityButton
+                edge="end"
+                icon={{ color: 'primary' }}
+                onClick={handleShowPasswordClick}
+                onMouseDown={handleShowPasswordMouseDown}
+                visible={!showPassword}
+              />
             </InputAdornment>
           }
           id="InnerAuthorizationForm__password-input"
