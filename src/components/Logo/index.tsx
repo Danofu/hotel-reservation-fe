@@ -5,13 +5,13 @@ import { RoomService } from '@mui/icons-material';
 import Link from 'src/components/Link';
 import { Props } from 'src/components/Logo/types';
 
-const Logo: FC<Props> = ({ icon, ...props }) => (
+const Logo: FC<Props> = ({ icon, sx, ...props }) => (
   <Typography
     alignItems="center"
     component={Link}
     display="flex"
     gap={1}
-    sx={{ color: 'inherit' }}
+    sx={{ color: 'inherit', ...sx }}
     textTransform="capitalize"
     underline="hover"
     variant="h5"
