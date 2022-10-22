@@ -5,7 +5,4 @@ import { LinkProps } from 'src/components/Link';
 
 type ExclusiveTypographyProps = TypographyProps<'a', LinkProps>;
 
-export type Props = Omit<ExclusiveTypographyProps, 'component' | 'sx'> & {
-  icon?: SvgIconProps;
-  sx?: Pick<ExclusiveTypographyProps, 'sx'>;
-};
+export type Props = Omit<ExclusiveTypographyProps, 'component'> & { icon?: SvgIconProps };

@@ -7,14 +7,14 @@ import { defaultInitialValues, defaultValidationSchema } from 'src/components/Au
 
 const AuthenticationForm: FC<Props> = ({
   initialValues = defaultInitialValues,
-  onSubmit,
   validationSchema = defaultValidationSchema,
+  ...props
 }) => (
   <Formik
     component={InnerAuthenticationForm}
     initialValues={initialValues}
-    onSubmit={onSubmit}
     validationSchema={validationSchema}
+    {...props}
   />
 );
 

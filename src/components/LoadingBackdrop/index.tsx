@@ -6,7 +6,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Props } from 'src/components/LoadingBackdrop/types';
 import { loadingContainer } from 'src/components/LoadingBackdrop/constants';
 
-const LoadingBackdrop: FC<Props> = ({ backdrop, delay = 1 * 1000, icon, ...props }) => {
+const LoadingBackdrop: FC<Props> = ({ backdrop, backdropSx, delay = 1 * 1000, icon, ...props }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -17,7 +17,11 @@ const LoadingBackdrop: FC<Props> = ({ backdrop, delay = 1 * 1000, icon, ...props
 
   return (
     <Portal container={loadingContainer} {...props}>
-      <Backdrop open={open} sx={{ color: 'white', zIndex: ({ zIndex }) => zIndex.drawer + 1 }} {...backdrop}>
+      <Backdrop
+        open={open}
+        sx={{ color: 'white', zIndex: ({ zIndex }) => zIndex.drawer + 1, ...backdropSx }}
+        {...backdrop}
+      >
         <CircularProgress color="inherit" {...icon} />
       </Backdrop>
     </Portal>

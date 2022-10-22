@@ -1,10 +1,8 @@
-import { FormikHelpers } from 'formik';
+import { FormikConfig } from 'formik';
 
-export type Props = {
-  initialValues?: IValues;
-  onSubmit: (values: IValues, formikHelpers: FormikHelpers<IValues>) => void | Promise<unknown>;
-  validationSchema?: unknown | (() => unknown);
-};
+import { Optional } from 'src/global';
+
+export type Props = Omit<Optional<FormikConfig<IValues>, 'initialValues' | 'validationSchema'>, 'component'>;
 
 export interface IValues {
   email: string;
