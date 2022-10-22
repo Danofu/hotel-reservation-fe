@@ -59,7 +59,7 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
           endAdornment={
             <InputAdornment position="end">
               <IconButton edge="end" onClick={handleShowPasswordClick} onMouseDown={handleShowPasswordMouseDown}>
-                {showPassword ? <VisibilityOff /> : <Visibility />}
+                {showPassword ? <VisibilityOff color="primary" /> : <Visibility color="primary" />}
               </IconButton>
             </InputAdornment>
           }

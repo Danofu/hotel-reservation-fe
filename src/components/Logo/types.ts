@@ -3,6 +3,4 @@ import { TypographyProps } from '@mui/material/Typography';
 
 import { LinkProps } from 'src/components/Link';
 
-type ExclusiveTypographyProps = TypographyProps<'a', LinkProps>;
-
-export type Props = Omit<ExclusiveTypographyProps, 'component'> & { icon?: SvgIconProps };
+export type Props = Omit<TypographyProps<'a', LinkProps>, 'component'> & { icon?: SvgIconProps };
