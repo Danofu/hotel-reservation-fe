@@ -1,6 +1,3 @@
-import { ReactNode } from 'react';
+import { ReactNode, SuspenseProps } from 'react';
 
-export type Props = {
-  component?: ReactNode;
-  fallback?: ReactNode;
-};
+export type Props = Omit<SuspenseProps, 'children'> & { component?: ReactNode };
