@@ -31,9 +31,9 @@ const Header = () => {
 
   return (
     <AppBar color="default" position="static">
-      <Toolbar disableGutters sx={{ px: 6 }}>
+      <Toolbar disableGutters sx={{ gap: 6, px: 6 }}>
         <Logo to={PATH_HOME} />
-        <Navigation ml={6} navLinks={navLinks} />
+        <Navigation navLinks={navLinks} />
         <Spacer />
         {isAuthorized ? (
           <>

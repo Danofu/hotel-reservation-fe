@@ -1,25 +1,18 @@
 import React, { FC } from 'react';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { RoomService } from '@mui/icons-material';
 
 import Link from 'src/components/Link';
 import { Props } from 'src/components/Logo/types';
 
-const Logo: FC<Props> = ({ icon, sx, ...props }) => (
-  <Typography
-    alignItems="center"
-    component={Link}
-    display="flex"
-    gap={1}
-    sx={{ color: 'inherit', ...sx }}
-    textTransform="capitalize"
-    underline="hover"
-    variant="h5"
-    {...props}
-  >
+const Logo: FC<Props> = ({ icon, text, textChildren = 'Hotel booking', textSx, ...props }) => (
+  <Stack alignItems="center" color="inherit" component={Link} direction="row" gap={1} underline="hover" {...props}>
     <RoomService color="primary" fontSize="large" {...icon} />
-    Hotel booking
-  </Typography>
+    <Typography component="span" sx={{ color: 'inherit', ...textSx }} textTransform="capitalize" variant="h5" {...text}>
+      {textChildren}
+    </Typography>
+  </Stack>
 );
 
 export default Logo;
