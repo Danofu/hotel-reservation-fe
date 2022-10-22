@@ -11,3 +11,5 @@ const Providers: FC<Props> = ({ children }) => (
 );
 
 export default Providers;
+
+export type ProvidersProps = Props;

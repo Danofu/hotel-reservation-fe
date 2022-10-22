@@ -1,7 +1,5 @@
-import { createTheme, ThemeOptions } from '@mui/material';
+import { createTheme, PaletteMode, ThemeOptions } from '@mui/material';
 import { green } from '@mui/material/colors';
-
-import { CreateThemeArgs } from 'src/providers/ThemeProvider/types';
 
 const lightThemeOptions: ThemeOptions = {
   palette: {
@@ -17,4 +15,4 @@ const darkThemeOptions: ThemeOptions = {
   },
 };
 
-export default ({ mode }: CreateThemeArgs) => createTheme(mode === 'light' ? lightThemeOptions : darkThemeOptions);
+export default (mode: PaletteMode) => createTheme(mode === 'light' ? lightThemeOptions : darkThemeOptions);

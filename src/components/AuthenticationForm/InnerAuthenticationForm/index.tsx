@@ -14,16 +14,9 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Form } from 'formik';
 
-import { InnerProps } from 'src/components/AuthenticationForm/types';
+import { Props } from 'src/components/AuthenticationForm/InnerAuthenticationForm/types';
 
-const InnerAuthenticationForm: FC<InnerProps> = ({
-  errors,
-  handleBlur,
-  handleChange,
-  isSubmitting,
-  touched,
-  values,
-}) => {
+const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const isEmailValid = touched.email && !!errors.email;
@@ -102,3 +95,5 @@ const InnerAuthenticationForm: FC<InnerProps> = ({
 };
 
 export default InnerAuthenticationForm;
+
+export type InnerAuthenticationFormProps = Props;

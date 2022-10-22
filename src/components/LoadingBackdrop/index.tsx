@@ -1,27 +1,29 @@
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Portal from '@mui/material/Portal';
-import React, { useEffect, useState } from 'react';
-import { grey } from '@mui/material/colors';
+import React, { FC, useEffect, useState } from 'react';
 
+import { Props } from 'src/components/LoadingBackdrop/types';
 import { loadingContainer } from 'src/components/LoadingBackdrop/constants';
 
-const LoadingBackdrop = () => {
+const LoadingBackdrop: FC<Props> = ({ backdrop, delay = 1 * 1000, icon, ...props }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    const timeoutId = setTimeout(setOpen, 1000, true);
+    const timeoutId = setTimeout(setOpen, delay, true);
 
     return () => clearTimeout(timeoutId);
   }, []);
 
   return (
-    <Portal container={loadingContainer}>
-      <Backdrop open={open} sx={{ color: grey[50], zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <CircularProgress color="inherit" />
+    <Portal container={loadingContainer} {...props}>
+      <Backdrop open={open} sx={{ color: 'white', zIndex: ({ zIndex }) => zIndex.drawer + 1 }} {...backdrop}>
+        <CircularProgress color="inherit" {...icon} />
       </Backdrop>
     </Portal>
   );
 };
 
 export default LoadingBackdrop;
+
+export type LoadingBackdropProps = Props;

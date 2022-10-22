@@ -1,5 +1,5 @@
 import { StackProps } from '@mui/material/Stack';
 
-import { Props as NavigationLinkProps } from 'src/components/Navigation/NavigationLink/types';
+import { NavigationLinkProps } from 'src/components/Navigation/NavigationLink';
 
 export type Props = Omit<StackProps<'nav'>, 'component'> & { navLinks: NavigationLinkProps[] };

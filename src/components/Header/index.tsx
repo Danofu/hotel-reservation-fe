@@ -12,8 +12,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import Logo from 'src/components/Logo';
 import Navigation from 'src/components/Navigation';
 import Spacer from 'src/components/Spacer';
-import { AuthorizationContext } from 'src/providers/AuthorizationProvider';
-import { IAuthorizationContext } from 'src/providers/AuthorizationProvider/types';
+import { AuthorizationContext, IAuthorizationContext } from 'src/providers/AuthorizationProvider';
 import { PATH_HOME, PATH_LOGIN } from 'src/routes/constants';
 import { navLinks } from 'src/components/Header/constants';
 

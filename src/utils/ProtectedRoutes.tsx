@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
-import { AuthorizationContext } from 'src/providers/AuthorizationProvider';
-import { IAuthorizationContext } from 'src/providers/AuthorizationProvider/types';
+import { AuthorizationContext, IAuthorizationContext } from 'src/providers/AuthorizationProvider';
 import { getStorageItem } from 'src/utils/storage';
 
 const ProtectedRoutes = () => {

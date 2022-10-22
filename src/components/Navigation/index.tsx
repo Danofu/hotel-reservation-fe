@@ -13,3 +13,5 @@ const Navigation: FC<Props> = ({ navLinks, ...props }) => (
 );
 
 export default Navigation;
+
+export type NavigationProps = Props;

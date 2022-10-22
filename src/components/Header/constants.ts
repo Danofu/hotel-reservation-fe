@@ -2,8 +2,8 @@ import { ButtonProps } from '@mui/material/Button';
 import { LinkProps } from 'react-router-dom';
 import { v4 as uuidV4 } from 'uuid';
 
+import { NavigationLinkProps } from 'src/components/Navigation/NavigationLink';
 import { PATH_PROTECTED } from 'src/routes/constants';
-import { Props as NavigationLinkProps } from 'src/components/Navigation/NavigationLink/types';
 
 const linkStyle = { color: 'inherit' } as ButtonProps<'a'>;
 

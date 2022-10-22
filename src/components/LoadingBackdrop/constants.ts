@@ -1,1 +1,1 @@
-export const loadingContainer = document.getElementById('loading') as HTMLElement;
+export const loadingContainer = document.getElementById('backdrop') as HTMLElement;

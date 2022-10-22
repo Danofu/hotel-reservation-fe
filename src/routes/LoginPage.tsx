@@ -9,8 +9,7 @@ import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import AuthenticationForm from 'src/components/AuthenticationForm';
-import { AuthorizationContext } from 'src/providers/AuthorizationProvider';
-import { IAuthorizationContext } from 'src/providers/AuthorizationProvider/types';
+import { AuthorizationContext, IAuthorizationContext } from 'src/providers/AuthorizationProvider';
 import { IValues } from 'src/components/AuthenticationForm/types';
 
 const LoginPage = () => {

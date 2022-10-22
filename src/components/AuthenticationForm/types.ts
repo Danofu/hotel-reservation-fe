@@ -1,6 +1,4 @@
-import { FormikHelpers, FormikProps } from 'formik';
-
-export type InnerProps = FormikProps<IValues>;
+import { FormikHelpers } from 'formik';
 
 export type Props = {
   initialValues?: IValues;

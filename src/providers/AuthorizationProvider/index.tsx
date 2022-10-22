@@ -1,10 +1,10 @@
 import React, { createContext, FC, useCallback, useMemo, useState } from 'react';
 
 import sleep from 'src/utils/sleep';
-import { IAuthorizationContext, Props } from 'src/providers/AuthorizationProvider/types';
+import { IContext, Props } from 'src/providers/AuthorizationProvider/types';
 import { getStorageItem, removeStorageItem } from 'src/utils/storage';
 
-export const AuthorizationContext = createContext<IAuthorizationContext>({} as IAuthorizationContext);
+export const AuthorizationContext = createContext<IContext>({} as IContext);
 
 const AuthorizationProvider: FC<Props> = ({ children }) => {
   const [isAuthorized, setIsAuthorized] = useState<boolean>(!!getStorageItem('user.token'));
@@ -30,9 +30,12 @@ const AuthorizationProvider: FC<Props> = ({ children }) => {
     setIsAuthorized(false);
   }, []);
 
-  const value = useMemo<IAuthorizationContext>(() => ({ isAuthorized, login, logout }), [isAuthorized]);
+  const value = useMemo<IContext>(() => ({ isAuthorized, login, logout }), [isAuthorized]);
 
   return <AuthorizationContext.Provider value={value}>{children}</AuthorizationContext.Provider>;
 };
 
 export default AuthorizationProvider;
+
+export type AuthorizationProps = Props;
+export type IAuthorizationContext = IContext;

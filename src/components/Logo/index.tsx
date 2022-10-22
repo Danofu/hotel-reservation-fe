@@ -23,3 +23,5 @@ const Logo: FC<Props> = ({ icon, ...props }) => (
 );
 
 export default Logo;
+
+export type LogoProps = Props;

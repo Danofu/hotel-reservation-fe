@@ -6,3 +6,5 @@ import { Props } from 'src/components/Spacer/types';
 const Spacer: FC<Props> = ({ flex = 1 }) => <Box flex={flex} />;
 
 export default Spacer;
+
+export type SpacerProps = Props;
