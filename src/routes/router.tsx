@@ -6,18 +6,23 @@ import ProtectedRoutes from 'utils/ProtectedRoutes';
 import Suspense from 'utils/Suspense';
 import { PATH_HOME, PATH_LOGIN, PATH_PROTECTED } from 'routes/constants';
 
+//#region lazy loading
 const AppLayout = lazy(() => import('components/AppLayout'));
 const ErrorPage = lazy(() => import('routes/ErrorPage'));
 const IndexPage = lazy(() => import('routes/IndexPage'));
 const LoginPage = lazy(() => import('routes/LoginPage'));
 const ProtectedPage = lazy(() => import('routes/ProtectedPage'));
+//#endregion
 
 export default createBrowserRouter([
   {
     children: [
       {
         children: [
-          { element: <Suspense component={<ProtectedPage />} fallback={<LoadingBackdrop />} />, path: PATH_PROTECTED },
+          {
+            element: <Suspense component={<ProtectedPage />} fallback={<LoadingBackdrop />} />,
+            path: PATH_PROTECTED,
+          },
         ],
         element: <Suspense component={<AppLayout />} fallback={<LoadingBackdrop />} />,
       },

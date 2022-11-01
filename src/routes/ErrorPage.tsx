@@ -15,10 +15,12 @@ const ErrorPage = () => {
     ? `${error.status} ${error.statusText}`
     : 'Sorry, an unexpected error has occurred.';
 
+  const errorTitle = isRouteErrorResponse(error) ? error.status.toString() : 'Error';
+
   return (
     <>
       <Helmet>
-        <title>Error Page</title>
+        <title>Hotel Booking &bull; {errorTitle}</title>
       </Helmet>
       <Box
         sx={{

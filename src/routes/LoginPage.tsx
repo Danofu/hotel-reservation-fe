@@ -9,16 +9,13 @@ import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import AuthenticationForm from 'components/AuthenticationForm';
-import { AuthorizationContext, IAuthorizationContext } from 'providers/AuthorizationProvider';
+import { AuthorizationContext } from 'providers/AuthorizationProvider';
 import { IValues } from 'components/AuthenticationForm/types';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { isAuthorized, login } = useContext<IAuthorizationContext>(AuthorizationContext);
+  const { isAuthorized, login } = useContext(AuthorizationContext);
   const { search: rawSearch } = useLocation();
-
-  const search = new URLSearchParams(rawSearch);
-  const navigateUrl = decodeURI(search.get('callbackUrl') ?? '/');
 
   const handleSubmit = async (values: IValues, formikHelpers: FormikHelpers<IValues>) => {
     const { email, password, remember } = values;
@@ -28,8 +25,6 @@ const LoginPage = () => {
 
     if (result) {
       toast.success('Authorization Succeeded');
-      navigate(navigateUrl);
-
       return;
     }
 
@@ -37,13 +32,16 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-    isAuthorized() && navigate(navigateUrl);
-  });
+    const search = new URLSearchParams(rawSearch);
+    const navigateUrl = decodeURI(search.get('callbackUrl') ?? '/');
+
+    isAuthorized() && navigate(navigateUrl, { replace: true });
+  }, [isAuthorized, rawSearch]);
 
   return (
     <>
       <Helmet>
-        <title>Login Page</title>
+        <title>Hotel Booking &bull; Login</title>
       </Helmet>
       <Box
         sx={{
