@@ -1,10 +1,9 @@
-import React, { createContext, FC, useCallback, useEffect, useMemo, useState } from 'react';
+import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { PaletteMode, ThemeProvider as MuiThemeProvider, useMediaQuery } from '@mui/material';
 
-import createTheme from 'providers/ThemeProvider/theme';
+import createTheme from 'providers/ThemeProvider/utils/createTheme';
 import { IContext, Props } from 'providers/ThemeProvider/types';
-
-export const ThemeContext = createContext<IContext>({} as IContext);
+import { ThemeContext } from 'providers/ThemeProvider/constants';
 
 const ThemeProvider: FC<Props> = ({ children }) => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');

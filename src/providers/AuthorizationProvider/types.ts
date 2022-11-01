@@ -5,7 +5,7 @@ export type Props = {
 };
 
 export interface IContext {
-  isAuthorized: () => boolean;
+  isAuthorized: boolean;
   login: (email: string, password: string, remember: boolean) => Promise<boolean>;
   logout: () => void;
 }

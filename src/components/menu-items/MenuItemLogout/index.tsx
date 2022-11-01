@@ -3,11 +3,11 @@ import React, { FC, useContext } from 'react';
 import Stack from '@mui/material/Stack';
 import { Logout } from '@mui/icons-material';
 
-import { AuthorizationContext, IAuthorizationContext } from 'providers/AuthorizationProvider';
+import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { Props } from 'components/menu-items/MenuItemLogout/types';
 
 const MenuItemLogout: FC<Props> = ({ icon, wrapper, ...props }) => {
-  const { logout } = useContext<IAuthorizationContext>(AuthorizationContext);
+  const { logout } = useContext(AuthorizationContext);
 
   return (
     <MenuItem onClick={logout} {...props}>

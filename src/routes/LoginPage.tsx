@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import AuthenticationForm from 'components/AuthenticationForm';
-import { AuthorizationContext } from 'providers/AuthorizationProvider';
+import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { IValues } from 'components/AuthenticationForm/types';
 
 const LoginPage = () => {
@@ -35,7 +35,7 @@ const LoginPage = () => {
     const search = new URLSearchParams(rawSearch);
     const navigateUrl = decodeURI(search.get('callbackUrl') ?? '/');
 
-    isAuthorized() && navigate(navigateUrl, { replace: true });
+    isAuthorized && navigate(navigateUrl, { replace: true });
   }, [isAuthorized, rawSearch]);
 
   return (
