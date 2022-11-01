@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { FormikHelpers } from 'formik';
@@ -14,10 +14,11 @@ import { IValues } from 'src/components/AuthenticationForm/types';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { login } = useContext<IAuthorizationContext>(AuthorizationContext);
+  const { isAuthorized, login } = useContext<IAuthorizationContext>(AuthorizationContext);
   const { search: rawSearch } = useLocation();
 
   const search = new URLSearchParams(rawSearch);
+  const navigateUrl = decodeURI(search.get('callbackUrl') ?? '/');
 
   const handleSubmit = async (values: IValues, formikHelpers: FormikHelpers<IValues>) => {
     const { email, password, remember } = values;
@@ -27,13 +28,17 @@ const LoginPage = () => {
 
     if (result) {
       toast.success('Authorization Succeeded');
-      navigate(decodeURI(search.get('callbackUrl') ?? '/'));
+      navigate(navigateUrl);
 
       return;
     }
 
     toast.error('Authorization Failed');
   };
+
+  useEffect(() => {
+    isAuthorized() && navigate(navigateUrl);
+  });
 
   return (
     <>

@@ -21,8 +21,8 @@ const Header = () => {
         <Logo to={PATH_HOME} />
         <Navigation navLinks={navLinks} />
         <Spacer />
-        {isAuthorized && <ProfileButton />}
-        {!isAuthorized && (
+        {isAuthorized() && <ProfileButton />}
+        {!isAuthorized() && (
           <Link color="inherit" textTransform="uppercase" to={PATH_LOGIN} underline="hover">
             Login
           </Link>

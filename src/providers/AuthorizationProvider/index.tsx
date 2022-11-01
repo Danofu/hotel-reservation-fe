@@ -7,7 +7,7 @@ import { getStorageItem, removeStorageItem } from 'src/utils/storage';
 export const AuthorizationContext = createContext<IContext>({} as IContext);
 
 const AuthorizationProvider: FC<Props> = ({ children }) => {
-  const [isAuthorized, setIsAuthorized] = useState<boolean>(!!getStorageItem('user.token'));
+  const [authorized, setAuthorized] = useState<boolean>(!!getStorageItem('user.token'));
 
   const login = useCallback(async (email: string, password: string, remember: boolean) => {
     // NOTE: fake request
@@ -17,7 +17,7 @@ const AuthorizationProvider: FC<Props> = ({ children }) => {
       const storage = remember ? localStorage : sessionStorage;
 
       storage.setItem('user.token', 'mock-token');
-      setIsAuthorized(true);
+      setAuthorized(true);
 
       return true;
     }
@@ -27,8 +27,10 @@ const AuthorizationProvider: FC<Props> = ({ children }) => {
 
   const logout = useCallback(() => {
     removeStorageItem('user.token');
-    setIsAuthorized(false);
+    setAuthorized(false);
   }, []);
+
+  const isAuthorized = useCallback(() => authorized, [authorized]);
 
   const value = useMemo<IContext>(() => ({ isAuthorized, login, logout }), [isAuthorized]);
 
