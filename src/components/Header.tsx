@@ -1,16 +1,15 @@
 import AppBar from '@mui/material/AppBar';
-import React from 'react';
+import React, { useContext } from 'react';
 import Toolbar from '@mui/material/Toolbar';
-import { useContext } from 'react';
 
 import Link from 'components/Link';
 import Logo from 'components/Logo';
 import Navigation from 'components/Navigation';
-import ProfileButton from 'components/ProfileButton';
+import NavigationLink from 'components/buttons/NavigationLink';
+import ProfileButton from 'components/buttons/ProfileButton';
 import Spacer from 'components/Spacer';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
-import { PATH_HOME, PATH_LOGIN } from 'routes/constants';
-import { navLinks } from 'components/Header/constants';
+import { PATH_HOME, PATH_LOGIN, PATH_PROTECTED } from 'routes/constants';
 
 const Header = () => {
   const { isAuthorized } = useContext(AuthorizationContext);
@@ -19,7 +18,11 @@ const Header = () => {
     <AppBar color="default" position="static">
       <Toolbar disableGutters sx={{ gap: 6, px: 6 }}>
         <Logo to={PATH_HOME} />
-        <Navigation navLinks={navLinks} />
+        <Navigation spacing={1}>
+          <NavigationLink color="inherit" to={PATH_PROTECTED}>
+            Protected
+          </NavigationLink>
+        </Navigation>
         <Spacer />
         {isAuthorized && <ProfileButton />}
         {!isAuthorized && (

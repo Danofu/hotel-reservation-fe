@@ -1,8 +1,9 @@
 import IconButton from '@mui/material/IconButton';
 import React, { FC } from 'react';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-import { Props } from 'components/AuthenticationForm/VisibilityButton/types';
+import { Props } from 'components/buttons/VisibilityButton/types';
 
 const VisibilityButton: FC<Props> = ({ icon, visible = true, ...props }) => (
   <IconButton {...props}>{visible ? <Visibility {...icon} /> : <VisibilityOff {...icon} />}</IconButton>

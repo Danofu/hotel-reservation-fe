@@ -7,7 +7,7 @@ import { LinkProps } from 'components/Link';
 
 export type Props = Omit<StackProps<'a', LinkProps>, 'component'> & {
   icon?: SvgIconProps;
-  text?: Omit<TypographyProps, 'children' | 'sx'>;
-  textChildren?: ReactNode;
+  text?: ReactNode;
+  textProps?: Omit<TypographyProps, 'sx'>;
   textSx?: Pick<TypographyProps, 'sx'>;
 };

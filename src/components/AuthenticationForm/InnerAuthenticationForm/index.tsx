@@ -11,8 +11,8 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import { Form } from 'formik';
 
+import VisibilityButton from 'components/buttons/VisibilityButton';
 import { Props } from 'components/AuthenticationForm/InnerAuthenticationForm/types';
-import VisibilityButton from 'components/AuthenticationForm/VisibilityButton';
 
 const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);

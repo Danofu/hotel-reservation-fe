@@ -1,14 +1,11 @@
 import React, { FC } from 'react';
 import Stack from '@mui/material/Stack';
 
-import NavigationLink from 'components/Navigation/NavigationLink';
 import { Props } from 'components/Navigation/types';
 
-const Navigation: FC<Props> = ({ navLinks, ...props }) => (
-  <Stack component="nav" direction="row" spacing={1} {...props}>
-    {navLinks.map((navLink) => (
-      <NavigationLink key={navLink.key} {...navLink} />
-    ))}
+const Navigation: FC<Props> = ({ children, ...props }) => (
+  <Stack component="nav" direction="row" {...props}>
+    {children}
   </Stack>
 );
 

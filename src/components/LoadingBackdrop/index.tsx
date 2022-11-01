@@ -7,7 +7,7 @@ import { Props } from 'components/LoadingBackdrop/types';
 import { loadingContainer } from 'components/LoadingBackdrop/constants';
 
 const LoadingBackdrop: FC<Props> = ({ backdrop, backdropSx, delay = 1000, icon, ...props }) => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const timeoutId = setTimeout(setOpen, delay, true);
