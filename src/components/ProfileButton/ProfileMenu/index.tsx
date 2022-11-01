@@ -1,8 +1,8 @@
 import Menu from '@mui/material/Menu';
 import React, { FC } from 'react';
 
-import MenuItemLogout from 'src/components/menu-items/MenuItemLogout';
-import { Props } from 'src/components/ProfileButton/ProfileMenu/types';
+import MenuItemLogout from 'components/menu-items/MenuItemLogout';
+import { Props } from 'components/ProfileButton/ProfileMenu/types';
 
 const ProfileMenu: FC<Props> = ({ itemLogout, sx, ...props }) => {
   return (

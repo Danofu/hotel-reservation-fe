@@ -2,8 +2,8 @@ import { ButtonProps } from '@mui/material/Button';
 import { LinkProps } from 'react-router-dom';
 import { v4 as uuidV4 } from 'uuid';
 
-import { NavigationLinkProps } from 'src/components/Navigation/NavigationLink';
-import { PATH_PROTECTED } from 'src/routes/constants';
+import { NavigationLinkProps } from 'components/Navigation/NavigationLink';
+import { PATH_PROTECTED } from 'routes/constants';
 
 type TLinkProps = Omit<NavigationLinkProps, keyof Omit<ButtonProps<'a'>, 'children'>>;
 type TLinkStyle = Omit<NavigationLinkProps, keyof LinkProps>;

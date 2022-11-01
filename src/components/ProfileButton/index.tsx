@@ -1,10 +1,10 @@
+import Fade from '@mui/material/Fade';
 import IconButton from '@mui/material/IconButton';
 import React, { FC, MouseEvent, useState } from 'react';
 import { AccountCircle } from '@mui/icons-material';
 
-import ProfileMenu from 'src/components/ProfileButton/ProfileMenu';
-import { Props } from 'src/components/ProfileButton/types';
-import Fade from '@mui/material/Fade';
+import ProfileMenu from 'components/ProfileButton/ProfileMenu';
+import { Props } from 'components/ProfileButton/types';
 
 const ProfileButton: FC<Props> = ({ icon, menu, ...props }) => {
   const [menuAnchorEl, setMenuAnchorEl] = useState<HTMLElement | null>(null);

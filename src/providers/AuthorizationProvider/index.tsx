@@ -1,8 +1,8 @@
 import React, { createContext, FC, useCallback, useMemo, useState } from 'react';
 
-import sleep from 'src/utils/sleep';
-import { IContext, Props } from 'src/providers/AuthorizationProvider/types';
-import { getStorageItem, removeStorageItem } from 'src/utils/storage';
+import sleep from 'utils/sleep';
+import { IContext, Props } from 'providers/AuthorizationProvider/types';
+import { getStorageItem, removeStorageItem } from 'utils/storage';
 
 export const AuthorizationContext = createContext<IContext>({} as IContext);
 

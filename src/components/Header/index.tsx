@@ -3,14 +3,14 @@ import React from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import { useContext } from 'react';
 
-import Link from 'src/components/Link';
-import Logo from 'src/components/Logo';
-import Navigation from 'src/components/Navigation';
-import ProfileButton from 'src/components/ProfileButton';
-import Spacer from 'src/components/Spacer';
-import { AuthorizationContext, IAuthorizationContext } from 'src/providers/AuthorizationProvider';
-import { PATH_HOME, PATH_LOGIN } from 'src/routes/constants';
-import { navLinks } from 'src/components/Header/constants';
+import Link from 'components/Link';
+import Logo from 'components/Logo';
+import Navigation from 'components/Navigation';
+import ProfileButton from 'components/ProfileButton';
+import Spacer from 'components/Spacer';
+import { AuthorizationContext, IAuthorizationContext } from 'providers/AuthorizationProvider';
+import { PATH_HOME, PATH_LOGIN } from 'routes/constants';
+import { navLinks } from 'components/Header/constants';
 
 const Header = () => {
   const { isAuthorized } = useContext<IAuthorizationContext>(AuthorizationContext);

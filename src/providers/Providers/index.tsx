@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import AuthorizationProvider from 'src/providers/AuthorizationProvider';
-import ThemeProvider from 'src/providers/ThemeProvider';
-import { Props } from 'src/providers/Providers/types';
+import AuthorizationProvider from 'providers/AuthorizationProvider';
+import ThemeProvider from 'providers/ThemeProvider';
+import { Props } from 'providers/Providers/types';
 
 const Providers: FC<Props> = ({ children }) => (
   <AuthorizationProvider>

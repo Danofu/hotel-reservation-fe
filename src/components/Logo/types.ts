@@ -3,7 +3,7 @@ import { StackProps } from '@mui/material/Stack';
 import { SvgIconProps } from '@mui/material/SvgIcon';
 import { TypographyProps } from '@mui/material/Typography';
 
-import { LinkProps } from 'src/components/Link';
+import { LinkProps } from 'components/Link';
 
 export type Props = Omit<StackProps<'a', LinkProps>, 'component'> & {
   icon?: SvgIconProps;

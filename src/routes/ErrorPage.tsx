@@ -5,8 +5,8 @@ import Typography from '@mui/material/Typography';
 import { Helmet } from 'react-helmet';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
-import Link from 'src/components/Link';
-import { PATH_HOME, PATH_LOGIN } from 'src/routes/constants';
+import Link from 'components/Link';
+import { PATH_HOME, PATH_LOGIN } from 'routes/constants';
 
 const ErrorPage = () => {
   const error = useRouteError();

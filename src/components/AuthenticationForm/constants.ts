@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-import { IAuthenticationFormValues } from 'src/components/AuthenticationForm';
+import { IAuthenticationFormValues } from 'components/AuthenticationForm';
 
 export const defaultInitialValues: IAuthenticationFormValues = {
   email: '',

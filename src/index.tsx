@@ -3,10 +3,10 @@ import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
-import Providers from 'src/providers/Providers';
-import ThemeProvider from './providers/ThemeProvider';
-import ToastContainer from 'src/components/ToastContainer';
-import router from 'src/routes/router';
+import Providers from 'providers/Providers';
+import ThemeProvider from 'providers/ThemeProvider';
+import ToastContainer from 'components/ToastContainer';
+import router from 'routes/router';
 
 import 'react-toastify/dist/ReactToastify.min.css';
 

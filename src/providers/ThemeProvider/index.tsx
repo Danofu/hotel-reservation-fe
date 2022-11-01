@@ -1,8 +1,8 @@
 import React, { createContext, FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { PaletteMode, ThemeProvider as MuiThemeProvider, useMediaQuery } from '@mui/material';
 
-import createTheme from 'src/providers/ThemeProvider/theme';
-import { IContext, Props } from 'src/providers/ThemeProvider/types';
+import createTheme from 'providers/ThemeProvider/theme';
+import { IContext, Props } from 'providers/ThemeProvider/types';
 
 export const ThemeContext = createContext<IContext>({} as IContext);
 

@@ -3,10 +3,10 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Portal from '@mui/material/Portal';
 import React, { FC, useEffect, useState } from 'react';
 
-import { Props } from 'src/components/LoadingBackdrop/types';
-import { loadingContainer } from 'src/components/LoadingBackdrop/constants';
+import { Props } from 'components/LoadingBackdrop/types';
+import { loadingContainer } from 'components/LoadingBackdrop/constants';
 
-const LoadingBackdrop: FC<Props> = ({ backdrop, backdropSx, delay = 1 * 1000, icon, ...props }) => {
+const LoadingBackdrop: FC<Props> = ({ backdrop, backdropSx, delay = 1000, icon, ...props }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {

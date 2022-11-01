@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Header from 'src/components/Header';
+import Header from 'components/Header';
 
 const AppLayout = () => (
   <Box sx={{ minHeight: '100vh', width: 1 }}>

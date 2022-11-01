@@ -1,16 +1,16 @@
 import React, { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import LoadingBackdrop from 'src/components/LoadingBackdrop';
-import ProtectedRoutes from 'src/utils/ProtectedRoutes';
-import Suspense from 'src/utils/Suspense';
-import { PATH_HOME, PATH_LOGIN, PATH_PROTECTED } from 'src/routes/constants';
+import LoadingBackdrop from 'components/LoadingBackdrop';
+import ProtectedRoutes from 'utils/ProtectedRoutes';
+import Suspense from 'utils/Suspense';
+import { PATH_HOME, PATH_LOGIN, PATH_PROTECTED } from 'routes/constants';
 
-const AppLayout = lazy(() => import('src/components/AppLayout'));
-const ErrorPage = lazy(() => import('src/routes/ErrorPage'));
-const IndexPage = lazy(() => import('src/routes/IndexPage'));
-const LoginPage = lazy(() => import('src/routes/LoginPage'));
-const ProtectedPage = lazy(() => import('src/routes/ProtectedPage'));
+const AppLayout = lazy(() => import('components/AppLayout'));
+const ErrorPage = lazy(() => import('routes/ErrorPage'));
+const IndexPage = lazy(() => import('routes/IndexPage'));
+const LoginPage = lazy(() => import('routes/LoginPage'));
+const ProtectedPage = lazy(() => import('routes/ProtectedPage'));
 
 export default createBrowserRouter([
   {

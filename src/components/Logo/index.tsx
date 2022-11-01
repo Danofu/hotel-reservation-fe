@@ -3,8 +3,8 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { RoomService } from '@mui/icons-material';
 
-import Link from 'src/components/Link';
-import { Props } from 'src/components/Logo/types';
+import Link from 'components/Link';
+import { Props } from 'components/Logo/types';
 
 const Logo: FC<Props> = ({ icon, text, textChildren = 'Hotel booking', textSx, ...props }) => (
   <Stack alignItems="center" color="inherit" component={Link} direction="row" gap={1} underline="hover" {...props}>

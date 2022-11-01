@@ -8,9 +8,9 @@ import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import AuthenticationForm from 'src/components/AuthenticationForm';
-import { AuthorizationContext, IAuthorizationContext } from 'src/providers/AuthorizationProvider';
-import { IValues } from 'src/components/AuthenticationForm/types';
+import AuthenticationForm from 'components/AuthenticationForm';
+import { AuthorizationContext, IAuthorizationContext } from 'providers/AuthorizationProvider';
+import { IValues } from 'components/AuthenticationForm/types';
 
 const LoginPage = () => {
   const navigate = useNavigate();
