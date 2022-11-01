@@ -20,7 +20,7 @@ const ErrorPage = () => {
   return (
     <>
       <Helmet>
-        <title>Hotel Booking &bull; {errorTitle}</title>
+        <title>{errorTitle} - Hotel Booking</title>
       </Helmet>
       <Box
         sx={{

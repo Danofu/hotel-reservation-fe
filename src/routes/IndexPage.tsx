@@ -5,8 +5,7 @@ import { Helmet } from 'react-helmet';
 const IndexPage = () => (
   <>
     <Helmet>
-      {/* TODO: Home &bull; Hotel Booking */}
-      <title>Hotel Booking &bull; Home</title>
+      <title>Home - Hotel Booking</title>
     </Helmet>
     <Typography align="center" component="h1" m={3} variant="h5">
       Home Page 😼

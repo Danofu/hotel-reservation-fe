@@ -41,7 +41,7 @@ const LoginPage = () => {
   return (
     <>
       <Helmet>
-        <title>Hotel Booking &bull; Login</title>
+        <title>Login - Hotel Booking</title>
       </Helmet>
       <Box
         sx={{
