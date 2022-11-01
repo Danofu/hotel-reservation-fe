@@ -1,8 +1,8 @@
 import { FormikConfig } from 'formik';
 
-import { Optional } from 'src/global';
+import { OptionalKeys } from 'global-types';
 
-export type Props = Omit<Optional<FormikConfig<IValues>, 'initialValues' | 'validationSchema'>, 'component'>;
+export type Props = Omit<OptionalKeys<FormikConfig<IValues>, 'initialValues' | 'validationSchema'>, 'component'>;
 
 export interface IValues {
   email: string;
