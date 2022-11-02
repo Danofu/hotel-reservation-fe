@@ -1,23 +1,20 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
-import { PaletteMode, ThemeProvider as MuiThemeProvider, useMediaQuery } from '@mui/material';
+import React, { FC, useMemo, useState } from 'react';
+import { ThemeProvider as MuiThemeProvider, useMediaQuery } from '@mui/material';
 
-import createTheme from 'providers/ThemeProvider/utils/createTheme';
 import { IContext, Props } from 'providers/ThemeProvider/types';
-import { ThemeContext } from 'providers/ThemeProvider/constants';
+import { createTheme, isColorMode } from 'providers/ThemeProvider/utils';
+import { storageMode, ThemeContext } from 'providers/ThemeProvider/constants';
 
 const ThemeProvider: FC<Props> = ({ children }) => {
+  const [mode, setMode] = useState(isColorMode(storageMode) ? storageMode : 'auto');
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const [mode, setMode] = useState<PaletteMode>(prefersDarkMode ? 'dark' : 'light');
 
-  const toggleColorMode = useCallback(() => setMode((prev) => (prev === 'light' ? 'dark' : 'light')), []);
+  const theme = useMemo(
+    () => (mode === 'auto' ? createTheme(prefersDarkMode ? 'dark' : 'light') : createTheme(mode)),
+    [mode, prefersDarkMode]
+  );
 
-  const theme = useMemo(() => createTheme(mode), [mode]);
-
-  const value = useMemo<IContext>(() => ({ toggleColorMode }), []);
-
-  useEffect(() => {
-    setMode(prefersDarkMode ? 'dark' : 'light');
-  }, [prefersDarkMode]);
+  const value = useMemo<IContext>(() => ({ mode, setMode }), [mode]);
 
   return (
     <ThemeContext.Provider value={value}>

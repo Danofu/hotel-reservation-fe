@@ -2,7 +2,7 @@ import { ThemeOptions } from '@mui/material';
 import { createContext } from 'react';
 import { green } from '@mui/material/colors';
 
-import { IContext } from 'providers/ThemeProvider/types';
+import { ColorMode, IContext } from 'providers/ThemeProvider/types';
 
 export const ThemeContext = createContext<IContext>({} as IContext);
 
@@ -19,3 +19,7 @@ export const darkThemeOptions: ThemeOptions = {
     primary: { main: green[500] },
   },
 };
+
+export const colorModes = ['auto', 'light', 'dark'] as const;
+
+export const storageMode = localStorage.getItem('theme.mode') as ColorMode;
