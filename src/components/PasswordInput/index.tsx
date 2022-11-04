@@ -6,7 +6,7 @@ import React, { FC, MouseEvent, useId, useState } from 'react';
 
 import VisibilityButton from 'components/buttons/VisibilityButton';
 import { Props } from 'components/PasswordInput/types';
-import { inputMap } from 'components/PasswordInput/constans';
+import { inputMapper } from 'components/PasswordInput/constans';
 
 const PasswordInput: FC<Props> = ({
   endAdornmentProps,
@@ -23,7 +23,7 @@ const PasswordInput: FC<Props> = ({
   const [showPassword, setShowPassword] = useState(false);
   const inputId = useId();
 
-  const Input = inputMap[variant];
+  const Input = inputMapper[variant];
 
   const handleShowPasswordClick = () => setShowPassword((prev) => !prev);
 

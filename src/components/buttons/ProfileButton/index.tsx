@@ -1,4 +1,4 @@
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Fade from '@mui/material/Fade';
 import IconButton from '@mui/material/IconButton';
 import React, { FC, MouseEvent, useState } from 'react';
@@ -16,7 +16,7 @@ const ProfileButton: FC<Props> = ({ icon, menu, ...props }) => {
   return (
     <>
       <IconButton color="primary" onClick={handleAccountButtonClick} size="large" {...props}>
-        <AccountCircle {...icon} />
+        <AccountCircleIcon {...icon} />
       </IconButton>
       <ProfileMenu
         TransitionComponent={Fade}

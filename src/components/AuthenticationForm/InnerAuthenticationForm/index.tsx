@@ -17,6 +17,7 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
     <Stack component={Form} noValidate spacing={3}>
       <TextField
         autoComplete="email"
+        autoFocus
         color="primary"
         error={isEmailValid}
         fullWidth

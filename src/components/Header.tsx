@@ -1,7 +1,9 @@
 import AppBar from '@mui/material/AppBar';
 import React, { useContext } from 'react';
+import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 
+import ColorModeButton from 'components/buttons/ColorModeButton';
 import Link from 'components/Link';
 import Logo from 'components/Logo';
 import Navigation from 'components/Navigation';
@@ -24,12 +26,15 @@ const Header = () => {
           </NavigationLink>
         </Navigation>
         <Spacer />
-        {isAuthorized && <ProfileButton />}
-        {!isAuthorized && (
-          <Link color="inherit" textTransform="uppercase" to={PATH_LOGIN} underline="hover">
-            Login
-          </Link>
-        )}
+        <Stack alignItems="center" direction="row" spacing={1}>
+          {!isAuthorized && (
+            <Link color="inherit" textTransform="uppercase" to={PATH_LOGIN} underline="hover">
+              Login
+            </Link>
+          )}
+          <ColorModeButton />
+          {isAuthorized && <ProfileButton />}
+        </Stack>
       </Toolbar>
     </AppBar>
   );
