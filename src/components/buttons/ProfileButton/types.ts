@@ -1,4 +1,4 @@
-import { SvgIconProps } from '@mui/material';
+import { SvgIconProps } from '@mui/material/SvgIcon';
 import { IconButtonProps } from '@mui/material/IconButton';
 
 import { OptionalKeys } from 'global-types';

@@ -20,19 +20,24 @@ const Header = () => {
     <AppBar color="default" position="static">
       <Toolbar disableGutters sx={{ gap: 6, px: 6 }}>
         <Logo to={PATH_HOME} />
-        <Navigation spacing={1}>
+        <Navigation spacing={2}>
           <NavigationLink color="inherit" to={PATH_PROTECTED}>
             Protected
           </NavigationLink>
         </Navigation>
         <Spacer />
-        <Stack alignItems="center" direction="row" spacing={1}>
+        <Stack alignItems="center" direction="row" spacing={2}>
           {!isAuthorized && (
             <Link color="inherit" textTransform="uppercase" to={PATH_LOGIN} underline="hover">
               Login
             </Link>
           )}
-          <ColorModeButton />
+          <ColorModeButton
+            color="primary"
+            colorModeButtonGroup={{ color: 'primary' }}
+            enableClickAwayListener
+            size="large"
+          />
           {isAuthorized && <ProfileButton />}
         </Stack>
       </Toolbar>
