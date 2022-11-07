@@ -4,16 +4,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import LoadingBackdrop from 'components/LoadingBackdrop';
 import ProtectedRoutes from 'utils/ProtectedRoutes';
 import Suspense from 'utils/Suspense';
-import {
-  LazyAppLayout,
-  LazyErrorPage,
-  LazyIndexPage,
-  LazyLoginPage,
-  LazyProtectedPage,
-  PATH_HOME,
-  PATH_LOGIN,
-  PATH_PROTECTED,
-} from 'routes/constants';
+import { LazyAppLayout, LazyErrorPage, LazyIndexPage, LazyLoginPage, LazyProtectedPage } from 'routes/constants';
+import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_PROTECTED } from 'app-constants';
 
 export default createBrowserRouter([
   {
@@ -22,7 +14,7 @@ export default createBrowserRouter([
         children: [
           {
             element: <Suspense component={<LazyProtectedPage />} fallback={<LoadingBackdrop />} />,
-            path: PATH_PROTECTED,
+            path: PATHNAME_PROTECTED,
           },
         ],
         element: <Suspense component={<LazyAppLayout />} fallback={<LoadingBackdrop />} />,
@@ -30,15 +22,15 @@ export default createBrowserRouter([
     ],
     element: <ProtectedRoutes />,
     errorElement: <Suspense component={<LazyErrorPage />} fallback={<LoadingBackdrop />} />,
-    path: PATH_HOME,
+    path: PATHNAME_HOME,
   },
   {
     children: [{ element: <Suspense component={<LazyIndexPage />} fallback={<LoadingBackdrop />} />, index: true }],
     element: <Suspense component={<LazyAppLayout />} fallback={<LoadingBackdrop />} />,
-    path: PATH_HOME,
+    path: PATHNAME_HOME,
   },
   {
     element: <Suspense component={<LazyLoginPage />} fallback={<LoadingBackdrop />} />,
-    path: PATH_LOGIN,
+    path: PATHNAME_LOGIN,
   },
 ]);

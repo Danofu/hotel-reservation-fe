@@ -1,6 +1,6 @@
 import Portal from '@mui/material/Portal';
 import React from 'react';
-import { ToastContainer as ToastifyToastContainer } from 'react-toastify';
+import { toast, ToastContainer as ToastifyToastContainer } from 'react-toastify';
 import { useTheme } from '@mui/material';
 
 import { toastContainer } from 'components/ToastContainer/constants';
@@ -10,7 +10,13 @@ const ToastContainer = () => {
 
   return (
     <Portal container={toastContainer}>
-      <ToastifyToastContainer closeButton={false} draggable={false} newestOnTop theme={theme.palette.mode} />
+      <ToastifyToastContainer
+        closeButton={false}
+        draggable={false}
+        newestOnTop
+        position={toast.POSITION.TOP_CENTER}
+        theme={theme.palette.mode}
+      />
     </Portal>
   );
 };

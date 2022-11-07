@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import CloseIcon from '@mui/icons-material/Close';
-import ColorModeButtonGroup from '../ColorModeButtonGroup';
+import ColorModePicker from '../ColorModePicker';
 import IconButton from '@mui/material/IconButton';
 import React, { FC, MouseEvent, useContext, useState } from 'react';
 
@@ -12,7 +12,7 @@ import { iconMapper } from 'components/buttons/ColorModeButton/constants';
 
 const ColorModeButton: FC<Props> = ({
   clickAwayListener,
-  colorModeButtonGroup,
+  colorModePicker,
   enableClickAwayListener,
   icon,
   popper,
@@ -44,7 +44,7 @@ const ColorModeButton: FC<Props> = ({
         transition
         {...popper}
       >
-        <ColorModeButtonGroup size="small" {...colorModeButtonGroup} />
+        <ColorModePicker size="small" {...colorModePicker} />
       </Popper>
     </>
   );

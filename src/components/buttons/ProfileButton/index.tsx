@@ -15,7 +15,7 @@ const ProfileButton: FC<Props> = ({ icon, menu, ...props }) => {
 
   return (
     <>
-      <IconButton color="primary" onClick={handleAccountButtonClick} size="large" {...props}>
+      <IconButton onClick={handleAccountButtonClick} {...props}>
         <AccountCircleIcon {...icon} />
       </IconButton>
       <ProfileMenu

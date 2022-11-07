@@ -11,6 +11,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import AuthenticationForm from 'components/AuthenticationForm';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { IValues } from 'components/AuthenticationForm/types';
+import { LOGO_TEXT_LONG } from 'app-constants';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ const LoginPage = () => {
   return (
     <>
       <Helmet>
-        <title>Login - Hotel Booking</title>
+        <title>Login - {LOGO_TEXT_LONG}</title>
       </Helmet>
       <Box
         sx={{

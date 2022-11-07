@@ -6,10 +6,10 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 import { ColorMode } from 'providers/ThemeProvider/types';
-import { Props } from 'components/buttons/ColorModeButtonGroup/types';
+import { Props } from 'components/buttons/ColorModePicker/types';
 import { ThemeContext } from 'providers/ThemeProvider/constants';
 
-const ColorModeButtonGroup: FC<Props> = ({ button, icon, sx, ...props }) => {
+const ColorModePicker: FC<Props> = ({ button, icon, sx, ...props }) => {
   const { mode, setMode } = useContext(ThemeContext);
 
   const handleMode = (event: MouseEvent<HTMLElement>, newMode: ColorMode) => {
@@ -43,6 +43,6 @@ const ColorModeButtonGroup: FC<Props> = ({ button, icon, sx, ...props }) => {
   );
 };
 
-export default ColorModeButtonGroup;
+export default ColorModePicker;
 
-export type ColorModeButtonGroupProps = Props;
+export type ColorModePickerProps = Props;

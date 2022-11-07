@@ -19,7 +19,12 @@ const Popper: FC<Props> = ({
   transition,
   ...props
 }) => {
-  const arrow = enableArrow && <Box data-popper-arrow sx={merge(defaultArrowSx(arrowSize), arrowSx)} {...arrowProps} />;
+  const popperContent = (
+    <>
+      {enableArrow && <Box data-popper-arrow sx={merge(defaultArrowSx(arrowSize), arrowSx)} {...arrowProps} />}
+      {children}
+    </>
+  );
 
   return (
     <MuiPopper
@@ -28,21 +33,13 @@ const Popper: FC<Props> = ({
       transition={transition}
       {...props}
     >
-      {transition ? (
-        ({ TransitionProps }) => (
-          <Fade {...TransitionProps} {...fade}>
-            <Box>
-              {arrow}
-              {children}
-            </Box>
-          </Fade>
-        )
-      ) : (
-        <>
-          {arrow}
-          {children}
-        </>
-      )}
+      {transition
+        ? ({ TransitionProps }) => (
+            <Fade {...TransitionProps} {...fade}>
+              <Box>{popperContent}</Box>
+            </Fade>
+          )
+        : popperContent}
     </MuiPopper>
   );
 };

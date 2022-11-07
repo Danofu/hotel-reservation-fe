@@ -6,7 +6,8 @@ import { Helmet } from 'react-helmet';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
 import Link from 'components/Link';
-import { PATH_HOME, PATH_LOGIN } from 'routes/constants';
+import { LOGO_TEXT_LONG } from 'app-constants';
+import { PATHNAME_HOME, PATHNAME_LOGIN } from 'app-constants';
 
 const ErrorPage = () => {
   const error = useRouteError();
@@ -20,7 +21,9 @@ const ErrorPage = () => {
   return (
     <>
       <Helmet>
-        <title>{errorTitle} - Hotel Booking</title>
+        <title>
+          {errorTitle} - {LOGO_TEXT_LONG}
+        </title>
       </Helmet>
       <Box
         sx={{
@@ -42,11 +45,11 @@ const ErrorPage = () => {
           </Typography>
           <Typography component="p" variant="body1">
             Try our&nbsp;
-            <Link to={PATH_HOME} underline="hover">
+            <Link to={PATHNAME_HOME} underline="hover">
               home
             </Link>
             &nbsp;or&nbsp;
-            <Link to={PATH_LOGIN} underline="hover">
+            <Link to={PATHNAME_LOGIN} underline="hover">
               login
             </Link>
             &nbsp;page

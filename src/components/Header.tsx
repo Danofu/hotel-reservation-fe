@@ -1,4 +1,5 @@
 import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
 import React, { useContext } from 'react';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,34 +12,36 @@ import NavigationLink from 'components/buttons/NavigationLink';
 import ProfileButton from 'components/buttons/ProfileButton';
 import Spacer from 'components/Spacer';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
-import { PATH_HOME, PATH_LOGIN, PATH_PROTECTED } from 'routes/constants';
+import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_PROTECTED } from 'app-constants';
+
+// TODO: lang feature
 
 const Header = () => {
   const { isAuthorized } = useContext(AuthorizationContext);
 
   return (
     <AppBar color="default" position="static">
-      <Toolbar disableGutters sx={{ gap: 6, px: 6 }}>
-        <Logo to={PATH_HOME} />
+      <Toolbar sx={{ gap: 4 }}>
+        <Logo to={PATHNAME_HOME} />
         <Navigation spacing={2}>
-          <NavigationLink color="inherit" to={PATH_PROTECTED}>
+          <NavigationLink color="inherit" to={PATHNAME_PROTECTED}>
             Protected
           </NavigationLink>
         </Navigation>
         <Spacer />
         <Stack alignItems="center" direction="row" spacing={2}>
-          {!isAuthorized && (
-            <Link color="inherit" textTransform="uppercase" to={PATH_LOGIN} underline="hover">
-              Login
-            </Link>
-          )}
           <ColorModeButton
             color="primary"
-            colorModeButtonGroup={{ color: 'primary' }}
+            colorModePicker={{ color: 'primary' }}
             enableClickAwayListener
             size="large"
           />
-          {isAuthorized && <ProfileButton />}
+          {isAuthorized && <ProfileButton color="primary" size="large" />}
+          {!isAuthorized && (
+            <Button component={Link} size="small" to={PATHNAME_LOGIN} variant="contained">
+              Login
+            </Button>
+          )}
         </Stack>
       </Toolbar>
     </AppBar>

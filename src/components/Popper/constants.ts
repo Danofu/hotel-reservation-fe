@@ -9,7 +9,12 @@ export const defaultPopperSx = (arrowSize: number): SxProps<Theme> => ({
 });
 
 export const defaultArrowSx = (arrowSize: number): SxProps<Theme> => ({
-  '&, ::before': { bgcolor: 'background.paper', height: arrowSize, position: 'absolute', width: arrowSize },
+  '&, ::before': {
+    bgcolor: 'background.paper',
+    height: arrowSize,
+    position: 'absolute',
+    width: arrowSize,
+  },
   '::before': {
     border: '1px solid transparent',
     borderLeftColor: 'divider',
