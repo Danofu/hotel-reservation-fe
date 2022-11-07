@@ -1,10 +1,14 @@
 import MuiLink from '@mui/material/Link';
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Props } from 'components/Link/types';
 
-const Link: FC<Props> = (props) => <MuiLink component={RouterLink} {...props} />;
+const Link = forwardRef<HTMLAnchorElement, Props>((props, ref) => (
+  <MuiLink component={RouterLink} ref={ref} {...props} />
+));
+
+Link.displayName = 'Link';
 
 export default Link;
 
