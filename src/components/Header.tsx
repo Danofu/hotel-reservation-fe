@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 
 import ColorModeButton from 'components/buttons/ColorModeButton';
+import LangButton from 'components/buttons/LangButton';
 import Link from 'components/Link';
 import Logo from 'components/Logo';
 import Navigation from 'components/Navigation';
@@ -22,7 +23,7 @@ const Header = () => {
 
   return (
     <AppBar color="default" position="static">
-      <Toolbar sx={{ gap: 3 }}>
+      <Toolbar sx={{ gap: 4 }}>
         <Logo to={PATHNAME_HOME} />
         <Navigation spacing={2}>
           <NavigationLink color="inherit" to={PATHNAME_PROTECTED}>
@@ -31,6 +32,14 @@ const Header = () => {
         </Navigation>
         <Spacer />
         <Stack alignItems="center" direction="row" spacing={2}>
+          <LangButton
+            color="primary"
+            size="large"
+            LangMenuProps={{
+              anchorOrigin: { horizontal: 'center', vertical: 'bottom' },
+              transformOrigin: { horizontal: 'center', vertical: 'top' },
+            }}
+          />
           <ColorModeButton
             color="primary"
             colorModePicker={{ color: 'primary' }}
@@ -38,17 +47,17 @@ const Header = () => {
             size="large"
           />
           {isAuthorized && <ProfileButton color="primary" size="large" />}
+          {!isAuthorized && (
+            <ButtonGroup color="primary" size="small" variant="text">
+              <Button color="inherit" component={Link} sx={{ px: 1 }} to={PATHNAME_LOGIN}>
+                Sing in
+              </Button>
+              <Button color="inherit" component={Link} sx={{ px: 1 }} to="#">
+                Sing up
+              </Button>
+            </ButtonGroup>
+          )}
         </Stack>
-        {!isAuthorized && (
-          <ButtonGroup color="primary" size="small" variant="text">
-            <Button color="inherit" component={Link} sx={{ px: 1 }} to={PATHNAME_LOGIN}>
-              Sing in
-            </Button>
-            <Button color="inherit" component={Link} sx={{ px: 1 }} to="#">
-              Sing up
-            </Button>
-          </ButtonGroup>
-        )}
       </Toolbar>
     </AppBar>
   );

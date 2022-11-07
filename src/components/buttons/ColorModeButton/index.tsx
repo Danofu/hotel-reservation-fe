@@ -18,6 +18,7 @@ const ColorModeButton: FC<Props> = ({
   popper,
   ...props
 }) => {
+  // TODO: move states to props
   const [isPopperOpen, setIsPopperOpen] = useState(false);
   const [popperAnchorEl, setPopperAnchorEl] = useState<HTMLElement | null>(null);
   const { mode } = useContext(ThemeContext);
