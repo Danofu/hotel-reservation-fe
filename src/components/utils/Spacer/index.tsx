@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import React, { FC } from 'react';
 
-import { Props } from 'components/Spacer/types';
+import { Props } from 'components/utils/Spacer/types';
 
 const Spacer: FC<Props> = ({ flex = 1 }) => <Box flex={flex} />;
 

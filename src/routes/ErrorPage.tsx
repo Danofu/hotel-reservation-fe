@@ -1,13 +1,12 @@
 import Box from '@mui/material/Box';
-import React from 'react';
+import React, { Fragment } from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Helmet } from 'react-helmet';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
-import Link from 'components/Link';
-import { LOGO_TEXT_LONG } from 'app-constants';
-import { PATHNAME_HOME, PATHNAME_LOGIN } from 'app-constants';
+import Link from 'components/utils/Link';
+import { LOGO_TEXT_LONG, PATHNAME_HOME, PATHNAME_LOGIN } from 'app-constants';
 
 const ErrorPage = () => {
   const error = useRouteError();
@@ -19,7 +18,7 @@ const ErrorPage = () => {
   const errorTitle = isRouteErrorResponse(error) ? error.status.toString() : 'Error';
 
   return (
-    <>
+    <Fragment>
       <Helmet>
         <title>
           {errorTitle} - {LOGO_TEXT_LONG}
@@ -56,7 +55,7 @@ const ErrorPage = () => {
           </Typography>
         </Stack>
       </Box>
-    </>
+    </Fragment>
   );
 };
 

@@ -32,12 +32,12 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
         value={values.email}
       />
       <PasswordInput
+        EyeButtonProps={{ edge: 'end', IconProps: { color: 'primary' } }}
+        InputProps={{ autoComplete: 'current-password', name: 'password', onBlur: handleBlur, value: values.password }}
         color="primary"
         error={isPasswordValid}
         errorText={errors.password}
-        eyeButton={{ edge: 'end', icon: { color: 'primary' } }}
         fullWidth
-        input={{ autoComplete: 'current-password', name: 'password', onBlur: handleBlur, value: values.password }}
         label="Password"
         margin="none"
         onChange={handleChange}

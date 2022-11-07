@@ -1,11 +1,6 @@
 import { FormikConfig } from 'formik';
 
+import { IAuthenticationFormValues } from 'components/AuthenticationForm';
 import { OptionalKeys } from 'global-types';
 
-export type Props = Omit<OptionalKeys<FormikConfig<IValues>, 'initialValues' | 'validationSchema'>, 'component'>;
-
-export interface IValues {
-  email: string;
-  password: string;
-  remember: boolean;
-}
+export type Props = OptionalKeys<FormikConfig<IAuthenticationFormValues>, 'initialValues'>;

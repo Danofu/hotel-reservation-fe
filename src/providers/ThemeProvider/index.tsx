@@ -1,12 +1,13 @@
 import React, { FC, useMemo, useState } from 'react';
 import { ThemeProvider as MuiThemeProvider, useMediaQuery } from '@mui/material';
 
-import { IContext, Props } from 'providers/ThemeProvider/types';
+import { IContext } from 'providers/ThemeProvider/interfaces';
+import { Props } from 'providers/ThemeProvider/types';
 import { createTheme, isColorMode } from 'providers/ThemeProvider/utils';
-import { storageMode, ThemeContext } from 'providers/ThemeProvider/constants';
+import { storedMode, ThemeContext } from 'providers/ThemeProvider/constants';
 
 const ThemeProvider: FC<Props> = ({ children }) => {
-  const [mode, setMode] = useState(isColorMode(storageMode) ? storageMode : 'auto');
+  const [mode, setMode] = useState(isColorMode(storedMode) ? storedMode : 'auto');
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const theme = useMemo(
@@ -27,3 +28,4 @@ export default ThemeProvider;
 
 export type IThemeContext = IContext;
 export type ThemeProviderProps = Props;
+export type { ColorMode } from 'providers/ThemeProvider/types';

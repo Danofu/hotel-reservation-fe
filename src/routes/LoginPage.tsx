@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
-import React, { useContext, useEffect } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { FormikHelpers } from 'formik';
@@ -8,9 +8,8 @@ import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import AuthenticationForm from 'components/AuthenticationForm';
+import AuthenticationForm, { IAuthenticationFormValues } from 'components/AuthenticationForm';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
-import { IValues } from 'components/AuthenticationForm/types';
 import { LOGO_TEXT_LONG } from 'app-constants';
 
 const LoginPage = () => {
@@ -18,7 +17,10 @@ const LoginPage = () => {
   const { isAuthorized, login } = useContext(AuthorizationContext);
   const { search: rawSearch } = useLocation();
 
-  const handleSubmit = async (values: IValues, formikHelpers: FormikHelpers<IValues>) => {
+  const handleSubmit = async (
+    values: IAuthenticationFormValues,
+    formikHelpers: FormikHelpers<IAuthenticationFormValues>
+  ) => {
     const { email, password, remember } = values;
     const result = await login(email, password, remember);
 
@@ -40,7 +42,7 @@ const LoginPage = () => {
   }, [isAuthorized, rawSearch]);
 
   return (
-    <>
+    <Fragment>
       <Helmet>
         <title>Login - {LOGO_TEXT_LONG}</title>
       </Helmet>
@@ -57,14 +59,14 @@ const LoginPage = () => {
       >
         <Paper elevation={3} sx={{ px: 5, py: 4, width: 500 }}>
           <Stack spacing={6}>
-            <Typography align="center" component="h1" variant="h5">
+            <Typography component="h1" variant="h5">
               Authentication 😼
             </Typography>
             <AuthenticationForm onSubmit={handleSubmit} />
           </Stack>
         </Paper>
       </Container>
-    </>
+    </Fragment>
   );
 };
 

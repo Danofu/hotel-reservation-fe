@@ -5,10 +5,10 @@ import React, { FC } from 'react';
 import { Props } from 'components/menus/LangMenu/types';
 import { options } from 'components/menus/LangMenu/constants';
 
-const LangMenu: FC<Props> = ({ MenuItemProps, PaperProps, ...props }) => (
+const LangMenu: FC<Props> = ({ PaperProps, ...props }) => (
   <Menu PaperProps={{ sx: { maxHeight: 200 }, ...PaperProps }} {...props}>
     {options.map(({ title, value }) => (
-      <MenuItem key={value} selected={value === 'ua'} {...MenuItemProps}>
+      <MenuItem key={value} selected={value === 'us'}>
         {title}
       </MenuItem>
     ))}

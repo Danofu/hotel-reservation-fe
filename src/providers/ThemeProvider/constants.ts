@@ -2,9 +2,9 @@ import { ThemeOptions } from '@mui/material';
 import { createContext } from 'react';
 import { green } from '@mui/material/colors';
 
-import { ColorMode, IContext } from 'providers/ThemeProvider/types';
+import { ColorMode, IThemeContext } from 'providers/ThemeProvider';
 
-export const ThemeContext = createContext<IContext>({} as IContext);
+export const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 
 export const lightThemeOptions: ThemeOptions = {
   palette: {
@@ -22,4 +22,4 @@ export const darkThemeOptions: ThemeOptions = {
 
 export const colorModes = ['auto', 'light', 'dark'] as const;
 
-export const storageMode = localStorage.getItem('theme.mode') as ColorMode;
+export const storedMode = localStorage.getItem('theme.mode') as ColorMode;

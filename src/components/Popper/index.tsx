@@ -1,29 +1,35 @@
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import MuiPopper from '@mui/material/Popper';
-import React, { FC } from 'react';
+import React, { FC, Fragment } from 'react';
 import merge from 'lodash/merge';
 
-import { Props } from 'components/Popper/types';
+import { PopperFadeContentProps, Props } from 'components/Popper/types';
 import { defaultArrowSx, defaultPopperSx } from 'components/Popper/constants';
 
 const Popper: FC<Props> = ({
-  arrowProps,
+  ArrowProps,
+  ArrowSx,
+  FadeProps,
   arrowSize = 8,
-  arrowSx,
   children,
   enableArrow,
-  fade,
   modifiers = [],
   sx,
   transition,
   ...props
 }) => {
   const popperContent = (
-    <>
-      {enableArrow && <Box data-popper-arrow sx={merge(defaultArrowSx(arrowSize), arrowSx)} {...arrowProps} />}
+    <Fragment>
+      {enableArrow && <Box data-popper-arrow sx={merge(defaultArrowSx(arrowSize), ArrowSx)} {...ArrowProps} />}
       {children}
-    </>
+    </Fragment>
+  );
+
+  const PopperFadeContent: FC<PopperFadeContentProps> = ({ TransitionProps }) => (
+    <Fade {...TransitionProps} {...FadeProps}>
+      <Box>{popperContent}</Box>
+    </Fade>
   );
 
   return (
@@ -33,13 +39,7 @@ const Popper: FC<Props> = ({
       transition={transition}
       {...props}
     >
-      {transition
-        ? ({ TransitionProps }) => (
-            <Fade {...TransitionProps} {...fade}>
-              <Box>{popperContent}</Box>
-            </Fade>
-          )
-        : popperContent}
+      {transition ? PopperFadeContent : popperContent}
     </MuiPopper>
   );
 };

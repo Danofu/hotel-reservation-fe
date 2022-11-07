@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-import { IContext } from 'providers/AuthorizationProvider/types';
+import { IAuthorizationContext } from 'providers/AuthorizationProvider';
 
-export const AuthorizationContext = createContext<IContext>({} as IContext);
+export const AuthorizationContext = createContext<IAuthorizationContext>({} as IAuthorizationContext);

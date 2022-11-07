@@ -2,7 +2,8 @@ import React, { FC, useCallback, useMemo, useState } from 'react';
 
 import sleep from 'utils/sleep';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
-import { IContext, Props } from 'providers/AuthorizationProvider/types';
+import { IContext } from 'providers/AuthorizationProvider/interfaces';
+import { Props } from 'providers/AuthorizationProvider/types';
 import { getStorageItem, removeStorageItem } from 'utils/storage';
 
 const AuthorizationProvider: FC<Props> = ({ children }) => {

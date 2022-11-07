@@ -1,13 +1,18 @@
 import { BoxProps } from '@mui/material/Box';
 import { FadeProps } from '@mui/material/Fade';
 import { PopperProps } from '@mui/material/Popper';
+import { PopperUnstyledOwnProps } from '@mui/base/PopperUnstyled/PopperUnstyled';
 import { ReactNode } from 'react';
 
 export type Props = Omit<PopperProps, 'children'> & {
-  arrowProps?: Omit<BoxProps, 'sx'>;
+  ArrowProps?: Omit<BoxProps, 'sx'>;
+  ArrowSx?: BoxProps['sx'];
+  FadeProps?: FadeProps;
   arrowSize?: number;
-  arrowSx?: Pick<BoxProps, 'sx'>;
   children?: ReactNode;
   enableArrow?: boolean;
-  fade?: FadeProps;
 };
+
+export type PopperFadeContentProps = Parameters<
+  Extract<PopperUnstyledOwnProps['children'], (props: never) => ReactNode>
+>[0];

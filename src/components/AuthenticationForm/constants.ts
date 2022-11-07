@@ -1,12 +1,6 @@
 import * as Yup from 'yup';
 
-import { IAuthenticationFormValues } from 'components/AuthenticationForm';
-
-export const defaultInitialValues: IAuthenticationFormValues = {
-  email: '',
-  password: '',
-  remember: false,
-};
+export const defaultInitialValues = { email: '', password: '', remember: false };
 
 export const defaultValidationSchema = Yup.object({
   email: Yup.string().required('Provide an email').email('Provide a valid email'),

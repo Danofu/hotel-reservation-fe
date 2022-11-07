@@ -4,10 +4,10 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { Props } from 'components/buttons/NavigationLink/types';
 
-const NavigationLink: FC<Props> = (props) => {
+const NavigationLink: FC<Props> = ({ to, ...props }) => {
   const { pathname } = useLocation();
 
-  return <Button component={Link} disabled={pathname === props.to} {...props} />;
+  return <Button component={Link} disabled={pathname === to} to={to} {...props} />;
 };
 
 export default NavigationLink;

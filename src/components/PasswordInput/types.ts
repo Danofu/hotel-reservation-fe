@@ -10,11 +10,11 @@ import { ReactNode } from 'react';
 import { VisibilityButtonProps } from 'components/buttons/VisibilityButton';
 
 export type Props = FormControlProps & {
-  endAdornmentProps?: Omit<InputAdornmentProps, 'position'>;
-  errorHelperProps?: FormHelperTextProps;
-  errorText?: string;
-  eyeButton?: Omit<VisibilityButtonProps, 'onClick' | 'onMouseDown' | 'visible'>;
-  input: Omit<FilledInputProps | InputProps | OutlinedInputProps, 'endAdornment' | 'id' | 'label' | 'type'>;
+  EndAdornmentProps?: InputAdornmentProps;
+  ErrorHelperTextProps?: FormHelperTextProps;
+  EyeButtonProps?: VisibilityButtonProps;
+  InputProps: FilledInputProps | InputProps | OutlinedInputProps;
+  LabelProps?: InputLabelProps;
+  errorText?: ReactNode;
   label: ReactNode;
-  labelProps?: Omit<InputLabelProps, 'htmlFor'>;
 };

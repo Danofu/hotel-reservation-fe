@@ -1,15 +1,13 @@
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
 import React, { FC, MouseEvent, useContext } from 'react';
-import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
-import { ColorMode } from 'providers/ThemeProvider/types';
+import { ColorMode } from 'providers/ThemeProvider';
 import { Props } from 'components/buttons/ColorModePicker/types';
 import { ThemeContext } from 'providers/ThemeProvider/constants';
+import { buttons } from 'components/buttons/ColorModePicker/constants';
 
-const ColorModePicker: FC<Props> = ({ button, icon, sx, ...props }) => {
+const ColorModePicker: FC<Props> = ({ ButtonProps, IconProps, onChange, sx, ...props }) => {
   const { mode, setMode } = useContext(ThemeContext);
 
   const handleMode = (event: MouseEvent<HTMLElement>, newMode: ColorMode) => {
@@ -17,6 +15,8 @@ const ColorModePicker: FC<Props> = ({ button, icon, sx, ...props }) => {
       setMode(newMode);
       localStorage.setItem('theme.mode', newMode);
     }
+
+    onChange?.(event, newMode);
   };
 
   return (
@@ -27,18 +27,12 @@ const ColorModePicker: FC<Props> = ({ button, icon, sx, ...props }) => {
       value={mode}
       {...props}
     >
-      <ToggleButton value="light" {...button}>
-        <LightModeIcon {...icon} />
-        &nbsp;Light
-      </ToggleButton>
-      <ToggleButton value="auto" {...button}>
-        <SettingsBrightnessIcon {...icon} />
-        &nbsp;System
-      </ToggleButton>
-      <ToggleButton value="dark" {...button}>
-        <DarkModeIcon {...icon} />
-        &nbsp;Dark
-      </ToggleButton>
+      {buttons.map(({ Icon, title, value }) => (
+        <ToggleButton key={value} value={value} {...ButtonProps}>
+          <Icon {...IconProps} />
+          &nbsp;{title}
+        </ToggleButton>
+      ))}
     </ToggleButtonGroup>
   );
 };

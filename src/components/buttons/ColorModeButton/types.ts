@@ -1,14 +1,14 @@
-import { ClickAwayListenerProps } from '@mui/material/ClickAwayListener';
 import { IconButtonProps } from '@mui/material/IconButton';
 import { SvgIconProps } from '@mui/material/SvgIcon';
 
+import { ClickAwayListenerProps } from 'components/utils/ClickAwayListener';
 import { ColorModePickerProps } from 'components/buttons/ColorModePicker';
 import { PopperProps } from 'components/Popper';
 
-export type Props = Omit<IconButtonProps, 'onClick'> & {
-  clickAwayListener?: Omit<ClickAwayListenerProps, 'onClickAway'>;
-  colorModePicker?: ColorModePickerProps;
+export type Props = IconButtonProps & {
+  ClickAwayListenerProps?: ClickAwayListenerProps;
+  ColorModePickerProps?: ColorModePickerProps;
+  IconProps?: SvgIconProps;
+  PopperProps?: Partial<PopperProps>;
   enableClickAwayListener?: boolean;
-  icon?: SvgIconProps;
-  popper?: Omit<PopperProps, 'anchorEl' | 'open'>;
 };

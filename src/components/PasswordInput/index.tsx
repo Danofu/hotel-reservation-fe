@@ -9,14 +9,14 @@ import { Props } from 'components/PasswordInput/types';
 import { inputMapper } from 'components/PasswordInput/constans';
 
 const PasswordInput: FC<Props> = ({
-  endAdornmentProps,
+  EndAdornmentProps,
+  ErrorHelperTextProps,
+  EyeButtonProps,
+  InputProps,
+  LabelProps,
   error,
-  errorHelperProps,
   errorText,
-  eyeButton,
-  input,
   label,
-  labelProps,
   variant = 'standard',
   ...props
 }) => {
@@ -31,26 +31,26 @@ const PasswordInput: FC<Props> = ({
 
   return (
     <FormControl error={error} variant={variant} {...props}>
-      <InputLabel htmlFor={inputId} {...labelProps}>
+      <InputLabel htmlFor={inputId} {...LabelProps}>
         {label}
       </InputLabel>
       <Input
         endAdornment={
-          <InputAdornment position="end" {...endAdornmentProps}>
+          <InputAdornment position="end" {...EndAdornmentProps}>
             <VisibilityButton
               onClick={handleShowPasswordClick}
               onMouseDown={handleShowPasswordMouseDown}
               visible={!showPassword}
-              {...eyeButton}
+              {...EyeButtonProps}
             />
           </InputAdornment>
         }
         id={inputId}
         label={label}
         type={showPassword ? 'text' : 'password'}
-        {...input}
+        {...InputProps}
       />
-      {error && <FormHelperText {...errorHelperProps}>{errorText}</FormHelperText>}
+      {error && <FormHelperText {...ErrorHelperTextProps}>{errorText}</FormHelperText>}
     </FormControl>
   );
 };
