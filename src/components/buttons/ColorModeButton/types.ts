@@ -10,5 +10,5 @@ export type Props = Omit<IconButtonProps, 'onClick'> & {
   colorModePicker?: ColorModePickerProps;
   enableClickAwayListener?: boolean;
   icon?: SvgIconProps;
-  popper?: Omit<PopperProps, 'anchorEl' | 'modifiers' | 'open'>;
+  popper?: Omit<PopperProps, 'anchorEl' | 'open'>;
 };

@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import React, { useContext, useEffect } from 'react';
 import Stack from '@mui/material/Stack';
@@ -44,7 +44,8 @@ const LoginPage = () => {
       <Helmet>
         <title>Login - {LOGO_TEXT_LONG}</title>
       </Helmet>
-      <Box
+      <Container
+        maxWidth={false}
         sx={{
           alignItems: 'center',
           display: 'flex',
@@ -52,7 +53,6 @@ const LoginPage = () => {
           justifyContent: 'center',
           py: 3,
           textAlign: 'center',
-          width: 1,
         }}
       >
         <Paper elevation={3} sx={{ px: 5, py: 4, width: 500 }}>
@@ -63,7 +63,7 @@ const LoginPage = () => {
             <AuthenticationForm onSubmit={handleSubmit} />
           </Stack>
         </Paper>
-      </Box>
+      </Container>
     </>
   );
 };

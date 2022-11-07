@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import CloseIcon from '@mui/icons-material/Close';
-import ColorModePicker from '../ColorModePicker';
 import IconButton from '@mui/material/IconButton';
 import React, { FC, MouseEvent, useContext, useState } from 'react';
 
+import ColorModePicker from 'components/buttons/ColorModePicker';
 import Popper from 'components/Popper';
 import { Props } from 'components/buttons/ColorModeButton/types';
 import { ThemeContext } from 'providers/ThemeProvider/constants';

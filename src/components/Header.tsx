@@ -1,5 +1,6 @@
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import React, { useContext } from 'react';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
@@ -21,7 +22,7 @@ const Header = () => {
 
   return (
     <AppBar color="default" position="static">
-      <Toolbar sx={{ gap: 4 }}>
+      <Toolbar sx={{ gap: 3 }}>
         <Logo to={PATHNAME_HOME} />
         <Navigation spacing={2}>
           <NavigationLink color="inherit" to={PATHNAME_PROTECTED}>
@@ -37,12 +38,17 @@ const Header = () => {
             size="large"
           />
           {isAuthorized && <ProfileButton color="primary" size="large" />}
-          {!isAuthorized && (
-            <Button component={Link} size="small" to={PATHNAME_LOGIN} variant="contained">
-              Login
-            </Button>
-          )}
         </Stack>
+        {!isAuthorized && (
+          <ButtonGroup color="primary" size="small" variant="text">
+            <Button color="inherit" component={Link} sx={{ px: 1 }} to={PATHNAME_LOGIN}>
+              Sing in
+            </Button>
+            <Button color="inherit" component={Link} sx={{ px: 1 }} to="#">
+              Sing up
+            </Button>
+          </ButtonGroup>
+        )}
       </Toolbar>
     </AppBar>
   );
