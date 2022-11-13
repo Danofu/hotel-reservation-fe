@@ -5,10 +5,10 @@ import InputLabel from '@mui/material/InputLabel';
 import React, { FC, MouseEvent, useId, useState } from 'react';
 
 import VisibilityButton from 'components/buttons/VisibilityButton';
-import { Props } from 'components/PasswordInput/types';
-import { inputMapper } from 'components/PasswordInput/constans';
+import { Props } from 'components/PasswordField/types';
+import { inputMapper } from 'components/PasswordField/constans';
 
-const PasswordInput: FC<Props> = ({
+const PasswordField: FC<Props> = ({
   EndAdornmentProps,
   ErrorHelperTextProps,
   EyeButtonProps,
@@ -55,6 +55,6 @@ const PasswordInput: FC<Props> = ({
   );
 };
 
-export default PasswordInput;
+export default PasswordField;
 
 export type PasswordInputProps = Props;

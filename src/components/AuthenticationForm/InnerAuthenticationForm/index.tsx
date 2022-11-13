@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 import { Form } from 'formik';
 import { useTranslation } from 'react-i18next';
 
-import PasswordInput from 'components/PasswordInput';
+import PasswordField from 'components/PasswordField';
 import { Props } from 'components/AuthenticationForm/InnerAuthenticationForm/types';
 
 const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => {
@@ -34,7 +34,7 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
         type="email"
         value={values.email}
       />
-      <PasswordInput
+      <PasswordField
         EyeButtonProps={{ edge: 'end', IconProps: { color: 'primary' } }}
         InputProps={{ autoComplete: 'current-password', name: 'password', onBlur: handleBlur, value: values.password }}
         color="primary"
