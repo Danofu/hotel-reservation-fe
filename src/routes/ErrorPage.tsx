@@ -3,26 +3,28 @@ import React, { Fragment } from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Helmet } from 'react-helmet';
+import { Trans, useTranslation } from 'react-i18next';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
 import Link from 'components/utils/Link';
 import { LOGO_TEXT_LONG, PATHNAME_HOME, PATHNAME_LOGIN } from 'app-constants';
 
 const ErrorPage = () => {
+  const { t } = useTranslation();
   const error = useRouteError();
 
   const errorText = isRouteErrorResponse(error)
-    ? `${error.status} ${error.statusText}`
-    : 'Sorry, an unexpected error has occurred.';
+    ? [`pages.error.description.${error.status}`, 'pages.error.description.unspecific']
+    : 'pages.error.description.unspecific';
 
-  const errorTitle = isRouteErrorResponse(error) ? error.status.toString() : 'Error';
+  const errorTitle = isRouteErrorResponse(error)
+    ? [`pages.error.title.${error.status}`, 'pages.error.title.unspecific']
+    : 'pages.error.title.unspecific';
 
   return (
     <Fragment>
       <Helmet>
-        <title>
-          {errorTitle} - {LOGO_TEXT_LONG}
-        </title>
+        <title>{t(errorTitle, { textLogo: LOGO_TEXT_LONG })}</title>
       </Helmet>
       <Box
         sx={{
@@ -37,21 +39,23 @@ const ErrorPage = () => {
       >
         <Stack spacing={3}>
           <Typography component="h1" variant="h4">
-            Oops... Something went wrong !
+            {t('pages.error.heading')}
           </Typography>
           <Typography component="h2" variant="h5">
-            {errorText}
+            {t(errorText)}
           </Typography>
           <Typography component="p" variant="body1">
-            Try our&nbsp;
-            <Link to={PATHNAME_HOME} underline="hover">
-              home
-            </Link>
-            &nbsp;or&nbsp;
-            <Link to={PATHNAME_LOGIN} underline="hover">
-              login
-            </Link>
-            &nbsp;page
+            <Trans i18nKey="pages.error.suggestion">
+              Try our&nbsp;
+              <Link to={PATHNAME_HOME} underline="hover">
+                home
+              </Link>
+              &nbsp;or&nbsp;
+              <Link to={PATHNAME_LOGIN} underline="hover">
+                login
+              </Link>
+              &nbsp;page
+            </Trans>
           </Typography>
         </Stack>
       </Box>

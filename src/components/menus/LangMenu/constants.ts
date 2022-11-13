@@ -1,5 +1,5 @@
 export const options = [
-  { title: 'English', value: 'us' },
-  { title: 'Polski', value: 'pl' },
-  { title: 'Українська', value: 'ua' },
+  { value: 'en', title: 'English' },
+  { value: 'pl', title: 'Polski' },
+  { value: 'uk', title: 'Українська' },
 ];

@@ -7,6 +7,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import React, { useContext } from 'react';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
+import { useTranslation } from 'react-i18next';
 
 import ColorModeButton from 'components/buttons/ColorModeButton';
 import LangMenu from 'components/menus/LangMenu';
@@ -23,6 +24,7 @@ import { navLinks } from 'components/Header/constants';
 
 const Header = () => {
   const { isAuthorized } = useContext(AuthorizationContext);
+  const { t } = useTranslation();
 
   return (
     <AppBar color="default" position="static">
@@ -61,12 +63,12 @@ const Header = () => {
             size="large"
           />
           {!isAuthorized && (
-            <ButtonGroup color="primary" size="small" variant="text">
-              <Button color="inherit" component={Link} sx={{ px: 1 }} to={PATHNAME_LOGIN}>
-                Sing in
+            <ButtonGroup color="inherit" size="small" variant="text">
+              <Button component={Link} to={PATHNAME_LOGIN}>
+                {t('components.links.sing-in')}
               </Button>
-              <Button color="inherit" component={Link} sx={{ px: 1 }} to="#">
-                Sing up
+              <Button component={Link} to="#">
+                {t('components.links.sing-up')}
               </Button>
             </ButtonGroup>
           )}

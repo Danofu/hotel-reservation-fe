@@ -5,16 +5,19 @@ import React, { FC } from 'react';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import { Form } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 import PasswordInput from 'components/PasswordInput';
 import { Props } from 'components/AuthenticationForm/InnerAuthenticationForm/types';
 
 const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => {
+  const { t } = useTranslation();
+
   const isEmailValid = touched.email && !!errors.email;
   const isPasswordValid = touched.password && !!errors.password;
 
   return (
-    <Stack component={Form} noValidate spacing={3}>
+    <Stack component={Form} noValidate spacing={2}>
       <TextField
         autoComplete="email"
         autoFocus
@@ -60,7 +63,7 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
         type="submit"
         variant="contained"
       >
-        Sign in
+        {t('components.buttons.sing-in')}
       </LoadingButton>
     </Stack>
   );

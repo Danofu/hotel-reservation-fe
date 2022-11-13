@@ -1,0 +1,47 @@
+{
+  "components": {
+    "buttons": {
+      "sing-in": "Submit"
+    },
+    "links": {
+      "sing-in": "Sing in",
+      "sing-up": "Sing up"
+    },
+    "menu-items": {
+      "logout": {
+        "title": "Logout"
+      }
+    },
+    "menus": {}
+  },
+  "pages": {
+    "error": {
+      "description": {
+        "404": "404 The page was not found",
+        "unspecific": "Sorry, an unknown error has occurred"
+      },
+      "heading": "Oops... Something went wrong !",
+      "suggestion": "Try our <1>home</1> or <3>login</3> page",
+      "title": {
+        "404": "404 - {{textLogo}}",
+        "unspecific": "Error - {{textLogo}}"
+      }
+    },
+    "index": {
+      "heading": "Home Page \uD83D\uDE3C",
+      "title": "Home - {{textLogo}}"
+    },
+    "login": {
+      "heading": "Authentication \uD83D\uDE3C",
+      "title": "Login - {{textLogo}}",
+      "toast": {
+        "failure": "Authorization Failed",
+        "success": "Authorization Succeeded"
+      }
+    },
+    "protected": {
+      "heading": "Protected Page \uD83D\uDE3C",
+      "title": "Protected - {{textLogo}}"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "index": {
+      "heading": "Strona Główna \uD83D\uDE3C",
+      "title": "Główna - {{textLogo}}"
+    },
+    "protected": {
+      "heading": "Strona Chroniona \uD83D\uDE3C",
+      "title": "Chroniona - {{textLogo}}"
+    }
+  }
+}

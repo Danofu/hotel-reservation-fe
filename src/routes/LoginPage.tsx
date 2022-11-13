@@ -7,6 +7,7 @@ import { FormikHelpers } from 'formik';
 import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import AuthenticationForm, { IAuthenticationFormValues } from 'components/AuthenticationForm';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
@@ -16,6 +17,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const { isAuthorized, login } = useContext(AuthorizationContext);
   const { search: rawSearch } = useLocation();
+  const { t } = useTranslation();
 
   const handleSubmit = async (
     values: IAuthenticationFormValues,
@@ -27,11 +29,11 @@ const LoginPage = () => {
     formikHelpers.setSubmitting(false);
 
     if (result) {
-      toast.success('Authorization Succeeded');
+      toast.success(t('pages.login.toast.success'));
       return;
     }
 
-    toast.error('Authorization Failed');
+    toast.error(t('pages.login.toast.failure'));
   };
 
   useEffect(() => {
@@ -44,7 +46,7 @@ const LoginPage = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>Login - {LOGO_TEXT_LONG}</title>
+        <title>{t('pages.login.title', { textLogo: LOGO_TEXT_LONG })}</title>
       </Helmet>
       <Container
         maxWidth={false}
@@ -60,7 +62,7 @@ const LoginPage = () => {
         <Paper elevation={3} sx={{ px: 5, py: 4, width: 500 }}>
           <Stack spacing={6}>
             <Typography component="h1" variant="h5">
-              Authentication 😼
+              {t('pages.login.heading')}
             </Typography>
             <AuthenticationForm onSubmit={handleSubmit} />
           </Stack>
