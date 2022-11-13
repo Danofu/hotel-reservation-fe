@@ -19,6 +19,7 @@ const MenuButton = <TMenu extends Partial<MenuProps>>({
 
   const handleMenuClose = () => setMenuAnchorEl(null);
 
+  // TODO: provide possibility for closing/keeping menu after item clicking
   const handleMenuListClick = pop(MenuListProps, 'onClick');
   MenuListProps.onClick = (event: MouseEvent<HTMLUListElement>) => {
     handleMenuClose();

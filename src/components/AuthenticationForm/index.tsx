@@ -1,22 +1,29 @@
 import React, { FC } from 'react';
 import { Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 import InnerAuthenticationForm from 'components/AuthenticationForm/InnerAuthenticationForm';
 import { Props } from 'components/AuthenticationForm/types';
-import { defaultInitialValues, defaultValidationSchema } from 'components/AuthenticationForm/constants';
+import { defaultInitialValues, defaultTranslatableValidationSchema } from 'components/AuthenticationForm/constants';
 
 const AuthenticationForm: FC<Props> = ({
   initialValues = defaultInitialValues,
-  validationSchema = defaultValidationSchema,
+  validationSchema,
   ...props
-}) => (
-  <Formik
-    component={InnerAuthenticationForm}
-    initialValues={initialValues}
-    validationSchema={validationSchema}
-    {...props}
-  />
-);
+}) => {
+  const { t } = useTranslation();
+
+  const defaultValidationSchema = defaultTranslatableValidationSchema(t);
+
+  return (
+    <Formik
+      component={InnerAuthenticationForm}
+      initialValues={initialValues}
+      validationSchema={validationSchema || defaultValidationSchema}
+      {...props}
+    />
+  );
+};
 
 export default AuthenticationForm;
 

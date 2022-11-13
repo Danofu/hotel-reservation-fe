@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import AuthenticationForm, { IAuthenticationFormValues } from 'components/AuthenticationForm';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { LOGO_TEXT_LONG } from 'app-constants';
+import { TPATH } from 'routes/LoginPage/constants';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -26,14 +27,8 @@ const LoginPage = () => {
     const { email, password, remember } = values;
     const result = await login(email, password, remember);
 
+    !result && toast.error(t(`${TPATH}.toast.failure`));
     formikHelpers.setSubmitting(false);
-
-    if (result) {
-      toast.success(t('pages.login.toast.success'));
-      return;
-    }
-
-    toast.error(t('pages.login.toast.failure'));
   };
 
   useEffect(() => {
@@ -46,7 +41,7 @@ const LoginPage = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>{t('pages.login.title', { textLogo: LOGO_TEXT_LONG })}</title>
+        <title>{t(`${TPATH}.title`, { textLogo: LOGO_TEXT_LONG })}</title>
       </Helmet>
       <Container
         maxWidth={false}
@@ -62,7 +57,7 @@ const LoginPage = () => {
         <Paper elevation={3} sx={{ px: 5, py: 4, width: 500 }}>
           <Stack spacing={6}>
             <Typography component="h1" variant="h5">
-              {t('pages.login.heading')}
+              {t(`${TPATH}.heading`)}
             </Typography>
             <AuthenticationForm onSubmit={handleSubmit} />
           </Stack>

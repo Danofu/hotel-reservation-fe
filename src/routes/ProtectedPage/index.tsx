@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import { LOGO_TEXT_LONG } from 'app-constants';
+import { TPATH } from 'routes/ProtectedPage/constants';
 
 const ProtectedPage = () => {
   const { t } = useTranslation();
@@ -11,10 +12,10 @@ const ProtectedPage = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>{t('pages.protected.title', { textLogo: LOGO_TEXT_LONG })}</title>
+        <title>{t(`${TPATH}.title`, { textLogo: LOGO_TEXT_LONG })}</title>
       </Helmet>
       <Typography component="h1" m={3} variant="h5">
-        {t('pages.protected.heading')}
+        {t(`${TPATH}.heading`)}
       </Typography>
     </Fragment>
   );

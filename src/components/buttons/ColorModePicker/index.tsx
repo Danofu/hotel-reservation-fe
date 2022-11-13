@@ -1,14 +1,16 @@
 import React, { FC, MouseEvent, useContext } from 'react';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { useTranslation } from 'react-i18next';
 
 import { ColorMode } from 'providers/ThemeProvider';
 import { Props } from 'components/buttons/ColorModePicker/types';
 import { ThemeContext } from 'providers/ThemeProvider/constants';
-import { buttons } from 'components/buttons/ColorModePicker/constants';
+import { translatableButton } from 'components/buttons/ColorModePicker/constants';
 
 const ColorModePicker: FC<Props> = ({ ButtonProps, IconProps, onChange, sx, ...props }) => {
   const { mode, setMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   const handleMode = (event: MouseEvent<HTMLElement>, newMode: ColorMode) => {
     if (newMode !== null) {
@@ -27,7 +29,7 @@ const ColorModePicker: FC<Props> = ({ ButtonProps, IconProps, onChange, sx, ...p
       value={mode}
       {...props}
     >
-      {buttons.map(({ Icon, title, value }) => (
+      {translatableButton(t).map(({ Icon, title, value }) => (
         <ToggleButton key={value} value={value} {...ButtonProps}>
           <Icon {...IconProps} />
           &nbsp;{title}

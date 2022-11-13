@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import { LOGO_TEXT_LONG } from 'app-constants';
+import { TPATH } from 'routes/IndexPage/constants';
 
 const IndexPage = () => {
   const { t } = useTranslation();
@@ -11,10 +12,10 @@ const IndexPage = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>{t('pages.index.title', { textLogo: LOGO_TEXT_LONG })}</title>
+        <title>{t(`${TPATH}.title`, { textLogo: LOGO_TEXT_LONG })}</title>
       </Helmet>
       <Typography component="h1" m={3} variant="h5">
-        {t('pages.index.heading')}
+        {t(`${TPATH}.heading`)}
       </Typography>
     </Fragment>
   );

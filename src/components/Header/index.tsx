@@ -20,7 +20,7 @@ import ProfileMenu from 'components/menus/ProfileMenu';
 import Spacer from 'components/utils/Spacer';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { PATHNAME_HOME, PATHNAME_LOGIN } from 'app-constants';
-import { navLinks } from 'components/Header/constants';
+import { translatableNavLinks, TPATH } from 'components/Header/constants';
 
 const Header = () => {
   const { isAuthorized } = useContext(AuthorizationContext);
@@ -37,7 +37,7 @@ const Header = () => {
           underline="hover"
         />
         <Navigation spacing={2}>
-          {navLinks.map(({ label, to }) => (
+          {translatableNavLinks(t).map(({ label, to }) => (
             <NavigationLink color="inherit" key={to} to={to}>
               {label}
             </NavigationLink>
@@ -65,10 +65,10 @@ const Header = () => {
           {!isAuthorized && (
             <ButtonGroup color="inherit" size="small" variant="text">
               <Button component={Link} to={PATHNAME_LOGIN}>
-                {t('components.links.sing-in')}
+                {t(`${TPATH}.links.sing-in`)}
               </Button>
               <Button component={Link} to="#">
-                {t('components.links.sing-up')}
+                {t(`${TPATH}.links.sing-up`)}
               </Button>
             </ButtonGroup>
           )}

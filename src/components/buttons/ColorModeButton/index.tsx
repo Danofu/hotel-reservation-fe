@@ -29,6 +29,7 @@ const ColorModeButton: FC<Props> = ({
 
   const handleClickAway = () => setIsPopperOpen(false);
 
+  // TODO: provide possibility for closing/keeping popper after children change
   const handleColorModeChange = (_event: MouseEvent<HTMLElement>, mode: ColorMode) =>
     mode !== null && setIsPopperOpen(false);
 

@@ -1,11 +1,39 @@
 {
   "components": {
     "buttons": {
-      "sing-in": "Submit"
+      "color-mode-picker": {
+        "auto": "System",
+        "light": "Light",
+        "dark": "Dark"
+      }
     },
-    "links": {
-      "sing-in": "Sing in",
-      "sing-up": "Sing up"
+    "forms": {
+      "authentication": {
+        "labels": {
+          "email": "Email",
+          "password": "Password",
+          "remember-me": "Remember me",
+          "submit": "Submit"
+        },
+        "errors": {
+          "email": {
+            "empty": "Provide an email",
+            "invalid": "Provide a valid email"
+          },
+          "password": {
+            "empty": "Provide a password",
+            "invalid": "Provide a password with at least 6 symbols"
+          }
+        }
+      }
+    },
+    "header": {
+      "links": {
+        "home": "Home",
+        "protected": "Protected",
+        "sing-in": "Sing in",
+        "sing-up": "Sing up"
+      }
     },
     "menu-items": {
       "logout": {

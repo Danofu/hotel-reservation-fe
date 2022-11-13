@@ -1,9 +1,19 @@
 import * as Yup from 'yup';
+import { TFunction } from 'i18next';
+
+import ntu from 'utils/ntu';
+
+export const TPATH = 'components.forms.authentication';
 
 export const defaultInitialValues = { email: '', password: '', remember: false };
 
-export const defaultValidationSchema = Yup.object({
-  email: Yup.string().required('Provide an email').email('Provide a valid email'),
-  password: Yup.string().required('Provide a password').min(6, 'Provide a password with at least 6 symbols'),
-  remember: Yup.boolean(),
-});
+export const defaultTranslatableValidationSchema = (t: TFunction) =>
+  Yup.object({
+    email: Yup.string()
+      .required(ntu(t(`${TPATH}.errors.email.empty`)))
+      .email(ntu(t(`${TPATH}.errors.email.invalid`))),
+    password: Yup.string()
+      .required(ntu(t(`${TPATH}.errors.password.empty`)))
+      .min(6, ntu(t(`${TPATH}.errors.password.invalid`))),
+    remember: Yup.boolean(),
+  });

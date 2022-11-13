@@ -1,4 +1,5 @@
 // TODO: consider eslint-plugin-jsx-a11y
+// TODO: consider TypeDoc
 
 import CssBaseline from '@mui/material/CssBaseline';
 import React from 'react';

@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 import PasswordField from 'components/PasswordField';
 import { Props } from 'components/AuthenticationForm/InnerAuthenticationForm/types';
+import { TPATH } from 'components/AuthenticationForm/InnerAuthenticationForm/constants';
 
 const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => {
   const { t } = useTranslation();
@@ -25,7 +26,7 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
         error={isEmailValid}
         fullWidth
         helperText={isEmailValid && errors.email}
-        label="Email"
+        label={t(`${TPATH}.labels.email`)}
         margin="none"
         name="email"
         onBlur={handleBlur}
@@ -41,7 +42,7 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
         error={isPasswordValid}
         errorText={errors.password}
         fullWidth
-        label="Password"
+        label={t(`${TPATH}.labels.password`)}
         margin="none"
         onChange={handleChange}
         required
@@ -49,7 +50,7 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
       />
       <FormControlLabel
         control={<Checkbox checked={values.remember} color="primary" />}
-        label="Remember me"
+        label={t(`${TPATH}.labels.remember-me`)}
         labelPlacement="start"
         name="remember"
         onBlur={handleBlur}
@@ -63,7 +64,7 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
         type="submit"
         variant="contained"
       >
-        {t('components.buttons.sing-in')}
+        {t(`${TPATH}.labels.submit`)}
       </LoadingButton>
     </Stack>
   );

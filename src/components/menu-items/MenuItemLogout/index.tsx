@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { Props } from 'components/menu-items/MenuItemLogout/types';
+import { TPATH } from 'components/menu-items/MenuItemLogout/constants';
 
 const MenuItemLogout: FC<Props> = ({ IconProps, WrapperProps, onClick, ...props }) => {
   const { logout } = useContext(AuthorizationContext);
@@ -21,7 +22,7 @@ const MenuItemLogout: FC<Props> = ({ IconProps, WrapperProps, onClick, ...props 
       {/* TODO: use ListItemIcon and ListItemText instead of stack */}
       <Stack direction="row" gap={1} {...WrapperProps}>
         <Logout {...IconProps} />
-        {t('components.menu-items.logout.title')}
+        {t(`${TPATH}.title`)}
       </Stack>
     </MenuItem>
   );
