@@ -3,6 +3,7 @@ import { createContext } from 'react';
 import { green } from '@mui/material/colors';
 
 import { ColorMode, IThemeContext } from 'providers/ThemeProvider';
+import { STORAGE_APP_COLOR_MODE } from 'app-constants';
 
 export const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 
@@ -22,4 +23,4 @@ export const darkThemeOptions: ThemeOptions = {
 
 export const colorModes = ['auto', 'light', 'dark'] as const;
 
-export const storedMode = localStorage.getItem('theme.mode') as ColorMode;
+export const storedMode = localStorage.getItem(STORAGE_APP_COLOR_MODE) as ColorMode;

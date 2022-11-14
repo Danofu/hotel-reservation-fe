@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { ColorMode } from 'providers/ThemeProvider';
 import { Props } from 'components/buttons/ColorModePicker/types';
+import { STORAGE_APP_COLOR_MODE } from 'app-constants';
 import { ThemeContext } from 'providers/ThemeProvider/constants';
 import { translatableButton } from 'components/buttons/ColorModePicker/constants';
 
@@ -15,7 +16,7 @@ const ColorModePicker: FC<Props> = ({ ButtonProps, IconProps, onChange, sx, ...p
   const handleMode = (event: MouseEvent<HTMLElement>, newMode: ColorMode) => {
     if (newMode !== null) {
       setMode(newMode);
-      localStorage.setItem('theme.mode', newMode);
+      localStorage.setItem(STORAGE_APP_COLOR_MODE, newMode);
     }
 
     onChange?.(event, newMode);

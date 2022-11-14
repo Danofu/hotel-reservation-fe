@@ -4,10 +4,11 @@ import sleep from 'utils/sleep';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { IContext } from 'providers/AuthorizationProvider/interfaces';
 import { Props } from 'providers/AuthorizationProvider/types';
+import { STORAGE_USER_TOKEN } from 'app-constants';
 import { getStorageItem, removeStorageItem } from 'utils/storage';
 
 const AuthorizationProvider: FC<Props> = ({ children }) => {
-  const [isAuthorized, setIsAuthorized] = useState(!!getStorageItem('user.token'));
+  const [isAuthorized, setIsAuthorized] = useState(!!getStorageItem(STORAGE_USER_TOKEN));
 
   const login = useCallback(async (email: string, password: string, remember: boolean) => {
     // NOTE: fake request
@@ -16,7 +17,7 @@ const AuthorizationProvider: FC<Props> = ({ children }) => {
     if (email === 'danofu13@gmail.com' && password === '752984136') {
       const storage = remember ? localStorage : sessionStorage;
 
-      storage.setItem('user.token', 'mock-token');
+      storage.setItem(STORAGE_USER_TOKEN, 'mock-token');
       setIsAuthorized(true);
 
       return true;
@@ -26,7 +27,7 @@ const AuthorizationProvider: FC<Props> = ({ children }) => {
   }, []);
 
   const logout = useCallback(() => {
-    removeStorageItem('user.token');
+    removeStorageItem(STORAGE_USER_TOKEN);
     setIsAuthorized(false);
   }, []);
 
