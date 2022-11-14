@@ -16,8 +16,7 @@ export const storages = [localStorage, sessionStorage];
  * @group Utils
  * @remarks The utility returns the value from the first storage that contains the `key`.
  */
-export const getStorageItem = (key: string): string | null | undefined =>
-  storages.find((storage) => !!storage.getItem(key))?.getItem(key);
+export const getStorageItem = (key: string) => storages.find((storage) => !!storage.getItem(key))?.getItem(key);
 
 /**
  * Removes the item from the array of {@link storages} by the specified `key`

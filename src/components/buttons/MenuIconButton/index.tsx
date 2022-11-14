@@ -2,8 +2,8 @@ import IconButton from '@mui/material/IconButton';
 import React, { Fragment, MouseEvent, useState } from 'react';
 import { MenuProps } from '@mui/material/Menu';
 
-import pop from 'utils/pop';
 import { Props } from 'components/buttons/MenuIconButton/types';
+import { pop } from 'utils';
 
 const MenuButton = <TMenu extends Partial<MenuProps>>({
   Icon,

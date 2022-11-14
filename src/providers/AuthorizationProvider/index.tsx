@@ -1,11 +1,11 @@
 import React, { FC, useCallback, useMemo, useState } from 'react';
 
-import sleep from 'utils/sleep';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { IContext } from 'providers/AuthorizationProvider/interfaces';
 import { Props } from 'providers/AuthorizationProvider/types';
 import { STORAGE_USER_TOKEN } from 'app-constants';
 import { getStorageItem, removeStorageItem } from 'utils/storage';
+import { sleep } from 'utils';
 
 const AuthorizationProvider: FC<Props> = ({ children }) => {
   const [isAuthorized, setIsAuthorized] = useState(!!getStorageItem(STORAGE_USER_TOKEN));

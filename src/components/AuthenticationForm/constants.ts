@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { TFunction } from 'i18next';
 
-import ntu from 'utils/ntu';
+import { ntu } from 'utils';
 
 export const TPATH = 'components.forms.authentication';
 
