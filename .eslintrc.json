@@ -16,9 +16,15 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "i18next", "prettier", "react", "react-hooks"],
+  "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc", "i18next", "prettier", "react", "react-hooks"],
   "rules": {
-    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "tsdoc/syntax": "warn"
   },
   "settings": {
     "import/resolver": {

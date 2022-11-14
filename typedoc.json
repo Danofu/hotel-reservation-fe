@@ -1,0 +1,26 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/utils"],
+  "externalSymbolLinkMappings": {
+    "@types/lodash": {
+      "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
+    },
+    "global": {
+      "Promise": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+      "Storage": "https://developer.mozilla.org/en-US/docs/Web/API/Storage"
+    },
+    "lodash": {
+      "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
+    },
+    "typescript": {
+      "Promise": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+      "Storage": "https://developer.mozilla.org/en-US/docs/Web/API/Storage"
+    }
+  },
+  "name": "\"Hotels & Booking\" Technical Documentation",
+  "navigationLinks": {
+    "GitHub": "https://github.com/Danofu/hotel-reservation-fe"
+  },
+  "sort": ["alphabetical"],
+  "watch": true
+}

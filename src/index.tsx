@@ -1,5 +1,6 @@
 // TODO: consider eslint-plugin-jsx-a11y
-// TODO: consider TypeDoc
+// TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void#non-leaking_arrow_functions
+// TODO: finish translation for Ukrainian and Polish
 
 import CssBaseline from '@mui/material/CssBaseline';
 import React from 'react';

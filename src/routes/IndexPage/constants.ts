@@ -1,1 +1,1 @@
-export const TPATH = "pages.index"
+export const TPATH = 'pages.index';

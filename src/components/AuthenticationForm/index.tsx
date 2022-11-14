@@ -6,11 +6,7 @@ import InnerAuthenticationForm from 'components/AuthenticationForm/InnerAuthenti
 import { Props } from 'components/AuthenticationForm/types';
 import { defaultInitialValues, defaultTranslatableValidationSchema } from 'components/AuthenticationForm/constants';
 
-const AuthenticationForm: FC<Props> = ({
-  initialValues = defaultInitialValues,
-  validationSchema,
-  ...props
-}) => {
+const AuthenticationForm: FC<Props> = ({ initialValues = defaultInitialValues, validationSchema, ...props }) => {
   const { t } = useTranslation();
 
   const defaultValidationSchema = defaultTranslatableValidationSchema(t);
