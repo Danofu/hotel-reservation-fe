@@ -22,5 +22,5 @@
     "GitHub": "https://github.com/Danofu/hotel-reservation-fe"
   },
   "sort": ["alphabetical"],
-  "watch": true
+  "watch": false
 }
