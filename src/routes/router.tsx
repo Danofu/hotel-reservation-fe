@@ -5,7 +5,7 @@ import LoadingBackdrop from 'components/LoadingBackdrop';
 import ProtectedRoutes from 'components/utils/ProtectedRoutes';
 import Suspense from 'components/utils/Suspense';
 import { LazyAppLayout, LazyErrorPage, LazyIndexPage, LazyLoginPage, LazyProtectedPage } from 'routes/constants';
-import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_PROTECTED } from 'app-constants';
+import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_PROTECTED } from 'app-globals';
 
 export default createBrowserRouter([
   {

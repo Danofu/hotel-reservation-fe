@@ -3,7 +3,7 @@ import { createContext } from 'react';
 import { green } from '@mui/material/colors';
 
 import { ColorMode, IThemeContext } from 'providers/ThemeProvider';
-import { STORAGE_APP_COLOR_MODE } from 'app-constants';
+import { STORAGE_APP_COLOR_MODE } from 'app-globals';
 
 export const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 

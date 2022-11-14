@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { ColorMode } from 'providers/ThemeProvider';
 import { Props } from 'components/buttons/ColorModePicker/types';
-import { STORAGE_APP_COLOR_MODE } from 'app-constants';
+import { STORAGE_APP_COLOR_MODE } from 'app-globals';
 import { ThemeContext } from 'providers/ThemeProvider/constants';
 import { translatableButton } from 'components/buttons/ColorModePicker/constants';
 

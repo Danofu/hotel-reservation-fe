@@ -19,7 +19,7 @@ import NavigationLink from 'components/buttons/NavigationLink';
 import ProfileMenu from 'components/menus/ProfileMenu';
 import Spacer from 'components/utils/Spacer';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
-import { PATHNAME_HOME, PATHNAME_LOGIN } from 'app-constants';
+import { PATHNAME_HOME, PATHNAME_LOGIN } from 'app-globals';
 import { translatableNavLinks, TPATH } from 'components/Header/constants';
 
 const Header = () => {

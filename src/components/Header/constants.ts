@@ -1,6 +1,6 @@
 import { TFunction } from 'i18next';
 
-import { PATHNAME_HOME, PATHNAME_PROTECTED } from 'app-constants';
+import { PATHNAME_HOME, PATHNAME_PROTECTED } from 'app-globals';
 
 export const TPATH = 'components.header';
 

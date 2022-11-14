@@ -6,8 +6,7 @@
  * @typeParam T - the type of the `value` parameter
  * @returns `undefined` if `value` is `null`, otherwise returns `value` itself.
  *
- * @category Functions
- * @group Utils
+ * @category NTU
  * @remarks The function name stands for **N**ull **t**o **U**ndefined.
  */
 export default <T>(value: T | null): T | undefined => (value === null ? undefined : value);

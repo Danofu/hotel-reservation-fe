@@ -1,8 +1,7 @@
 /**
  * Array that contains {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage | local} and {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage | session} storages.
  *
- * @category Constants
- * @group Utils
+ * @category Storage
  */
 export const storages = [localStorage, sessionStorage];
 
@@ -12,8 +11,7 @@ export const storages = [localStorage, sessionStorage];
  * @param key - the storage item key you want to retrieve the value of
  * @returns The value of the `key`. If the `key` doesn't exist, `null` is returned.
  *
- * @category Functions
- * @group Utils
+ * @category Storage
  * @remarks The utility returns the value from the first storage that contains the `key`.
  */
 export const getStorageItem = (key: string) => storages.find((storage) => !!storage.getItem(key))?.getItem(key);
@@ -23,7 +21,6 @@ export const getStorageItem = (key: string) => storages.find((storage) => !!stor
  *
  * @param key - the key you want to remove
  *
- * @category Functions
- * @group Utils
+ * @category Storage
  */
 export const removeStorageItem = (key: string) => storages.forEach((storage) => storage.removeItem(key));

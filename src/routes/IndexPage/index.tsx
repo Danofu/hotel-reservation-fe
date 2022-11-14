@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import { LOGO_TEXT_LONG } from 'app-constants';
+import { LOGO_TEXT_LONG } from 'app-globals';
 import { TPATH } from 'routes/IndexPage/constants';
 
 const IndexPage = () => {

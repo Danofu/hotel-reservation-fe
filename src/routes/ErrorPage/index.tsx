@@ -7,7 +7,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
 import Link from 'components/utils/Link';
-import { LOGO_TEXT_LONG, PATHNAME_HOME, PATHNAME_LOGIN } from 'app-constants';
+import { LOGO_TEXT_LONG, PATHNAME_HOME, PATHNAME_LOGIN } from 'app-globals';
 import { TPATH } from 'routes/ErrorPage/constants';
 
 const ErrorPage = () => {

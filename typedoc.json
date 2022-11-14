@@ -1,11 +1,15 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["src/utils"],
+  "entryPoints": ["src/app-globals.ts", "src/utils"],
+  "excludeNotDocumented": false,
   "externalSymbolLinkMappings": {
     "@types/lodash": {
       "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
     },
     "global": {
+      "Omit": "https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys",
+      "Partial": "https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype",
+      "Pick": "https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys",
       "Promise": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
       "Storage": "https://developer.mozilla.org/en-US/docs/Web/API/Storage"
     },
@@ -13,6 +17,9 @@
       "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
     },
     "typescript": {
+      "Omit": "https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys",
+      "Partial": "https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype",
+      "Pick": "https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys",
       "Promise": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
       "Storage": "https://developer.mozilla.org/en-US/docs/Web/API/Storage"
     }
@@ -21,6 +28,6 @@
   "navigationLinks": {
     "GitHub": "https://github.com/Danofu/hotel-reservation-fe"
   },
-  "sort": ["alphabetical"],
+  "sort": ["kind", "alphabetical"],
   "watch": false
 }

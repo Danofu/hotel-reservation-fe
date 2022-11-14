@@ -2,7 +2,7 @@ import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import { STORAGE_APP_LANGUAGE } from 'app-constants';
+import { STORAGE_APP_LANGUAGE } from 'app-globals';
 import { en, pl, uk } from 'translations';
 
 i18next

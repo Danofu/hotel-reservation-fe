@@ -3,7 +3,6 @@
  *
  * @param millis - the time in milliseconds
  *
- * @category Functions
- * @group Utils
+ * @category Sleep
  */
 export default async (millis: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, millis));

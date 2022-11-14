@@ -30,7 +30,8 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "docs:gen": "typedoc --watch",
+    "docs:dev": "typedoc --watch",
+    "docs:gen": "typedoc",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config .prettierrc",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",

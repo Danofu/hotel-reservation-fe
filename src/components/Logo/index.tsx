@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 import Link from 'components/utils/Link';
-import { LOGO_TEXT_SHORT } from 'app-constants';
+import { LOGO_TEXT_SHORT } from 'app-globals';
 import { Props } from 'components/Logo/types';
 import { pop } from 'utils';
 

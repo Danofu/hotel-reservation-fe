@@ -3,7 +3,7 @@ import React, { FC, useCallback, useMemo, useState } from 'react';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { IContext } from 'providers/AuthorizationProvider/interfaces';
 import { Props } from 'providers/AuthorizationProvider/types';
-import { STORAGE_USER_TOKEN } from 'app-constants';
+import { STORAGE_USER_TOKEN } from 'app-globals';
 import { getStorageItem, removeStorageItem } from 'utils/storage';
 import { sleep } from 'utils';
 

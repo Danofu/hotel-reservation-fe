@@ -11,6 +11,10 @@
     },
     {
       "syntaxKind": "block",
+      "tagName": "@module"
+    },
+    {
+      "syntaxKind": "block",
       "tagName": "@template"
     }
   ]

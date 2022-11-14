@@ -10,8 +10,7 @@ import { get, GetFieldType, unset } from 'lodash';
  * @typeParam TPath - type of the `path` param
  * @returns Resolved value.
  *
- * @category Functions
- * @group Utils
+ * @category Pop
  * @remarks The utility uses the external library {@link https://lodash.com | lodash}, specifically the {@link https://lodash.com/docs/4.17.15#get | get} and {@link https://lodash.com/docs/4.17.15#unset | unset} functions.
  */
 export default <TObject, TPath extends string>(data: TObject, path: TPath): GetFieldType<TObject, TPath> => {
