@@ -1,8 +1,70 @@
 {
+  "components": {
+    "buttons": {
+      "color-mode-picker": {
+        "auto": "Systemowy",
+        "dark": "Ciemny",
+        "light": "Światły"
+      }
+    },
+    "forms": {
+      "authentication": {
+        "labels": {
+          "email": "Email",
+          "password": "Hasło",
+          "remember-me": "Pamiętaj mnie",
+          "submit": "Prześlij"
+        },
+        "errors": {
+          "email": {
+            "empty": "Podaj email",
+            "invalid": "Podaj poprawny email"
+          },
+          "password": {
+            "empty": "Podaj hasło",
+            "invalid": "Podaj hasło z co najmniej 6 symbolami"
+          }
+        }
+      }
+    },
+    "header": {
+      "links": {
+        "home": "Główna",
+        "protected": "Chroniona",
+        "sign-in": "Zaloguj",
+        "sign-up": "Zarejestruj"
+      }
+    },
+    "menu-items": {
+      "logout": {
+        "title": "Wyloguj"
+      }
+    },
+    "menus": {}
+  },
   "pages": {
+    "error": {
+      "description": {
+        "404": "404 Strona nie została znaleziona",
+        "unspecific": "Przykro nam, wystąpił nieznany błąd"
+      },
+      "heading": "Ups... Coś poszło nie tak !",
+      "suggestion": "Wypróbuj naszą stronę <1>główną</1> lub stronę <3>logowania</3>",
+      "title": {
+        "404": "404 - {{textLogo}}",
+        "unspecific": "Błąd - {{textLogo}}"
+      }
+    },
     "index": {
       "heading": "Strona Główna \uD83D\uDE3C",
       "title": "Główna - {{textLogo}}"
+    },
+    "login": {
+      "heading": "Autentykacja \uD83D\uDE3C",
+      "title": "Logowanie - {{textLogo}}",
+      "toast": {
+        "failure": "Autoryzacja nie powiodła się"
+      }
     },
     "protected": {
       "heading": "Strona Chroniona \uD83D\uDE3C",

@@ -3,8 +3,8 @@
     "buttons": {
       "color-mode-picker": {
         "auto": "System",
-        "light": "Light",
-        "dark": "Dark"
+        "dark": "Dark",
+        "light": "Light"
       }
     },
     "forms": {
@@ -31,8 +31,8 @@
       "links": {
         "home": "Home",
         "protected": "Protected",
-        "sing-in": "Sing in",
-        "sing-up": "Sing up"
+        "sign-in": "Sing in",
+        "sign-up": "Sing up"
       }
     },
     "menu-items": {
@@ -63,8 +63,7 @@
       "heading": "Authentication \uD83D\uDE3C",
       "title": "Login - {{textLogo}}",
       "toast": {
-        "failure": "Authorization Failed",
-        "success": "Authorization Succeeded"
+        "failure": "Authorization failed"
       }
     },
     "protected": {

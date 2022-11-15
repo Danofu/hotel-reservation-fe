@@ -1,4 +1,47 @@
 {
+  "components": {
+    "buttons": {
+      "color-mode-picker": {
+        "auto": "Системна",
+        "dark": "Темна",
+        "light": "Світла"
+      }
+    },
+    "forms": {
+      "authentication": {
+        "labels": {
+          "email": "Електронна пошта",
+          "password": "Пароль",
+          "remember-me": "Пам'ятай мене",
+          "submit": "Надіслати"
+        },
+        "errors": {
+          "email": {
+            "empty": "Вкажіть електронну пошту",
+            "invalid": "Вкажіть дійсну електронну пошту"
+          },
+          "password": {
+            "empty": "Вкажіть пароль",
+            "invalid": "Вкажіть пароль з щонайменше 6 символів"
+          }
+        }
+      }
+    },
+    "header": {
+      "links": {
+        "home": "Головна",
+        "protected": "Захищена",
+        "sign-in": "Увійти",
+        "sign-up": "Реєстрація"
+      }
+    },
+    "menu-items": {
+      "logout": {
+        "title": "Вихід"
+      }
+    },
+    "menus": {}
+  },
   "pages": {
     "error": {
       "description": {
@@ -15,6 +58,13 @@
     "index": {
       "heading": "Головна Сторінка \uD83D\uDE3C",
       "title": "Головна - {{textLogo}}"
+    },
+    "login": {
+      "heading": "Аутентифікація \uD83D\uDE3C",
+      "title": "Логін - {{textLogo}}",
+      "toast": {
+        "failure": "Авторизація не вдалася"
+      }
     },
     "protected": {
       "heading": "Захищена Сторінка \uD83D\uDE3C",

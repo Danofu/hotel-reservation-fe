@@ -7,6 +7,7 @@ import Suspense from 'components/utils/Suspense';
 import { LazyAppLayout, LazyErrorPage, LazyIndexPage, LazyLoginPage, LazyProtectedPage } from 'routes/constants';
 import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_PROTECTED } from 'app-globals';
 
+// TODO: navigate from "/" to "/home"
 export default createBrowserRouter([
   {
     children: [

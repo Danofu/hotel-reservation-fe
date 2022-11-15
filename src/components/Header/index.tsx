@@ -55,6 +55,7 @@ const Header = () => {
           <MenuIconButton
             Icon={LanguageIcon}
             Menu={LangMenu}
+            // TODO: change origins
             MenuProps={{
               anchorOrigin: { horizontal: 'center', vertical: 'bottom' },
               transformOrigin: { horizontal: 'center', vertical: 'top' },
@@ -65,10 +66,10 @@ const Header = () => {
           {!isAuthorized && (
             <ButtonGroup color="inherit" size="small" variant="text">
               <Button component={Link} to={PATHNAME_LOGIN}>
-                {t(`${TPATH}.links.sing-in`)}
+                {t(`${TPATH}.links.sign-in`)}
               </Button>
               <Button component={Link} to="#">
-                {t(`${TPATH}.links.sing-up`)}
+                {t(`${TPATH}.links.sign-up`)}
               </Button>
             </ButtonGroup>
           )}
@@ -76,6 +77,7 @@ const Header = () => {
             <MenuIconButton
               Icon={AccountCircleIcon}
               Menu={ProfileMenu}
+              // TODO: change origins
               MenuProps={{
                 LogoutProps: { IconProps: { color: 'primary' } },
                 TransitionComponent: Fade,

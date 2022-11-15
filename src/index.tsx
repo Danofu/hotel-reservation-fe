@@ -1,6 +1,6 @@
 // TODO: consider eslint-plugin-jsx-a11y
 // TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void#non-leaking_arrow_functions
-// TODO: finish translation for Ukrainian and Polish
+// TODO: add tooltip for all icon buttons
 
 import CssBaseline from '@mui/material/CssBaseline';
 import React from 'react';
@@ -17,6 +17,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
+  // TODO: add StrictMode
   <Providers>
     <CssBaseline />
     <RouterProvider router={router} />
