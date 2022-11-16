@@ -7,6 +7,6 @@ import { LinkProps } from 'components/utils/Link';
 
 export type Props = StackProps<'a', LinkProps> & {
   IconProps?: SvgIconProps;
-  TextProps?: TypographyProps;
+  TextProps?: TypographyProps<'h1'>;
   text?: ReactNode;
 };
