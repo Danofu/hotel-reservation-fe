@@ -55,7 +55,7 @@
         "unspecific": "Error - {{textLogo}}"
       }
     },
-    "index": {
+    "home": {
       "heading": "Home Page \uD83D\uDE3C",
       "title": "Home - {{textLogo}}"
     },

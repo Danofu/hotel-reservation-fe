@@ -55,7 +55,7 @@
         "unspecific": "Помилка - {{textLogo}}"
       }
     },
-    "index": {
+    "home": {
       "heading": "Головна Сторінка \uD83D\uDE3C",
       "title": "Головна - {{textLogo}}"
     },

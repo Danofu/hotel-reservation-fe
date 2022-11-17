@@ -55,7 +55,7 @@
         "unspecific": "Błąd - {{textLogo}}"
       }
     },
-    "index": {
+    "home": {
       "heading": "Strona Główna \uD83D\uDE3C",
       "title": "Główna - {{textLogo}}"
     },

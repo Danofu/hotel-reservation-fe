@@ -17,7 +17,7 @@ export const LOGO_TEXT_SHORT = 'H&B';
  * The URL path name to the home "page".
  * @category URLs
  */
-export const PATHNAME_HOME = '/';
+export const PATHNAME_HOME = '/home';
 /**
  * The URL path name to the login "page".
  * @category URLs

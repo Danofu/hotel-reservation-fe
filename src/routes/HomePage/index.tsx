@@ -4,9 +4,9 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import { LOGO_TEXT_LONG } from 'app-globals';
-import { TPATH } from 'routes/IndexPage/constants';
+import { TPATH } from 'routes/HomePage/constants';
 
-const IndexPage = () => {
+const HomePage = () => {
   const { t } = useTranslation();
 
   return (
@@ -21,4 +21,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default HomePage;
