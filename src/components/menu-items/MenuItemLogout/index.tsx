@@ -1,14 +1,21 @@
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import Logout from '@mui/icons-material/Logout';
 import MenuItem from '@mui/material/MenuItem';
 import React, { FC, MouseEvent, useContext } from 'react';
-import Stack from '@mui/material/Stack';
 import { useTranslation } from 'react-i18next';
 
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { Props } from 'components/menu-items/MenuItemLogout/types';
 import { TPATH } from 'components/menu-items/MenuItemLogout/constants';
 
-const MenuItemLogout: FC<Props> = ({ IconProps, WrapperProps, onClick = () => void {}, ...props }) => {
+const MenuItemLogout: FC<Props> = ({
+  IconProps,
+  ListItemIconProps,
+  ListItemTextProps,
+  onClick = () => void {},
+  ...props
+}) => {
   const { logout } = useContext(AuthorizationContext);
   const { t } = useTranslation();
 
@@ -19,11 +26,10 @@ const MenuItemLogout: FC<Props> = ({ IconProps, WrapperProps, onClick = () => vo
 
   return (
     <MenuItem onClick={handleItemClick} {...props}>
-      {/* TODO: use ListItemIcon and ListItemText instead of stack */}
-      <Stack direction="row" gap={1} {...WrapperProps}>
+      <ListItemIcon {...ListItemIconProps}>
         <Logout {...IconProps} />
-        {t(`${TPATH}.title`)}
-      </Stack>
+      </ListItemIcon>
+      <ListItemText {...ListItemTextProps}>{t(`${TPATH}.title`)}</ListItemText>
     </MenuItem>
   );
 };
