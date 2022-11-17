@@ -7,6 +7,7 @@
       "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
     },
     "global": {
+      "Exclude": "https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers",
       "Omit": "https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys",
       "Partial": "https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype",
       "Pick": "https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys",
@@ -17,6 +18,7 @@
       "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
     },
     "typescript": {
+      "Exclude": "https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers",
       "Omit": "https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys",
       "Partial": "https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype",
       "Pick": "https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys",
