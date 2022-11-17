@@ -9,4 +9,5 @@ export type Props<TMenu extends Partial<MenuProps>> = IconButtonProps & {
   Menu: FC<TMenu>;
   MenuListProps?: TMenu['MenuListProps'];
   MenuProps?: Omit<Partial<TMenu>, 'MenuListProps'>;
+  keepMenuOpenAfterClick?: boolean;
 };
