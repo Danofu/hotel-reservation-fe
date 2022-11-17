@@ -20,7 +20,7 @@ const MenuButton = <TMenu extends Partial<MenuProps>>({
 
   const handleMenuClose = () => setMenuAnchorEl(null);
 
-  const handleMenuListClick = popWithDefault(MenuListProps, 'onClick', () => void {});
+  const handleMenuListClick = popWithDefault(MenuListProps, 'onClick', () => undefined);
   MenuListProps.onClick = (event: MouseEvent<HTMLUListElement>) => {
     !keepMenuOpenAfterClick && handleMenuClose();
     handleMenuListClick(event);

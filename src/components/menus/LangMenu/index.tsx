@@ -4,16 +4,18 @@ import ListItemText from '@mui/material/ListItemText';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Props } from 'components/menus/LangMenu/types';
 import { options } from 'components/menus/LangMenu/constants';
-import { useTranslation } from 'react-i18next';
 
 // TODO: component not finished
 const LangMenu: FC<Props> = ({ PaperProps, ...props }) => {
   const { i18n } = useTranslation();
 
-  const handleItemClick = (value: string) => i18n.changeLanguage(value);
+  const handleItemClick = async (value: string) => {
+    await i18n.changeLanguage(value);
+  };
 
   return (
     <Menu PaperProps={{ sx: { maxHeight: 200 }, ...PaperProps }} {...props}>

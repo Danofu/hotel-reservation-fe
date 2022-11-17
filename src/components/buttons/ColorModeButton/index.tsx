@@ -30,8 +30,9 @@ const ColorModeButton: FC<Props> = ({
 
   const handleClickAway = () => setIsPopperOpen(false);
 
-  const handleColorModeChange = (_event: MouseEvent<HTMLElement>, mode: ColorMode) =>
+  const handleColorModeChange = (_event: MouseEvent<HTMLElement>, mode: ColorMode) => {
     !keepPopperOpenAfterClick && mode !== null && setIsPopperOpen(false);
+  }
 
   const ButtonIcon = iconMapper[mode];
 

@@ -9,7 +9,7 @@ import { STORAGE_APP_COLOR_MODE } from 'app-globals';
 import { ThemeContext } from 'providers/ThemeProvider/constants';
 import { translatableButton } from 'components/buttons/ColorModePicker/constants';
 
-const ColorModePicker: FC<Props> = ({ ButtonProps, IconProps, onChange, sx, ...props }) => {
+const ColorModePicker: FC<Props> = ({ ButtonProps, IconProps, onChange = () => undefined, sx, ...props }) => {
   const { mode, setMode } = useContext(ThemeContext);
   const { t } = useTranslation();
 
@@ -19,7 +19,7 @@ const ColorModePicker: FC<Props> = ({ ButtonProps, IconProps, onChange, sx, ...p
       localStorage.setItem(STORAGE_APP_COLOR_MODE, newMode);
     }
 
-    onChange?.(event, newMode);
+    onChange(event, newMode);
   };
 
   return (

@@ -13,7 +13,7 @@ const MenuItemLogout: FC<Props> = ({
   IconProps,
   ListItemIconProps,
   ListItemTextProps,
-  onClick = () => void {},
+  onClick = () => undefined,
   ...props
 }) => {
   const { logout } = useContext(AuthorizationContext);

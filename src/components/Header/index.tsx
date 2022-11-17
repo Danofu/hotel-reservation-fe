@@ -57,7 +57,9 @@ const Header = () => {
             Icon={LanguageIcon}
             Menu={LangMenu}
             MenuProps={{
+              TransitionComponent: Fade,
               anchorOrigin: { horizontal: 'right', vertical: 'bottom' },
+              keepMounted: true,
               transformOrigin: { horizontal: 'right', vertical: 'top' },
             }}
             color="primary"

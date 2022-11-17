@@ -1,5 +1,4 @@
 // TODO: consider eslint-plugin-jsx-a11y
-// TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void#non-leaking_arrow_functions
 // TODO: add tooltip for all icon buttons
 
 import CssBaseline from '@mui/material/CssBaseline';
