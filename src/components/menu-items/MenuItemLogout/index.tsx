@@ -8,14 +8,13 @@ import { AuthorizationContext } from 'providers/AuthorizationProvider/constants'
 import { Props } from 'components/menu-items/MenuItemLogout/types';
 import { TPATH } from 'components/menu-items/MenuItemLogout/constants';
 
-// TODO: use "() => void {}" for default onClick
-const MenuItemLogout: FC<Props> = ({ IconProps, WrapperProps, onClick, ...props }) => {
+const MenuItemLogout: FC<Props> = ({ IconProps, WrapperProps, onClick = () => void {}, ...props }) => {
   const { logout } = useContext(AuthorizationContext);
   const { t } = useTranslation();
 
   const handleItemClick = (event: MouseEvent<HTMLLIElement>) => {
     logout();
-    onClick?.(event);
+    onClick(event);
   };
 
   return (
