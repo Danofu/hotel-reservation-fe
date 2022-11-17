@@ -20,7 +20,7 @@ import ProfileMenu from 'components/menus/ProfileMenu';
 import Spacer from 'components/utils/Spacer';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { PATHNAME_HOME, PATHNAME_LOGIN } from 'app-globals';
-import { translatableNavLinks, TPATH } from 'components/Header/constants';
+import { TPATH, translatableNavLinks } from 'components/Header/constants';
 
 const Header = () => {
   const { isAuthorized } = useContext(AuthorizationContext);
@@ -56,10 +56,9 @@ const Header = () => {
           <MenuIconButton
             Icon={LanguageIcon}
             Menu={LangMenu}
-            // TODO: change origins
             MenuProps={{
-              anchorOrigin: { horizontal: 'center', vertical: 'bottom' },
-              transformOrigin: { horizontal: 'center', vertical: 'top' },
+              anchorOrigin: { horizontal: 'right', vertical: 'bottom' },
+              transformOrigin: { horizontal: 'right', vertical: 'top' },
             }}
             color="primary"
             keepMenuOpenAfterClick
@@ -79,13 +78,12 @@ const Header = () => {
             <MenuIconButton
               Icon={AccountCircleIcon}
               Menu={ProfileMenu}
-              // TODO: change origins
               MenuProps={{
                 LogoutProps: { IconProps: { color: 'primary' } },
                 TransitionComponent: Fade,
-                anchorOrigin: { horizontal: 'center', vertical: 'bottom' },
+                anchorOrigin: { horizontal: 'right', vertical: 'bottom' },
                 keepMounted: true,
-                transformOrigin: { horizontal: 'center', vertical: 'top' },
+                transformOrigin: { horizontal: 'right', vertical: 'top' },
               }}
               color="primary"
               size="large"
