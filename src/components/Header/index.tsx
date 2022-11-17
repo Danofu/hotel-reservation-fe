@@ -15,7 +15,7 @@ import Link from 'components/utils/Link';
 import Logo from 'components/Logo';
 import MenuIconButton from 'components/buttons/MenuIconButton';
 import Navigation from 'components/Navigation';
-import NavigationLink from 'components/buttons/NavigationLink';
+import ButtonNavLink from 'components/buttons/ButtonNavLink';
 import ProfileMenu from 'components/menus/ProfileMenu';
 import Spacer from 'components/utils/Spacer';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
@@ -38,9 +38,9 @@ const Header = () => {
         />
         <Navigation spacing={2}>
           {translatableNavLinks(t).map(({ label, to }) => (
-            <NavigationLink color="inherit" key={to} to={to}>
+            <ButtonNavLink color="inherit" key={to} to={to}>
               {label}
-            </NavigationLink>
+            </ButtonNavLink>
           ))}
         </Navigation>
         <Spacer />
