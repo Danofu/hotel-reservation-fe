@@ -11,4 +11,5 @@ export type Props = IconButtonProps & {
   IconProps?: SvgIconProps;
   PopperProps?: Partial<PopperProps>;
   enableClickAwayListener?: boolean;
+  keepPopperOpenAfterClick?: boolean;
 };

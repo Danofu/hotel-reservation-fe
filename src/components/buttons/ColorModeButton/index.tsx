@@ -16,6 +16,7 @@ const ColorModeButton: FC<Props> = ({
   IconProps,
   PopperProps,
   enableClickAwayListener,
+  keepPopperOpenAfterClick = false,
   ...props
 }) => {
   const [isPopperOpen, setIsPopperOpen] = useState(false);
@@ -29,9 +30,8 @@ const ColorModeButton: FC<Props> = ({
 
   const handleClickAway = () => setIsPopperOpen(false);
 
-  // TODO: provide possibility for closing/keeping popper after children change
   const handleColorModeChange = (_event: MouseEvent<HTMLElement>, mode: ColorMode) =>
-    mode !== null && setIsPopperOpen(false);
+    !keepPopperOpenAfterClick && mode !== null && setIsPopperOpen(false);
 
   const ButtonIcon = iconMapper[mode];
 

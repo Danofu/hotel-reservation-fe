@@ -50,6 +50,7 @@ const Header = () => {
             PopperProps={{ arrowSize: 10, enableArrow: true, keepMounted: true }}
             color="primary"
             enableClickAwayListener
+            keepPopperOpenAfterClick
             size="large"
           />
           <MenuIconButton
