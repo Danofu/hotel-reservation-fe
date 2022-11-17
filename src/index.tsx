@@ -3,7 +3,7 @@
 // TODO: add tooltip for all icon buttons
 
 import CssBaseline from '@mui/material/CssBaseline';
-import React from 'react';
+import React, { StrictMode } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
@@ -17,10 +17,11 @@ import 'react-toastify/dist/ReactToastify.min.css';
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  // TODO: add StrictMode
-  <Providers>
-    <CssBaseline />
-    <RouterProvider router={router} />
-    <ToastContainer />
-  </Providers>
+  <StrictMode>
+    <Providers>
+      <CssBaseline />
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </Providers>
+  </StrictMode>
 );
