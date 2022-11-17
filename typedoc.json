@@ -1,8 +1,11 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["src/app-globals.ts", "src/utils"],
+  "entryPoints": ["src/app-globals.ts", "src/components/buttons/ButtonNavLink", "src/utils"],
   "excludeNotDocumented": false,
   "externalSymbolLinkMappings": {
+    "@mui/material": {
+      "ButtonProps": "https://mui.com/material-ui/api/button/#props"
+    },
     "@types/lodash": {
       "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
     },
@@ -16,6 +19,9 @@
     },
     "lodash": {
       "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
+    },
+    "react-router-dom": {
+      "LinkProps": "https://reactrouter.com/en/main/components/link"
     },
     "typescript": {
       "Exclude": "https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers",
