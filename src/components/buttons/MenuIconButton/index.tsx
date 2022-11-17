@@ -3,7 +3,7 @@ import React, { Fragment, MouseEvent, useState } from 'react';
 import { MenuProps } from '@mui/material/Menu';
 
 import { Props } from 'components/buttons/MenuIconButton/types';
-import { pop } from 'utils';
+import { popWithDefault } from 'utils';
 
 const MenuButton = <TMenu extends Partial<MenuProps>>({
   Icon,
@@ -20,10 +20,10 @@ const MenuButton = <TMenu extends Partial<MenuProps>>({
   const handleMenuClose = () => setMenuAnchorEl(null);
 
   // TODO: provide possibility for closing/keeping menu after item clicking
-  const handleMenuListClick = pop(MenuListProps, 'onClick');
+  const handleMenuListClick = popWithDefault(MenuListProps, 'onClick', () => void {});
   MenuListProps.onClick = (event: MouseEvent<HTMLUListElement>) => {
     handleMenuClose();
-    handleMenuListClick?.(event);
+    handleMenuListClick(event);
   };
 
   return (
