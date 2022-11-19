@@ -4,7 +4,11 @@
       "color-mode-picker": {
         "auto": "Systemowy",
         "dark": "Ciemny",
-        "light": "Światły"
+        "light": "Światły",
+        "tooltip": {
+          "closed": "Tryb koloru ...",
+          "opened": "Zamknij"
+        }
       }
     },
     "forms": {

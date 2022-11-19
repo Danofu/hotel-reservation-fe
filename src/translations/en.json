@@ -4,7 +4,11 @@
       "color-mode-picker": {
         "auto": "System",
         "dark": "Dark",
-        "light": "Light"
+        "light": "Light",
+        "tooltip": {
+          "closed": "Color mode ...",
+          "opened": "Close"
+        }
       }
     },
     "forms": {

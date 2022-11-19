@@ -4,7 +4,11 @@
       "color-mode-picker": {
         "auto": "Системна",
         "dark": "Темна",
-        "light": "Світла"
+        "light": "Світла",
+        "tooltip": {
+          "closed": "Режим кольору ...",
+          "opened": "Закрити"
+        }
       }
     },
     "forms": {

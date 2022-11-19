@@ -3,3 +3,5 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 
 export const iconMapper = { auto: SettingsBrightnessIcon, dark: DarkModeIcon, light: LightModeIcon };
+
+export const TPATH = 'components.buttons.color-mode-picker';
