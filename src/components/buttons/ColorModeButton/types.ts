@@ -1,17 +1,15 @@
-import { IconButtonProps } from '@mui/material/IconButton';
 import { SvgIconProps } from '@mui/material/SvgIcon';
-import { TooltipProps } from '@mui/material/Tooltip';
 
 import { ClickAwayListenerProps } from 'components/utils/ClickAwayListener';
 import { ColorModePickerProps } from 'components/buttons/ColorModePicker';
 import { PopperProps } from 'components/Popper';
+import { TooltipIconButtonProps } from 'components/buttons/TooltipIconButton';
 
-export type Props = IconButtonProps & {
+export type Props = TooltipIconButtonProps & {
   ClickAwayListenerProps?: ClickAwayListenerProps;
   ColorModePickerProps?: ColorModePickerProps;
   IconProps?: SvgIconProps;
   PopperProps?: Partial<PopperProps>;
-  TooltipProps?: TooltipProps;
   enableClickAwayListener?: boolean;
   keepPopperOpenAfterClick?: boolean;
 };

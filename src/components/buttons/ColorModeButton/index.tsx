@@ -1,12 +1,11 @@
 import CloseIcon from '@mui/icons-material/Close';
-import IconButton from '@mui/material/IconButton';
 import React, { FC, Fragment, MouseEvent, useContext, useState } from 'react';
-import Tooltip from '@mui/material/Tooltip';
 import { useTranslation } from 'react-i18next';
 
 import ClickAwayListener from 'components/utils/ClickAwayListener';
 import ColorModePicker from 'components/buttons/ColorModePicker';
 import Popper from 'components/Popper';
+import TooltipIconButton from 'components/buttons/TooltipIconButton';
 import { ColorMode } from 'providers/ThemeProvider';
 import { Props } from 'components/buttons/ColorModeButton/types';
 import { ThemeContext } from 'providers/ThemeProvider/constants';
@@ -17,7 +16,6 @@ const ColorModeButton: FC<Props> = ({
   ColorModePickerProps,
   IconProps,
   PopperProps,
-  TooltipProps,
   enableClickAwayListener,
   keepPopperOpenAfterClick = false,
   ...props
@@ -43,11 +41,9 @@ const ColorModeButton: FC<Props> = ({
 
   const colorModeButton = (
     <Fragment>
-      <Tooltip title={tooltipTitle} {...TooltipProps}>
-        <IconButton onClick={handleButtonClick} type="button" {...props}>
-          {isPopperOpen ? <CloseIcon {...IconProps} /> : <ButtonIcon {...IconProps} />}
-        </IconButton>
-      </Tooltip>
+      <TooltipIconButton TooltipProps={{ title: tooltipTitle }} onClick={handleButtonClick} type="button" {...props}>
+        {isPopperOpen ? <CloseIcon {...IconProps} /> : <ButtonIcon {...IconProps} />}
+      </TooltipIconButton>
       <Popper anchorEl={popperAnchorEl} open={isPopperOpen} transition {...PopperProps}>
         <ColorModePicker onChange={handleColorModeChange} size="small" {...ColorModePickerProps} />
       </Popper>
