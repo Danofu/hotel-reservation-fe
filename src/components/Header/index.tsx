@@ -63,7 +63,6 @@ const Header = () => {
               transformOrigin: { horizontal: 'right', vertical: 'top' },
             }}
             color="primary"
-            keepMenuOpenAfterClick
             size="large"
           />
           {!isAuthorized && (
