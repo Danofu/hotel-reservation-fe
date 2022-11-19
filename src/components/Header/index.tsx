@@ -10,7 +10,7 @@ import Toolbar from '@mui/material/Toolbar';
 import { useTranslation } from 'react-i18next';
 
 import ColorModeButton from 'components/buttons/ColorModeButton';
-import LangMenu from 'components/menus/LangMenu';
+import LanguageMenu from 'components/menus/LanguageMenu';
 import Link from 'components/utils/Link';
 import Logo from 'components/Logo';
 import MenuIconButton from 'components/buttons/MenuIconButton';
@@ -55,7 +55,7 @@ const Header = () => {
           />
           <MenuIconButton
             Icon={LanguageIcon}
-            Menu={LangMenu}
+            Menu={LanguageMenu}
             MenuProps={{
               TransitionComponent: Fade,
               anchorOrigin: { horizontal: 'right', vertical: 'bottom' },

@@ -6,10 +6,10 @@ import React, { FC, MouseEvent, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
-import { Props } from 'components/menu-items/MenuItemLogout/types';
-import { TPATH } from 'components/menu-items/MenuItemLogout/constants';
+import { Props } from 'components/menu-items/LogoutMenuItem/types';
+import { TPATH } from 'components/menu-items/LogoutMenuItem/constants';
 
-const MenuItemLogout: FC<Props> = ({
+const LogoutMenuItem: FC<Props> = ({
   IconProps,
   ListItemIconProps,
   ListItemTextProps,
@@ -34,6 +34,6 @@ const MenuItemLogout: FC<Props> = ({
   );
 };
 
-export default MenuItemLogout;
+export default LogoutMenuItem;
 
 export type MenuItemLogoutProps = Props;

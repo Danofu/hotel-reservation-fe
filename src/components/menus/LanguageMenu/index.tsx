@@ -6,11 +6,11 @@ import MenuItem from '@mui/material/MenuItem';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Props } from 'components/menus/LangMenu/types';
-import { options } from 'components/menus/LangMenu/constants';
+import { Props } from 'components/menus/LanguageMenu/types';
+import { options } from 'components/menus/LanguageMenu/constants';
 
 // TODO: component not finished
-const LangMenu: FC<Props> = ({ PaperProps, ...props }) => {
+const LanguageMenu: FC<Props> = ({ PaperProps, ...props }) => {
   const { i18n } = useTranslation();
 
   const handleItemClick = async (value: string) => {
@@ -37,6 +37,6 @@ const LangMenu: FC<Props> = ({ PaperProps, ...props }) => {
   );
 };
 
-export default LangMenu;
+export default LanguageMenu;
 
 export type LangManuProps = Props;
