@@ -1,3 +1,5 @@
 import { MenuProps } from '@mui/material/Menu';
 
-export type Props = MenuProps;
+import { LanguageMenuItemProps } from 'components/menu-items/LanguageMenuItem';
+
+export type Props = MenuProps & { LanguageMenuItemProps?: LanguageMenuItemProps };
