@@ -63,6 +63,7 @@ const Header = () => {
               keepMounted: true,
               transformOrigin: { horizontal: 'right', vertical: 'top' },
             }}
+            TooltipProps={{ title: t(`${TPATH}.tooltips.language`) }}
             color="primary"
             size="large"
           />
@@ -87,6 +88,7 @@ const Header = () => {
                 keepMounted: true,
                 transformOrigin: { horizontal: 'right', vertical: 'top' },
               }}
+              TooltipProps={{ title: t(`${TPATH}.tooltips.profile`) }}
               color="primary"
               size="large"
             />

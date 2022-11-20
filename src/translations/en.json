@@ -9,6 +9,10 @@
           "closed": "Color mode ...",
           "opened": "Close"
         }
+      },
+      "visibility": {
+        "hide": "Hide",
+        "show": "Show"
       }
     },
     "forms": {
@@ -37,6 +41,10 @@
         "protected": "Protected",
         "sign-in": "Sing in",
         "sign-up": "Sing up"
+      },
+      "tooltips": {
+        "language": "Language ...",
+        "profile": "Profile ..."
       }
     },
     "menu-items": {

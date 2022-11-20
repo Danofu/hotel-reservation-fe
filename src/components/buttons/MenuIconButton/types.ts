@@ -1,9 +1,10 @@
 import { FC } from 'react';
-import { IconButtonProps } from '@mui/material/IconButton';
 import { MenuProps } from '@mui/material/Menu';
 import { SvgIconProps } from '@mui/material/SvgIcon';
 
-export type Props<TMenu extends Partial<MenuProps>> = IconButtonProps & {
+import { TooltipIconButtonProps } from 'components/buttons/TooltipIconButton';
+
+export type Props<TMenu extends Partial<MenuProps>> = TooltipIconButtonProps & {
   Icon: FC<SvgIconProps>;
   IconProps?: SvgIconProps;
   Menu: FC<TMenu>;

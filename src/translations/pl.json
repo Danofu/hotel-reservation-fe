@@ -9,6 +9,10 @@
           "closed": "Tryb koloru ...",
           "opened": "Zamknij"
         }
+      },
+      "visibility": {
+        "hide": "Ukryj",
+        "show": "Pokaż"
       }
     },
     "forms": {
@@ -37,6 +41,10 @@
         "protected": "Chroniona",
         "sign-in": "Zaloguj",
         "sign-up": "Zarejestruj"
+      },
+      "tooltips": {
+        "language": "Język ...",
+        "profile": "Profil ..."
       }
     },
     "menu-items": {

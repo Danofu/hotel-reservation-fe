@@ -1,9 +1,9 @@
-import IconButton from '@mui/material/IconButton';
 import React, { Fragment, MouseEvent, useState } from 'react';
 import { MenuProps } from '@mui/material/Menu';
 
 import { Props } from 'components/buttons/MenuIconButton/types';
 import { popWithDefault } from 'utils';
+import TooltipIconButton from '../TooltipIconButton';
 
 const MenuButton = <TMenu extends Partial<MenuProps>>({
   Icon,
@@ -28,9 +28,9 @@ const MenuButton = <TMenu extends Partial<MenuProps>>({
 
   return (
     <Fragment>
-      <IconButton onClick={handleButtonClick} {...props}>
+      <TooltipIconButton onClick={handleButtonClick} {...props}>
         <Icon {...IconProps} />
-      </IconButton>
+      </TooltipIconButton>
       <Menu
         MenuListProps={MenuListProps}
         anchorEl={menuAnchorEl}

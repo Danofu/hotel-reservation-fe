@@ -9,6 +9,10 @@
           "closed": "Режим кольору ...",
           "opened": "Закрити"
         }
+      },
+      "visibility": {
+        "hide": "Сховати",
+        "show": "Показати"
       }
     },
     "forms": {
@@ -37,6 +41,10 @@
         "protected": "Захищена",
         "sign-in": "Увійти",
         "sign-up": "Реєстрація"
+      },
+      "tooltips": {
+        "language": "Мова ...",
+        "profile": "Профіль ..."
       }
     },
     "menu-items": {
