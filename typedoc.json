@@ -1,13 +1,23 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["src/app-globals.ts", "src/components/buttons/ButtonNavLink", "src/utils"],
+  "entryPoints": [
+    "src/app-globals.ts",
+    "src/components/buttons/ButtonNavLink",
+    "src/components/buttons/TooltipIconButton",
+    "src/utils"
+  ],
   "excludeNotDocumented": false,
   "externalSymbolLinkMappings": {
     "@mui/material": {
-      "ButtonProps": "https://mui.com/material-ui/api/button/#props"
+      "ButtonProps": "https://mui.com/material-ui/api/button/#props",
+      "IconButtonProps": "https://mui.com/material-ui/api/icon-button/#props",
+      "TooltipProps": "https://mui.com/material-ui/api/tooltip/#props"
     },
     "@types/lodash": {
       "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
+    },
+    "@types/react": {
+      "ReactElement": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts#L141"
     },
     "global": {
       "Exclude": "https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers",
@@ -19,6 +29,9 @@
     },
     "lodash": {
       "GetFieldType": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/lodash/common/object.d.ts#L1041"
+    },
+    "react": {
+      "ReactElement": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts#L141"
     },
     "react-router-dom": {
       "LinkProps": "https://reactrouter.com/en/main/components/link"
