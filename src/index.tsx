@@ -1,5 +1,4 @@
 // TODO: consider eslint-plugin-jsx-a11y
-// TODO: add tooltip for all icon buttons
 
 import CssBaseline from '@mui/material/CssBaseline';
 import React, { StrictMode } from 'react';

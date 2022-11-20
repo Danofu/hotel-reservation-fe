@@ -48,7 +48,7 @@ const Header = () => {
           <ColorModeButton
             ColorModePickerProps={{ color: 'primary' }}
             PopperProps={{ arrowSize: 10, enableArrow: true, keepMounted: true }}
-            TooltipProps={{ placement: 'left' }}
+            TooltipProps={{ arrow: true }}
             color="primary"
             enableClickAwayListener
             keepPopperOpenAfterClick
@@ -63,7 +63,7 @@ const Header = () => {
               keepMounted: true,
               transformOrigin: { horizontal: 'right', vertical: 'top' },
             }}
-            TooltipProps={{ title: t(`${TPATH}.tooltips.language`) }}
+            TooltipProps={{ arrow: true, title: t(`${TPATH}.tooltips.language`) }}
             color="primary"
             size="large"
           />
@@ -88,7 +88,7 @@ const Header = () => {
                 keepMounted: true,
                 transformOrigin: { horizontal: 'right', vertical: 'top' },
               }}
-              TooltipProps={{ title: t(`${TPATH}.tooltips.profile`) }}
+              TooltipProps={{ arrow: true, title: t(`${TPATH}.tooltips.profile`) }}
               color="primary"
               size="large"
             />
