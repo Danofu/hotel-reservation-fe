@@ -27,3 +27,5 @@ export const defaultArrowSx = (arrowSize: number): SxProps<Theme> => ({
   visibility: 'hidden',
   zIndex: -1,
 });
+
+export const popperContainer = document.getElementById('popper');

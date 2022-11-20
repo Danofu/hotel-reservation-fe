@@ -6,7 +6,7 @@ import LanguageMenuItem from 'components/menu-items/LanguageMenuItem';
 import { Props } from 'components/menus/LanguageMenu/types';
 import { options } from 'components/menus/LanguageMenu/constants';
 
-const LanguageMenu: FC<Props> = ({ LanguageMenuItemProps, PaperProps, ...props }) => {
+const LanguageMenu: FC<Props> = ({ LanguageMenuItemProps, PaperProps, sx, ...props }) => {
   const { i18n } = useTranslation();
 
   const handleItemClick = async (value: string) => {
@@ -14,7 +14,7 @@ const LanguageMenu: FC<Props> = ({ LanguageMenuItemProps, PaperProps, ...props }
   };
 
   return (
-    <Menu PaperProps={{ sx: { maxHeight: 200 }, ...PaperProps }} {...props}>
+    <Menu PaperProps={{ sx: { maxHeight: 200 }, ...PaperProps }} sx={{ textAlign: 'start', ...sx }} {...props}>
       {options.map(({ title, value }) => (
         <LanguageMenuItem
           key={value}

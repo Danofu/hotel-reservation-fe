@@ -1,9 +1,10 @@
 import React, { Fragment, MouseEvent, useState } from 'react';
 import { MenuProps } from '@mui/material/Menu';
 
+import TooltipIconButton from 'components/buttons/TooltipIconButton';
 import { Props } from 'components/buttons/MenuIconButton/types';
+import { menuContainer } from 'components/buttons/MenuIconButton/constants';
 import { popWithDefault } from 'utils';
-import TooltipIconButton from '../TooltipIconButton';
 
 const MenuButton = <TMenu extends Partial<MenuProps>>({
   Icon,
@@ -34,6 +35,7 @@ const MenuButton = <TMenu extends Partial<MenuProps>>({
       <Menu
         MenuListProps={MenuListProps}
         anchorEl={menuAnchorEl}
+        container={menuContainer}
         onClose={handleMenuClose}
         open={!!menuAnchorEl}
         {...(MenuProps as TMenu)}

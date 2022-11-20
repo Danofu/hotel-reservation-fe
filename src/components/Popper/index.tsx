@@ -5,7 +5,7 @@ import React, { FC, Fragment } from 'react';
 import merge from 'lodash/merge';
 
 import { PopperFadeContentProps, Props } from 'components/Popper/types';
-import { defaultArrowSx, defaultPopperSx } from 'components/Popper/constants';
+import { defaultArrowSx, defaultPopperSx, popperContainer } from 'components/Popper/constants';
 
 const Popper: FC<Props> = ({
   ArrowProps,
@@ -34,6 +34,7 @@ const Popper: FC<Props> = ({
 
   return (
     <MuiPopper
+      container={popperContainer}
       modifiers={[{ enabled: enableArrow, name: 'arrow' }, ...modifiers]}
       sx={merge(defaultPopperSx(arrowSize), sx)}
       transition={transition}

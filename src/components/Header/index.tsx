@@ -30,7 +30,7 @@ const Header = () => {
     <AppBar color="default" position="static">
       <Toolbar sx={{ gap: 4 }}>
         <Logo
-          IconProps={{ color: 'primary', fontSize: 'large' }}
+          IconProps={{ color: 'primary' }}
           TextProps={{ sx: { color: 'inherit' }, variant: 'h5' }}
           color="inherit"
           to={PATHNAME_HOME}
@@ -47,8 +47,8 @@ const Header = () => {
         <Stack alignItems="center" direction="row" spacing={2}>
           <ColorModeButton
             ColorModePickerProps={{ color: 'primary' }}
-            PopperProps={{ arrowSize: 10, enableArrow: true, keepMounted: true }}
-            TooltipProps={{ arrow: true }}
+            PopperProps={{ keepMounted: true, placement: 'bottom-end' }}
+            TooltipProps={{ TransitionComponent: Fade, placement: 'bottom-end' }}
             color="primary"
             enableClickAwayListener
             keepPopperOpenAfterClick
@@ -63,7 +63,11 @@ const Header = () => {
               keepMounted: true,
               transformOrigin: { horizontal: 'right', vertical: 'top' },
             }}
-            TooltipProps={{ arrow: true, title: t(`${TPATH}.tooltips.language`) }}
+            TooltipProps={{
+              TransitionComponent: Fade,
+              placement: 'bottom-end',
+              title: t(`${TPATH}.tooltips.language`),
+            }}
             color="primary"
             size="large"
           />
@@ -88,7 +92,11 @@ const Header = () => {
                 keepMounted: true,
                 transformOrigin: { horizontal: 'right', vertical: 'top' },
               }}
-              TooltipProps={{ arrow: true, title: t(`${TPATH}.tooltips.profile`) }}
+              TooltipProps={{
+                TransitionComponent: Fade,
+                placement: 'bottom-end',
+                title: t(`${TPATH}.tooltips.profile`),
+              }}
               color="primary"
               size="large"
             />

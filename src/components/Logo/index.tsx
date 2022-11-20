@@ -10,7 +10,7 @@ import { pop } from 'utils';
 
 const Logo: FC<Props> = ({ IconProps = {}, TextProps, text = LOGO_TEXT_SHORT, ...props }) => (
   <Stack alignItems="center" component={Link} direction="row" {...props}>
-    <NightShelterIcon sx={{ mb: 0.5, ...pop(IconProps, 'sx') }} {...IconProps} />
+    <NightShelterIcon fontSize="large" sx={{ mb: 0.5, ...pop(IconProps, 'sx') }} {...IconProps} />
     <Typography component="h1" {...TextProps}>
       {text}
     </Typography>
