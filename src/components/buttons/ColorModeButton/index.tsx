@@ -16,6 +16,7 @@ const ColorModeButton: FC<Props> = ({
   ColorModePickerProps,
   IconProps,
   PopperProps,
+  TooltipProps,
   enableClickAwayListener,
   keepPopperOpenAfterClick = false,
   ...props
@@ -41,7 +42,12 @@ const ColorModeButton: FC<Props> = ({
 
   const colorModeButton = (
     <Fragment>
-      <TooltipIconButton TooltipProps={{ title: tooltipTitle }} onClick={handleButtonClick} type="button" {...props}>
+      <TooltipIconButton
+        TooltipProps={{ title: tooltipTitle, ...TooltipProps }}
+        onClick={handleButtonClick}
+        type="button"
+        {...props}
+      >
         {isPopperOpen ? <CloseIcon {...IconProps} /> : <ButtonIcon {...IconProps} />}
       </TooltipIconButton>
       <Popper anchorEl={popperAnchorEl} open={isPopperOpen} transition {...PopperProps}>

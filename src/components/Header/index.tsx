@@ -48,6 +48,7 @@ const Header = () => {
           <ColorModeButton
             ColorModePickerProps={{ color: 'primary' }}
             PopperProps={{ arrowSize: 10, enableArrow: true, keepMounted: true }}
+            TooltipProps={{ placement: 'left' }}
             color="primary"
             enableClickAwayListener
             keepPopperOpenAfterClick
