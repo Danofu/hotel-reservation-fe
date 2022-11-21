@@ -8,8 +8,8 @@ import { Form } from 'formik';
 import { useTranslation } from 'react-i18next';
 
 import PasswordField from 'components/PasswordField';
-import { Props } from 'components/AuthenticationForm/InnerAuthenticationForm/types';
-import { TPATH } from 'components/AuthenticationForm/InnerAuthenticationForm/constants';
+import { Props } from 'components/forms/AuthenticationForm/InnerAuthenticationForm/types';
+import { TPATH } from 'components/forms/AuthenticationForm/InnerAuthenticationForm/constants';
 
 const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => {
   const { t } = useTranslation();
@@ -21,7 +21,6 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
     <Stack component={Form} noValidate spacing={2}>
       <TextField
         autoComplete="email"
-        autoFocus
         color="primary"
         error={isEmailValid}
         fullWidth

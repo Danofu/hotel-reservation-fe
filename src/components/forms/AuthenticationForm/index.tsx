@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
 
-import InnerAuthenticationForm from 'components/AuthenticationForm/InnerAuthenticationForm';
-import { Props } from 'components/AuthenticationForm/types';
-import { defaultInitialValues, defaultTranslatableValidationSchema } from 'components/AuthenticationForm/constants';
+import InnerAuthenticationForm from 'components/forms/AuthenticationForm/InnerAuthenticationForm';
+import { Props } from 'components/forms/AuthenticationForm/types';
+import { defaultInitialValues, defaultTranslatableValidationSchema } from 'components/forms/AuthenticationForm/constants';
 
 const AuthenticationForm: FC<Props> = ({ initialValues = defaultInitialValues, validationSchema, ...props }) => {
   const { t } = useTranslation();
@@ -24,4 +24,4 @@ const AuthenticationForm: FC<Props> = ({ initialValues = defaultInitialValues, v
 export default AuthenticationForm;
 
 export type AuthenticationForm = Props;
-export type { IValues as IAuthenticationFormValues } from 'components/AuthenticationForm/interfaces';
+export type { IValues as IAuthenticationFormValues } from 'components/forms/AuthenticationForm/interfaces';

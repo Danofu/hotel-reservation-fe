@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import AuthenticationForm, { IAuthenticationFormValues } from 'components/AuthenticationForm';
+import AuthenticationForm, { IAuthenticationFormValues } from 'components/forms/AuthenticationForm';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
 import { LOGO_TEXT_LONG } from 'app-globals';
 import { TPATH } from 'routes/LoginPage/constants';
