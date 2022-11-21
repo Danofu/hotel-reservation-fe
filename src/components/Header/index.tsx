@@ -19,7 +19,7 @@ import ButtonNavLink from 'components/buttons/ButtonNavLink';
 import ProfileMenu from 'components/menus/ProfileMenu';
 import Spacer from 'components/utils/Spacer';
 import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
-import { PATHNAME_HOME, PATHNAME_LOGIN } from 'app-globals';
+import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_REGISTRATION } from 'app-globals';
 import { TPATH, translatableNavLinks } from 'components/Header/constants';
 
 const Header = () => {
@@ -76,7 +76,7 @@ const Header = () => {
               <Button component={Link} to={PATHNAME_LOGIN}>
                 {t(`${TPATH}.links.sign-in`)}
               </Button>
-              <Button component={Link} to="#">
+              <Button component={Link} to={PATHNAME_REGISTRATION}>
                 {t(`${TPATH}.links.sign-up`)}
               </Button>
             </ButtonGroup>

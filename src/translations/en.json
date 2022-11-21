@@ -81,6 +81,9 @@
     "protected": {
       "heading": "Protected Page \uD83D\uDE3C",
       "title": "Protected - {{textLogo}}"
+    },
+    "registration": {
+      "title": "Registration - {{textLogo}}"
     }
   }
 }

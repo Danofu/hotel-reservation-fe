@@ -81,6 +81,9 @@
     "protected": {
       "heading": "Strona Chroniona \uD83D\uDE3C",
       "title": "Chroniona - {{textLogo}}"
+    },
+    "registration": {
+      "title": "Rejestracja - {{textLogo}}"
     }
   }
 }

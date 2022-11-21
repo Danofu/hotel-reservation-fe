@@ -28,6 +28,11 @@ export const PATHNAME_LOGIN = '/login';
  * @category URLs
  */
 export const PATHNAME_PROTECTED = '/protected';
+/**
+ * The URL path name to the registration "page".
+ * @category URLs
+ */
+export const PATHNAME_REGISTRATION = '/registration';
 
 /**
  * The storage item key name for cashing an application color mode.

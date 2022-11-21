@@ -81,6 +81,9 @@
     "protected": {
       "heading": "Захищена Сторінка \uD83D\uDE3C",
       "title": "Захищена - {{textLogo}}"
+    },
+    "registration": {
+      "title": "Реєстрація - {{textLogo}}"
     }
   }
 }

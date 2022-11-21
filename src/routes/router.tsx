@@ -4,8 +4,15 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import LoadingBackdrop from 'components/LoadingBackdrop';
 import ProtectedRoutes from 'components/utils/ProtectedRoutes';
 import Suspense from 'components/utils/Suspense';
-import { LazyAppLayout, LazyErrorPage, LazyHomePage, LazyLoginPage, LazyProtectedPage } from 'routes/constants';
-import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_PROTECTED } from 'app-globals';
+import {
+  LazyAppLayout,
+  LazyErrorPage,
+  LazyHomePage,
+  LazyLoginPage,
+  LazyProtectedPage,
+  LazyRegistrationPage,
+} from 'routes/constants';
+import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_PROTECTED, PATHNAME_REGISTRATION } from 'app-globals';
 
 export default createBrowserRouter([
   {
@@ -29,4 +36,5 @@ export default createBrowserRouter([
     path: '/',
   },
   { element: <Suspense Component={LazyLoginPage} fallback={<LoadingBackdrop />} />, path: PATHNAME_LOGIN },
+  { element: <Suspense Component={LazyRegistrationPage} fallback={<LoadingBackdrop />} />, path: PATHNAME_REGISTRATION }
 ]);
