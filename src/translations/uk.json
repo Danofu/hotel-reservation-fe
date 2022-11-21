@@ -33,6 +33,17 @@
             "invalid": "Вкажіть пароль з щонайменше 6 символів"
           }
         }
+      },
+      "registration": {
+        "labels": {
+          "confirm-password": "Підтвердіть пароль",
+          "email": "Електронна пошта",
+          "family-name": "Прізвище",
+          "given-name": "Ім'я",
+          "password": "Пароль",
+          "submit": "Надіслати"
+        },
+        "errors": {}
       }
     },
     "header": {

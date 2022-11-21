@@ -33,6 +33,17 @@
             "invalid": "Podaj hasło z co najmniej 6 symbolami"
           }
         }
+      },
+      "registration": {
+        "labels": {
+          "confirm-password": "Potwierdź hasło",
+          "email": "Email",
+          "family-name": "Nazwisko",
+          "given-name": "Imię",
+          "password": "Hasło",
+          "submit": "Prześlij"
+        },
+        "errors": {}
       }
     },
     "header": {

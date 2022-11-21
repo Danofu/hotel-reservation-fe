@@ -13,7 +13,7 @@ export type Props = FormControlProps & {
   EndAdornmentProps?: InputAdornmentProps;
   ErrorHelperTextProps?: FormHelperTextProps;
   EyeButtonProps?: VisibilityButtonProps;
-  InputProps: FilledInputProps | InputProps | OutlinedInputProps;
+  InputProps?: FilledInputProps | InputProps | OutlinedInputProps;
   LabelProps?: InputLabelProps;
   errorText?: ReactNode;
   label: ReactNode;

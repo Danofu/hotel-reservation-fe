@@ -33,6 +33,17 @@
             "invalid": "Provide a password with at least 6 symbols"
           }
         }
+      },
+      "registration": {
+        "labels": {
+          "confirm-password": "Confirm password",
+          "email": "Email",
+          "family-name": "Family name",
+          "given-name": "Given name",
+          "password": "Password",
+          "submit": "Submit"
+        },
+        "errors": {}
       }
     },
     "header": {

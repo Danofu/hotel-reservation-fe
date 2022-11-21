@@ -1,4 +1,5 @@
 import Checkbox from '@mui/material/Checkbox';
+import Fade from '@mui/material/Fade';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import LoadingButton from '@mui/lab/LoadingButton';
 import React, { FC } from 'react';
@@ -37,7 +38,7 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
       <PasswordField
         EyeButtonProps={{
           IconProps: { color: 'primary' },
-          TooltipProps: { arrow: true, placement: 'right' },
+          TooltipProps: { TransitionComponent: Fade, placement: 'right' },
           edge: 'end',
         }}
         InputProps={{ autoComplete: 'current-password', name: 'password', onBlur: handleBlur, value: values.password }}
