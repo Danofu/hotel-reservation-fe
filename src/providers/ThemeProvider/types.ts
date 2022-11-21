@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { colorModes } from 'providers/ThemeProvider/constants';
 
-export type Props = { children?: ReactNode };
+export type Props = PropsWithChildren;
 
 export type ColorMode = typeof colorModes[number];

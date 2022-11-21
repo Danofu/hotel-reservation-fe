@@ -1,3 +1,3 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
-export type Props = { children?: ReactNode };
+export type Props = PropsWithChildren;

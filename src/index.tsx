@@ -1,5 +1,3 @@
-// TODO: consider eslint-plugin-jsx-a11y
-
 import CssBaseline from '@mui/material/CssBaseline';
 import React, { StrictMode } from 'react';
 import { RouterProvider } from 'react-router-dom';
