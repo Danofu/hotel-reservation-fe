@@ -43,7 +43,22 @@
           "password": "Password",
           "submit": "Submit"
         },
-        "errors": {}
+        "errors": {
+          "confirm-password": {
+            "empty": "Confirm the above password",
+            "not-matched": "A confirm password should be equal to the password"
+          },
+          "email": {
+            "empty": "Provide an email",
+            "invalid": "Provide a valid email"
+          },
+          "family-name": "Provide a family name",
+          "given-name": "Provide a given name",
+          "password": {
+            "empty": "Provide a password",
+            "invalid": "Provide a password with at least 6 symbols"
+          }
+        }
       }
     },
     "header": {

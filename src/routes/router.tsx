@@ -36,5 +36,8 @@ export default createBrowserRouter([
     path: '/',
   },
   { element: <Suspense Component={LazyLoginPage} fallback={<LoadingBackdrop />} />, path: PATHNAME_LOGIN },
-  { element: <Suspense Component={LazyRegistrationPage} fallback={<LoadingBackdrop />} />, path: PATHNAME_REGISTRATION }
+  {
+    element: <Suspense Component={LazyRegistrationPage} fallback={<LoadingBackdrop />} />,
+    path: PATHNAME_REGISTRATION,
+  },
 ]);

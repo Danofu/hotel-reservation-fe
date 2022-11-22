@@ -43,7 +43,22 @@
           "password": "Hasło",
           "submit": "Prześlij"
         },
-        "errors": {}
+        "errors": {
+          "confirm-password": {
+            "empty": "Potwierdź powyższe hasło",
+            "not-matched": "Hasłu potwierdzającemu warto być równym hasłu"
+          },
+          "email": {
+            "empty": "Podaj email",
+            "invalid": "Podaj poprawny email"
+          },
+          "family-name": "Podaj nazwisko",
+          "given-name": "Podaj imię",
+          "password": {
+            "empty": "Podaj hasło",
+            "invalid": "Podaj hasło z co najmniej 6 symbolami"
+          }
+        }
       }
     },
     "header": {

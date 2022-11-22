@@ -1,10 +1,9 @@
 import Container from '@mui/material/Container';
 import React from 'react';
-import { Formik } from 'formik';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import InnerRegistrationForm from 'components/forms/RegistrationForm/InnerRegistrationForm';
+import RegistrationForm from 'components/forms/RegistrationForm';
 import { LOGO_TEXT_LONG } from 'app-globals';
 import { TPATH } from 'routes/RegistrationPage/constants';
 
@@ -17,11 +16,7 @@ const RegistrationPage = () => {
         <title>{t(`${TPATH}.title`, { textLogo: LOGO_TEXT_LONG })}</title>
       </Helmet>
       <Container sx={{ py: 3 }}>
-        <Formik
-          component={InnerRegistrationForm}
-          initialValues={{ email: '', password: '', 'confirm-password': '', 'family-name': '', 'given-name': '' }}
-          onSubmit={() => undefined}
-        />
+        <RegistrationForm onSubmit={() => undefined} />
       </Container>
     </>
   );

@@ -4,7 +4,10 @@ import { useTranslation } from 'react-i18next';
 
 import InnerAuthenticationForm from 'components/forms/AuthenticationForm/InnerAuthenticationForm';
 import { Props } from 'components/forms/AuthenticationForm/types';
-import { defaultInitialValues, defaultTranslatableValidationSchema } from 'components/forms/AuthenticationForm/constants';
+import {
+  defaultInitialValues,
+  defaultTranslatableValidationSchema,
+} from 'components/forms/AuthenticationForm/constants';
 
 const AuthenticationForm: FC<Props> = ({ initialValues = defaultInitialValues, validationSchema, ...props }) => {
   const { t } = useTranslation();
