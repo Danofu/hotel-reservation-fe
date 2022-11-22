@@ -19,47 +19,54 @@ const InnerAuthenticationForm: FC<Props> = ({ errors, handleBlur, handleChange, 
   const isPasswordValid = touched.password && !!errors.password;
 
   return (
-    <Stack component={Form} noValidate spacing={2}>
-      <TextField
-        autoComplete="email"
-        color="primary"
-        error={isEmailValid}
-        fullWidth
-        helperText={isEmailValid && errors.email}
-        label={t(`${TPATH}.labels.email`)}
-        margin="none"
-        name="email"
-        onBlur={handleBlur}
-        onChange={handleChange}
-        required
-        type="email"
-        value={values.email}
-      />
-      <PasswordField
-        EyeButtonProps={{
-          IconProps: { color: 'primary' },
-          TooltipProps: { TransitionComponent: Fade, placement: 'right' },
-          edge: 'end',
-        }}
-        InputProps={{ autoComplete: 'current-password', name: 'password', onBlur: handleBlur, value: values.password }}
-        color="primary"
-        error={isPasswordValid}
-        errorText={errors.password}
-        fullWidth
-        label={t(`${TPATH}.labels.password`)}
-        margin="none"
-        onChange={handleChange}
-        required
-        variant="outlined"
-      />
-      <FormControlLabel
-        control={<Checkbox checked={values.remember} color="primary" />}
-        label={t(`${TPATH}.labels.remember-me`)}
-        labelPlacement="start"
-        name="remember"
-        onBlur={handleBlur}
-        onChange={handleChange}
-      />
+    <Stack component={Form} noValidate spacing={6}>
+      <Stack spacing={2}>
+        <TextField
+          autoComplete="email"
+          color="primary"
+          error={isEmailValid}
+          fullWidth
+          helperText={isEmailValid && errors.email}
+          label={t(`${TPATH}.labels.email`)}
+          margin="none"
+          name="email"
+          onBlur={handleBlur}
+          onChange={handleChange}
+          required
+          type="email"
+          value={values.email}
+        />
+        <PasswordField
+          EyeButtonProps={{
+            IconProps: { color: 'primary' },
+            TooltipProps: { TransitionComponent: Fade, placement: 'right' },
+            edge: 'end',
+          }}
+          InputProps={{
+            autoComplete: 'current-password',
+            name: 'password',
+            onBlur: handleBlur,
+            value: values.password,
+          }}
+          color="primary"
+          error={isPasswordValid}
+          errorText={errors.password}
+          fullWidth
+          label={t(`${TPATH}.labels.password`)}
+          margin="none"
+          onChange={handleChange}
+          required
+          variant="outlined"
+        />
+        <FormControlLabel
+          control={<Checkbox checked={values.remember} color="primary" />}
+          label={t(`${TPATH}.labels.remember-me`)}
+          labelPlacement="start"
+          name="remember"
+          onBlur={handleBlur}
+          onChange={handleChange}
+        />
+      </Stack>
       <LoadingButton
         color="primary"
         disabled={isSubmitting}

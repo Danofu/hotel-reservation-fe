@@ -109,7 +109,8 @@
       "title": "Protected - {{textLogo}}"
     },
     "registration": {
-      "title": "Registration - {{textLogo}}"
+      "title": "Registration - {{textLogo}}",
+      "heading": "Authentication \uD83D\uDE3C"
     }
   }
 }

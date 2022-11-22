@@ -54,7 +54,7 @@ const LoginPage = () => {
           textAlign: 'center',
         }}
       >
-        <Paper elevation={3} sx={{ px: 5, py: 4, width: 500 }}>
+        <Paper elevation={3} sx={{ px: 5, py: 4, width: 600 }}>
           <Stack spacing={6}>
             <Typography component="h1" variant="h5">
               {t(`${TPATH}.heading`)}

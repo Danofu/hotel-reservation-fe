@@ -109,7 +109,8 @@
       "title": "Захищена - {{textLogo}}"
     },
     "registration": {
-      "title": "Реєстрація - {{textLogo}}"
+      "title": "Реєстрація - {{textLogo}}",
+      "heading": "Аутентифікація \uD83D\uDE3C"
     }
   }
 }

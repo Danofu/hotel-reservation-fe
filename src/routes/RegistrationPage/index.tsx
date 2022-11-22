@@ -1,5 +1,8 @@
 import Container from '@mui/material/Container';
+import Paper from '@mui/material/Paper';
 import React from 'react';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
@@ -15,8 +18,24 @@ const RegistrationPage = () => {
       <Helmet>
         <title>{t(`${TPATH}.title`, { textLogo: LOGO_TEXT_LONG })}</title>
       </Helmet>
-      <Container sx={{ py: 3 }}>
-        <RegistrationForm onSubmit={() => undefined} />
+      <Container
+        sx={{
+          alignItems: 'center',
+          display: 'flex',
+          height: '100vh',
+          justifyContent: 'center',
+          py: 3,
+          textAlign: 'center',
+        }}
+      >
+        <Paper elevation={3} sx={{ px: 5, py: 4, width: 600 }}>
+          <Stack spacing={6}>
+            <Typography component="h1" variant="h5">
+              {t(`${TPATH}.heading`)}
+            </Typography>
+            <RegistrationForm onSubmit={() => undefined} />
+          </Stack>
+        </Paper>
       </Container>
     </>
   );

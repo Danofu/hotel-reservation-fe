@@ -109,7 +109,8 @@
       "title": "Chroniona - {{textLogo}}"
     },
     "registration": {
-      "title": "Rejestracja - {{textLogo}}"
+      "title": "Rejestracja - {{textLogo}}",
+      "heading": "Autentykacja \uD83D\uDE3C"
     }
   }
 }
