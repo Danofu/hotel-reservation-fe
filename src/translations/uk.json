@@ -81,6 +81,13 @@
     "menus": {}
   },
   "pages": {
+    "authentication": {
+      "heading": "Аутентифікація \uD83D\uDE3C",
+      "title": "Аутентифікація - {{textLogo}}",
+      "toast": {
+        "failure": "Авторизація не вдалася"
+      }
+    },
     "error": {
       "description": {
         "404": "404 Сторінку не знайдено",
@@ -97,20 +104,13 @@
       "heading": "Головна Сторінка \uD83D\uDE3C",
       "title": "Головна - {{textLogo}}"
     },
-    "login": {
-      "heading": "Аутентифікація \uD83D\uDE3C",
-      "title": "Логін - {{textLogo}}",
-      "toast": {
-        "failure": "Авторизація не вдалася"
-      }
-    },
     "protected": {
       "heading": "Захищена Сторінка \uD83D\uDE3C",
       "title": "Захищена - {{textLogo}}"
     },
     "registration": {
       "title": "Реєстрація - {{textLogo}}",
-      "heading": "Аутентифікація \uD83D\uDE3C"
+      "heading": "Реєстрація \uD83D\uDE3C"
     }
   }
 }

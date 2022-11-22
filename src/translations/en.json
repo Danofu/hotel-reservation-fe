@@ -81,6 +81,13 @@
     "menus": {}
   },
   "pages": {
+    "authentication": {
+      "heading": "Authentication \uD83D\uDE3C",
+      "title": "Authentication - {{textLogo}}",
+      "toast": {
+        "failure": "Authorization failed"
+      }
+    },
     "error": {
       "description": {
         "404": "404 The page was not found",
@@ -97,20 +104,13 @@
       "heading": "Home Page \uD83D\uDE3C",
       "title": "Home - {{textLogo}}"
     },
-    "login": {
-      "heading": "Authentication \uD83D\uDE3C",
-      "title": "Login - {{textLogo}}",
-      "toast": {
-        "failure": "Authorization failed"
-      }
-    },
     "protected": {
       "heading": "Protected Page \uD83D\uDE3C",
       "title": "Protected - {{textLogo}}"
     },
     "registration": {
       "title": "Registration - {{textLogo}}",
-      "heading": "Authentication \uD83D\uDE3C"
+      "heading": "Registration \uD83D\uDE3C"
     }
   }
 }

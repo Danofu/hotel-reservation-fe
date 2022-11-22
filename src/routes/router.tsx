@@ -8,7 +8,7 @@ import {
   LazyAppLayout,
   LazyErrorPage,
   LazyHomePage,
-  LazyLoginPage,
+  LazyAuthenticationPage,
   LazyProtectedPage,
   LazyRegistrationPage,
 } from 'routes/constants';
@@ -35,7 +35,7 @@ export default createBrowserRouter([
     errorElement: <Suspense Component={LazyErrorPage} fallback={<LoadingBackdrop />} />,
     path: '/',
   },
-  { element: <Suspense Component={LazyLoginPage} fallback={<LoadingBackdrop />} />, path: PATHNAME_LOGIN },
+  { element: <Suspense Component={LazyAuthenticationPage} fallback={<LoadingBackdrop />} />, path: PATHNAME_LOGIN },
   {
     element: <Suspense Component={LazyRegistrationPage} fallback={<LoadingBackdrop />} />,
     path: PATHNAME_REGISTRATION,

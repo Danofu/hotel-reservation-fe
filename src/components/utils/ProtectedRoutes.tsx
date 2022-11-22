@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
-import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
+import { AuthContext } from 'providers/AuthProvider/constants';
 
 const ProtectedRoutes = () => {
-  const { isAuthorized } = useContext(AuthorizationContext);
+  const { isAuthorized } = useContext(AuthContext);
   const { pathname } = useLocation();
 
   return isAuthorized ? <Outlet /> : <Navigate replace to={`/login?callbackUrl=${encodeURI(pathname)}`} />;

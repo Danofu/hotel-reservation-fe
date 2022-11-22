@@ -10,13 +10,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import AuthenticationForm, { IAuthenticationFormValues } from 'components/forms/AuthenticationForm';
-import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
+import { AuthContext } from 'providers/AuthProvider/constants';
 import { LOGO_TEXT_LONG } from 'app-globals';
-import { TPATH } from 'routes/LoginPage/constants';
+import { TPATH } from 'routes/AuthenticationPage/constants';
 
-const LoginPage = () => {
+const AuthenticationPage = () => {
   const navigate = useNavigate();
-  const { isAuthorized, login } = useContext(AuthorizationContext);
+  const { isAuthorized, login } = useContext(AuthContext);
   const { search: rawSearch } = useLocation();
   const { t } = useTranslation();
 
@@ -67,4 +67,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default AuthenticationPage;

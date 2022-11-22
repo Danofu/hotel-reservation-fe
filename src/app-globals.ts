@@ -22,7 +22,7 @@ export const PATHNAME_HOME = '/home';
  * The URL path name to the login "page".
  * @category URLs
  */
-export const PATHNAME_LOGIN = '/login';
+export const PATHNAME_LOGIN = '/authentication';
 /**
  * The URL path name to the protected "page".
  * @category URLs

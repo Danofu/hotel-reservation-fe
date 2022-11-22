@@ -18,12 +18,12 @@ import Navigation from 'components/Navigation';
 import ButtonNavLink from 'components/buttons/ButtonNavLink';
 import ProfileMenu from 'components/menus/ProfileMenu';
 import Spacer from 'components/utils/Spacer';
-import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
+import { AuthContext } from 'providers/AuthProvider/constants';
 import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_REGISTRATION } from 'app-globals';
 import { TPATH, translatableNavLinks } from 'components/Header/constants';
 
 const Header = () => {
-  const { isAuthorized } = useContext(AuthorizationContext);
+  const { isAuthorized } = useContext(AuthContext);
   const { t } = useTranslation();
 
   return (

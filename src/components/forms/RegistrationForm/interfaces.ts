@@ -1,7 +1,7 @@
 export interface IValues {
-  'confirm-password': string;
-  'family-name': string;
-  'given-name': string;
+  confirmPassword: string;
   email: string;
+  familyName: string;
+  givenName: string;
   password: string;
 }

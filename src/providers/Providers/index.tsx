@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import AuthorizationProvider from 'providers/AuthorizationProvider';
+import AuthorizationProvider from 'providers/AuthProvider';
 import ThemeProvider from 'providers/ThemeProvider';
 import { Props } from 'providers/Providers/types';
 

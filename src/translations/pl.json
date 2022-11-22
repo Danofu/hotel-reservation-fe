@@ -81,6 +81,13 @@
     "menus": {}
   },
   "pages": {
+    "authentication": {
+      "heading": "Autentykacja \uD83D\uDE3C",
+      "title": "Autentykacja - {{textLogo}}",
+      "toast": {
+        "failure": "Autoryzacja nie powiodła się"
+      }
+    },
     "error": {
       "description": {
         "404": "404 Strona nie została znaleziona",
@@ -97,20 +104,13 @@
       "heading": "Strona Główna \uD83D\uDE3C",
       "title": "Główna - {{textLogo}}"
     },
-    "login": {
-      "heading": "Autentykacja \uD83D\uDE3C",
-      "title": "Logowanie - {{textLogo}}",
-      "toast": {
-        "failure": "Autoryzacja nie powiodła się"
-      }
-    },
     "protected": {
       "heading": "Strona Chroniona \uD83D\uDE3C",
       "title": "Chroniona - {{textLogo}}"
     },
     "registration": {
       "title": "Rejestracja - {{textLogo}}",
-      "heading": "Autentykacja \uD83D\uDE3C"
+      "heading": "Rejestracja \uD83D\uDE3C"
     }
   }
 }

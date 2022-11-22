@@ -1,8 +1,8 @@
 import React, { FC, useCallback, useMemo, useState } from 'react';
 
-import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
-import { IContext } from 'providers/AuthorizationProvider/interfaces';
-import { Props } from 'providers/AuthorizationProvider/types';
+import { AuthContext } from 'providers/AuthProvider/constants';
+import { IContext } from 'providers/AuthProvider/interfaces';
+import { Props } from 'providers/AuthProvider/types';
 import { STORAGE_USER_TOKEN } from 'app-globals';
 import { getStorageItem, removeStorageItem, sleep } from 'utils';
 
@@ -32,10 +32,10 @@ const AuthorizationProvider: FC<Props> = ({ children }) => {
 
   const value = useMemo<IContext>(() => ({ isAuthorized, login, logout }), [isAuthorized]);
 
-  return <AuthorizationContext.Provider value={value}>{children}</AuthorizationContext.Provider>;
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export default AuthorizationProvider;
 
-export type AuthorizationProps = Props;
-export type IAuthorizationContext = IContext;
+export type AuthProps = Props;
+export type IAuthContext = IContext;

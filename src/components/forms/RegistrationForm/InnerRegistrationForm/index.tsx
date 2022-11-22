@@ -13,10 +13,10 @@ import { TPATH } from 'components/forms/RegistrationForm/InnerRegistrationForm/c
 const InnerRegistrationForm: FC<Props> = ({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => {
   const { t } = useTranslation();
 
-  const isConfirmPasswordValid = touched['confirm-password'] && !!errors['confirm-password'];
+  const isConfirmPasswordValid = touched.confirmPassword && !!errors.confirmPassword;
   const isEmailValid = touched.email && !!errors.email;
-  const isFamilyNameValid = touched['family-name'] && !!errors['family-name'];
-  const isGivenNameValid = touched['given-name'] && !!errors['given-name'];
+  const isFamilyNameValid = touched.familyName && !!errors.familyName;
+  const isGivenNameValid = touched.givenName && !!errors.givenName;
   const isPasswordValid = touched.password && !!errors.password;
 
   return (
@@ -28,30 +28,30 @@ const InnerRegistrationForm: FC<Props> = ({ errors, handleBlur, handleChange, is
             color="primary"
             error={isGivenNameValid}
             fullWidth
-            helperText={isGivenNameValid && errors['given-name']}
+            helperText={isGivenNameValid && errors.givenName}
             label={t(`${TPATH}.labels.given-name`)}
             margin="none"
-            name="given-name"
+            name="givenName"
             onBlur={handleBlur}
             onChange={handleChange}
             required
             type="text"
-            value={values['given-name']}
+            value={values.givenName}
           />
           <TextField
             autoComplete="family-name"
             color="primary"
             error={isFamilyNameValid}
             fullWidth
-            helperText={isFamilyNameValid && errors['family-name']}
+            helperText={isFamilyNameValid && errors.familyName}
             label={t(`${TPATH}.labels.family-name`)}
             margin="none"
-            name="family-name"
+            name="familyName"
             onBlur={handleBlur}
             onChange={handleChange}
             required
             type="text"
-            value={values['family-name']}
+            value={values.familyName}
           />
         </Stack>
         <TextField
@@ -94,13 +94,13 @@ const InnerRegistrationForm: FC<Props> = ({ errors, handleBlur, handleChange, is
           }}
           InputProps={{
             autoComplete: 'new-password',
-            name: 'confirm-password',
+            name: 'confirmPassword',
             onBlur: handleBlur,
-            value: values['confirm-password'],
+            value: values.confirmPassword,
           }}
           color="primary"
           error={isConfirmPasswordValid}
-          errorText={errors['confirm-password']}
+          errorText={errors.confirmPassword}
           fullWidth
           label={t(`${TPATH}.labels.confirm-password`)}
           margin="none"

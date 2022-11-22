@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import React, { FC, MouseEvent, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AuthorizationContext } from 'providers/AuthorizationProvider/constants';
+import { AuthContext } from 'providers/AuthProvider/constants';
 import { Props } from 'components/menu-items/LogoutMenuItem/types';
 import { TPATH } from 'components/menu-items/LogoutMenuItem/constants';
 
@@ -16,7 +16,7 @@ const LogoutMenuItem: FC<Props> = ({
   onClick = () => undefined,
   ...props
 }) => {
-  const { logout } = useContext(AuthorizationContext);
+  const { logout } = useContext(AuthContext);
   const { t } = useTranslation();
 
   const handleItemClick = (event: MouseEvent<HTMLLIElement>) => {

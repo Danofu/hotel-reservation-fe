@@ -26,5 +26,5 @@ const AuthenticationForm: FC<Props> = ({ initialValues = defaultInitialValues, v
 
 export default AuthenticationForm;
 
-export type AuthenticationForm = Props;
+export type AuthenticationFormProps = Props;
 export type { IValues as IAuthenticationFormValues } from 'components/forms/AuthenticationForm/interfaces';
