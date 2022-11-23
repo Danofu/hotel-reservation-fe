@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useMemo, useState } from 'react';
-
+import axios from 'axios';
 import { AuthContext } from 'providers/AuthProvider/constants';
 import { IContext } from 'providers/AuthProvider/interfaces';
 import { Props } from 'providers/AuthProvider/types';
@@ -11,18 +11,23 @@ const AuthorizationProvider: FC<Props> = ({ children }) => {
 
   const login = useCallback(async (email: string, password: string, remember: boolean) => {
     // NOTE: fake request
-    await sleep(2 * 1000);
+    const body: {email: string, password: string} = {email, password};
+    const url = "http://localhost:8081/api/auth/login";
+    try {
+      const response = await axios.post(url, body, {method: 'post', })
 
-    if (email === 'danofu13@gmail.com' && password === '752984136') {
-      const storage = remember ? localStorage : sessionStorage;
+      if(response.statusText !== 'OK') {
+        return false;
+      }
 
-      storage.setItem(STORAGE_USER_TOKEN, 'mock-token');
+      const token: string = response.data.token;
+      localStorage.setItem(STORAGE_USER_TOKEN, token);
       setIsAuthorized(true);
-
       return true;
+    } catch (e) {
+      console.log(e);
+      return false;
     }
-
-    return false;
   }, []);
 
   const logout = useCallback(() => {

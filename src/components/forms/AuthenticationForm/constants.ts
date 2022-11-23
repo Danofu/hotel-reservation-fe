@@ -14,6 +14,6 @@ export const defaultTranslatableValidationSchema = (t: TFunction) =>
       .email(ntu(t(`${TPATH}.errors.email.invalid`))),
     password: Yup.string()
       .required(ntu(t(`${TPATH}.errors.password.empty`)))
-      .min(6, ntu(t(`${TPATH}.errors.password.invalid`))),
+      .min(4, ntu(t(`${TPATH}.errors.password.invalid`))),
     remember: Yup.boolean(),
   });
