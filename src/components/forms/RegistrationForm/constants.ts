@@ -3,7 +3,7 @@ import { TFunction } from 'i18next';
 
 import { ntu } from 'utils';
 
-export const TPATH = 'components.forms.register';
+export const TPATH = 'components.forms.registration';
 
 export const defaultInitialValues = {
   confirmPassword: '',
