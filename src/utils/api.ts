@@ -2,6 +2,8 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({ baseURL: process.env.REACT_APP_API_URL, timeout: 30 * 1000 });
 
+type AuthenticateUserResponse = { message: string; token: string };
+
 /**
  * Authenticates a user for the given `email` and `password`. Throws an error if request is invalid.
  *
@@ -14,4 +16,4 @@ const axiosInstance = axios.create({ baseURL: process.env.REACT_APP_API_URL, tim
  * @category API
  */
 export const authenticateUser = async (email: string, password: string) =>
-  axiosInstance.post('/api/auth/login', { email, password });
+  axiosInstance.post<AuthenticateUserResponse>('/api/auth/login', { email, password });
