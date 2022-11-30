@@ -59,7 +59,10 @@ const AuthenticationPage = () => {
             <Typography component="h1" variant="h5">
               {t(`${TPATH}.heading`)}
             </Typography>
-            <AuthenticationForm onSubmit={handleSubmit} />
+            <AuthenticationForm
+              initialValues={{ email: 'irene.richie@gmail.com', password: '752984136', remember: false }}
+              onSubmit={handleSubmit}
+            />
           </Stack>
         </Paper>
       </Container>

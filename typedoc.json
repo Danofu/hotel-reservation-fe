@@ -19,6 +19,9 @@
     "@types/react": {
       "ReactElement": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts#L141"
     },
+    "axios": {
+      "AxiosResponse": "https://github.com/axios/axios/blob/v1.x/index.d.ts#L348"
+    },
     "global": {
       "Exclude": "https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers",
       "Omit": "https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys",
