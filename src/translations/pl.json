@@ -109,8 +109,17 @@
       "title": "Chroniona - {{textLogo}}"
     },
     "registration": {
+      "form-errors": {
+        "email": {
+          "duplicate": "Podany email już istnieje"
+        }
+      },
+      "heading": "Rejestracja \uD83D\uDE3C",
       "title": "Rejestracja - {{textLogo}}",
-      "heading": "Rejestracja \uD83D\uDE3C"
+      "toast": {
+        "failure": "Rejestracja nie powiodła się",
+        "success": "Udało Ci się zarejestrować pomyślnie"
+      }
     }
   }
 }

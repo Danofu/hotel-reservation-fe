@@ -109,8 +109,17 @@
       "title": "Захищена - {{textLogo}}"
     },
     "registration": {
+      "form-errors": {
+        "email": {
+          "duplicate": "Вказана електронна адреса вже існує"
+        }
+      },
+      "heading": "Реєстрація \uD83D\uDE3C",
       "title": "Реєстрація - {{textLogo}}",
-      "heading": "Реєстрація \uD83D\uDE3C"
+      "toast": {
+        "failure": "Реєстрація не вдалася",
+        "success": "Ви успішно зареєструвалися"
+      }
     }
   }
 }

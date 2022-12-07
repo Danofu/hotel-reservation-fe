@@ -45,9 +45,9 @@ export const authenticateUser = async (email: string, password: string) =>
  * @category API
  */
 export const registerUser = async ({ email, familyName, givenName, password }: RegisterUserArgs) =>
-  axiosInstance.post<RegisterUserResponse>('/api/auth/login', {
+  axiosInstance.post<RegisterUserResponse>('/api/auth/registration', {
     email,
-    firstName: givenName,
-    lastName: familyName,
+    firstname: givenName,
+    lastname: familyName,
     password,
   });

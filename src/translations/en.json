@@ -109,8 +109,17 @@
       "title": "Protected - {{textLogo}}"
     },
     "registration": {
+      "form-errors": {
+        "email": {
+          "duplicate": "The provided email already exists"
+        }
+      },
+      "heading": "Registration \uD83D\uDE3C",
       "title": "Registration - {{textLogo}}",
-      "heading": "Registration \uD83D\uDE3C"
+      "toast": {
+        "failure": "Registration failed",
+        "success": "You're successfully registered"
+      }
     }
   }
 }
