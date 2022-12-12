@@ -47,7 +47,7 @@ export const authenticateUser = async (email: string, password: string) =>
 export const registerUser = async ({ email, familyName, givenName, password }: RegisterUserArgs) =>
   axiosInstance.post<RegisterUserResponse>('/api/auth/registration', {
     email,
-    firstname: givenName,
-    lastname: familyName,
+    first_name: givenName,
+    last_name: familyName,
     password,
   });
