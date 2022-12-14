@@ -2,6 +2,8 @@
  * The application global declarations.
  * @module Globals
  */
+import axios from 'axios';
+
 /**
  * The text logo of the application.
  * @category Logo
@@ -57,3 +59,5 @@ export const STORAGE_USER_TOKEN = 'user.auth-token';
  * @typeParam K - the properties that will be optional in the object
  */
 export type OptionalKeys<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
+
+export const AXIOS_MAIN_INSTANCE = axios.create({ baseURL: process.env.REACT_APP_API_URL, timeout: 30 * 1000 });
