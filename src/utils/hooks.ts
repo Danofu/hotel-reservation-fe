@@ -3,6 +3,18 @@ import { useEffect, useState } from 'react';
 
 import { AXIOS_MAIN_INSTANCE } from 'app-globals';
 
+/**
+ * The utility react hook that uses axios instance to fetch data from the given URL.
+ *
+ * @template T
+ * @typeParam T - type of the axios response
+ * @param url - the URL to fetch from
+ * @param config - the config of the `instance`
+ * @param instance - the instance of the {@link https://axios-http.com/docs/intro | axios}
+ * @returns The object with **data** from URL response, **error** from response (if their any) and **fetching** state.
+ *
+ * @category Hooks
+ */
 export const useAxios = <T>(
   url: string,
   config?: AxiosRequestConfig,

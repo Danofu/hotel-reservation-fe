@@ -60,4 +60,8 @@ export const STORAGE_USER_TOKEN = 'user.auth-token';
  */
 export type OptionalKeys<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 
+/**
+ * The instance of {@link https://axios-http.com/docs/intro | axios} with the main API base URL.
+ * @category Axios
+ */
 export const AXIOS_MAIN_INSTANCE = axios.create({ baseURL: process.env.REACT_APP_API_URL, timeout: 30 * 1000 });

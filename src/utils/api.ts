@@ -1,8 +1,7 @@
-import axios from 'axios';
-
-const axiosInstance = axios.create({ baseURL: process.env.REACT_APP_API_URL, timeout: 30 * 1000 });
+import { AXIOS_MAIN_INSTANCE } from 'app-globals';
 
 type AuthenticateUserResponse = { message: string; token: string };
+type RegisterUserResponse = { message: string };
 
 /**
  * The arguments type of the utility function {@link registerUser}.
@@ -19,7 +18,6 @@ export type RegisterUserArgs = {
   /** the password of the user */
   password: string;
 };
-type RegisterUserResponse = { message: string };
 
 /**
  * Authenticates a user for the given `email` and `password`. Throws an error if request is invalid.
@@ -33,7 +31,7 @@ type RegisterUserResponse = { message: string };
  * @category API
  */
 export const authenticateUser = async (email: string, password: string) =>
-  axiosInstance.post<AuthenticateUserResponse>('/api/auth/login', { email, password });
+  AXIOS_MAIN_INSTANCE.post<AuthenticateUserResponse>('/api/auth/login', { email, password });
 
 /**
  * Registers the user with the given data. Throws an error if request is invalid.
@@ -45,7 +43,7 @@ export const authenticateUser = async (email: string, password: string) =>
  * @category API
  */
 export const registerUser = async ({ email, familyName, givenName, password }: RegisterUserArgs) =>
-  axiosInstance.post<RegisterUserResponse>('/api/auth/registration', {
+  AXIOS_MAIN_INSTANCE.post<RegisterUserResponse>('/api/auth/registration', {
     email,
     first_name: givenName,
     last_name: familyName,
