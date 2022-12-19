@@ -78,7 +78,12 @@
         "title": "Wyloguj"
       }
     },
-    "menus": {}
+    "menus": {},
+    "room": {
+      "book": "Zarezerwuj",
+      "peopleAmount": "Osób: {{amount}}",
+      "price": "Cena: {{price}}"
+    }
   },
   "pages": {
     "authentication": {

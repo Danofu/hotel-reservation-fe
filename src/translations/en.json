@@ -78,7 +78,12 @@
         "title": "Logout"
       }
     },
-    "menus": {}
+    "menus": {},
+    "room": {
+      "book": "Book",
+      "peopleAmount": "People: {{amount}}",
+      "price": "Price: {{price}}"
+    }
   },
   "pages": {
     "authentication": {
