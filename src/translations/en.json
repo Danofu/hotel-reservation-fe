@@ -106,7 +106,8 @@
       }
     },
     "home": {
-      "heading": "Home Page \uD83D\uDE3C",
+      "heading": "Rooms",
+      "noContent": "No Available Rooms",
       "title": "Home - {{textLogo}}"
     },
     "protected": {

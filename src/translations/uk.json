@@ -106,7 +106,8 @@
       }
     },
     "home": {
-      "heading": "Головна Сторінка \uD83D\uDE3C",
+      "heading": "Кімнати",
+      "noContent": "Немає Доступних Кімнат",
       "title": "Головна - {{textLogo}}"
     },
     "protected": {

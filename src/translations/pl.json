@@ -106,7 +106,8 @@
       }
     },
     "home": {
-      "heading": "Strona Główna \uD83D\uDE3C",
+      "heading": "Pokoje",
+      "noContent": "Brak Dostępnych Pokojów",
       "title": "Główna - {{textLogo}}"
     },
     "protected": {
