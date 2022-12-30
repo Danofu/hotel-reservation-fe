@@ -3,7 +3,7 @@
  * @module Utils
  */
 export * from 'utils/api';
-export * from 'utils/hooks'
+export * from 'utils/hooks';
 export * from 'utils/pop';
 export * from 'utils/storage';
 export { default as ntu } from 'utils/ntu';

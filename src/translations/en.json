@@ -79,6 +79,7 @@
       }
     },
     "menus": {},
+    "modals": {},
     "room": {
       "book": "Book",
       "peopleAmount": "People: {{amount}}",
@@ -108,6 +109,12 @@
     "home": {
       "heading": "Rooms",
       "noContent": "No Available Rooms",
+      "reservation-modal": {
+        "button": "Book",
+        "check-in-field-label": "Check In",
+        "check-out-field-label": "Check Out",
+        "header": "Chose check in and out date time"
+      },
       "title": "Home - {{textLogo}}"
     },
     "protected": {

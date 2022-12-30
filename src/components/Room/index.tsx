@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { Props } from 'components/Room/types';
 import { TPATH } from 'components/Room/constants';
 
-const Room: FC<Props> = ({ description, header, peopleAmount, price }) => {
+const Room: FC<Props> = ({ description, header, onClick, peopleAmount, price }) => {
   const [isTextExpanded, setIsTextExpanded] = useState(false);
   const { t } = useTranslation();
 
@@ -48,7 +48,7 @@ const Room: FC<Props> = ({ description, header, peopleAmount, price }) => {
         </Stack>
       </CardContent>
       <CardActions>
-        <Button>{t(`${TPATH}.book`)}</Button>
+        <Button onClick={onClick}>{t(`${TPATH}.book`)}</Button>
       </CardActions>
     </Card>
   );
