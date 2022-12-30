@@ -108,6 +108,12 @@
     "home": {
       "heading": "Pokoje",
       "noContent": "Brak Dostępnych Pokojów",
+      "reservation-modal": {
+        "button": "Zarezerwuj",
+        "check-in-field-label": "Przyjazd",
+        "check-out-field-label": "Wyjazd",
+        "header": "Wybierz daty przyjazdu i wyjazdu"
+      },
       "title": "Główna - {{textLogo}}"
     },
     "protected": {

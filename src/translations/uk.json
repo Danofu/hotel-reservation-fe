@@ -108,6 +108,12 @@
     "home": {
       "heading": "Кімнати",
       "noContent": "Немає Доступних Кімнат",
+      "reservation-modal": {
+        "button": "Забронювати",
+        "check-in-field-label": "В'їзд",
+        "check-out-field-label": "Виїзд",
+        "header": "Оберіть час в'їзду та виїзду"
+      },
       "title": "Головна - {{textLogo}}"
     },
     "protected": {
