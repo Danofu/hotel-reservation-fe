@@ -2,4 +2,4 @@ import { PropsWithChildren } from 'react';
 
 export type Props = PropsWithChildren;
 
-export type UserData = { user: { first_name: string; last_name: string; email: string } };
+export type UserData = { user: { email: string; first_name: string; id: number; last_name: string } };

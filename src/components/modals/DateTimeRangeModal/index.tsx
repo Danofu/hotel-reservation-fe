@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import LoadingButton from '@mui/lab/LoadingButton';
 import Modal from '@mui/material/Modal';
 import React, { FC } from 'react';
 import Stack from '@mui/material/Stack';
@@ -17,11 +17,13 @@ const DateTimeRangeModal: FC<Props> = ({
   ContentWrapperProps,
   FieldsWrapperProps,
   FromDateTimePickerProps,
+  FromRenderInputProps,
   HeaderProps,
   LocalizationProviderProps,
   PaperProps,
   PaperSx,
   ToDateTimePickerProps,
+  ToRenderInputProps,
   ...props
 }) => (
   <Modal container={modalContainer} {...props}>
@@ -42,16 +44,16 @@ const DateTimeRangeModal: FC<Props> = ({
         <LocalizationProvider dateAdapter={AdapterMoment} {...LocalizationProviderProps}>
           <Stack direction="row" spacing={3} {...FieldsWrapperProps}>
             <DateTimePicker
-              renderInput={(props: TextFieldProps) => <TextField {...props} />}
+              renderInput={(props: TextFieldProps) => <TextField {...props} {...FromRenderInputProps} />}
               {...FromDateTimePickerProps}
             />
             <DateTimePicker
-              renderInput={(props: TextFieldProps) => <TextField {...props} />}
+              renderInput={(props: TextFieldProps) => <TextField {...props} {...ToRenderInputProps} />}
               {...ToDateTimePickerProps}
             />
           </Stack>
         </LocalizationProvider>
-        <Button variant="contained" {...ButtonProps} />
+        <LoadingButton variant="contained" {...ButtonProps} />
       </Stack>
     </Box>
   </Modal>

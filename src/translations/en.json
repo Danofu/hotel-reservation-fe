@@ -111,9 +111,34 @@
       "noContent": "No Available Rooms",
       "reservation-modal": {
         "button": "Book",
-        "check-in-field-label": "Check In",
-        "check-out-field-label": "Check Out",
-        "header": "Chose check in and out date time"
+        "form": {
+          "errors": {
+            "check-in": {
+              "afterCheckOut": "Check-in date should be before the check-out date",
+              "empty": "Provide a check-in date",
+              "invalid": "Provide a valid check-in date"
+            },
+            "check-out": {
+              "beforeCheckOut": "Check-out date should be after the check-in date",
+              "empty": "Provide a check-out date",
+              "invalid": "Provide a valid check-out date"
+            }
+          },
+          "labels": {
+            "check-in": "Check-in",
+            "check-out": "Check-out"
+          }
+        },
+        "header": "Chose check-in and check-out date times",
+        "toasts": {
+          "reservation": {
+            "failed": "Reservation failed",
+            "incomplete-dates": "Select both check-in and check-out dates",
+            "no-room-selected": "Room wasn't selected",
+            "not-authorized": "Authorize before booking",
+            "success": "You successfully reserve the room"
+          }
+        }
       },
       "title": "Home - {{textLogo}}"
     },

@@ -10,7 +10,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import AuthenticationForm, { IAuthenticationFormValues } from 'components/forms/AuthenticationForm';
-import { AuthContext } from 'providers/AuthProvider/constants';
+import { AuthContext } from 'providers/AuthProvider';
 import { LOGO_TEXT_LONG } from 'app-globals';
 import { TPATH } from 'routes/AuthenticationPage/constants';
 

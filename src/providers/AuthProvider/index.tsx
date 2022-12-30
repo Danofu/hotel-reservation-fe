@@ -47,6 +47,8 @@ const AuthorizationProvider: FC<Props> = ({ children }) => {
 
 export default AuthorizationProvider;
 
+export { AuthContext };
+
 export type AuthProps = Props;
 export type AuthUser = UserData['user'];
 export type IAuthContext = IContext;

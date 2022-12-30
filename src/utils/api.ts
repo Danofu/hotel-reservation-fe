@@ -27,9 +27,9 @@ export type CreateRoomReservationData = {
   /** the check-out date of the reservation */
   checkOutDate: string;
   /** the id of the room */
-  roomId: string;
+  roomId: number;
   /** the id of the user */
-  userId: string;
+  userId: number;
 };
 
 /**

@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import React, { FC, MouseEvent, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AuthContext } from 'providers/AuthProvider/constants';
+import { AuthContext } from 'providers/AuthProvider';
 import { Props } from 'components/menu-items/LogoutMenuItem/types';
 import { TPATH } from 'components/menu-items/LogoutMenuItem/constants';
 

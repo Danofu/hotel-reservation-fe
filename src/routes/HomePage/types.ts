@@ -1,3 +1,5 @@
+import { Moment } from 'moment/moment';
+
 export type Room = {
   cena: number;
   dodatkowa_informacja: string;
@@ -6,3 +8,8 @@ export type Room = {
   ilosc_mieszkan: number;
   kategorja: string;
 };
+
+export interface ModalFormValues {
+  checkIn: Moment | null;
+  checkOut: Moment | null;
+}

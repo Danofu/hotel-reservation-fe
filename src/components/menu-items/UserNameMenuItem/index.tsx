@@ -2,7 +2,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import React, { FC, useContext } from 'react';
 
-import { AuthContext } from 'providers/AuthProvider/constants';
+import { AuthContext } from 'providers/AuthProvider';
 import { Props, Props as UserNameMenuItemProps } from 'components/menu-items/UserNameMenuItem/types';
 
 const UserNameMenuItem: FC<Props> = ({ ListItemTextProps, ...props }) => {

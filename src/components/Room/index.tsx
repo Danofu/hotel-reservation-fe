@@ -2,11 +2,12 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import React, { FC, useState } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
 
+import { AuthContext } from 'providers/AuthProvider';
 import { Props } from 'components/Room/types';
 import { TPATH } from 'components/Room/constants';
 
@@ -26,6 +27,7 @@ const Room: FC<Props> = ({
   ...props
 }) => {
   const [isTextExpanded, setIsTextExpanded] = useState(false);
+  const { isAuthorized } = useContext(AuthContext);
   const { t } = useTranslation();
 
   const handleTextExpand = () => setIsTextExpanded((prevState) => !prevState);
@@ -63,9 +65,11 @@ const Room: FC<Props> = ({
           </Typography>
         </Stack>
       </CardContent>
-      <CardActions {...CardActionsProps}>
-        <Button {...BookButtonProps}>{t(`${TPATH}.book`)}</Button>
-      </CardActions>
+      {isAuthorized && (
+        <CardActions {...CardActionsProps}>
+          <Button {...BookButtonProps}>{t(`${TPATH}.book`)}</Button>
+        </CardActions>
+      )}
     </Card>
   );
 };
