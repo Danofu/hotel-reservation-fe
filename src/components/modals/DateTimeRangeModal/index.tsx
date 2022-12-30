@@ -14,8 +14,13 @@ import { modalContainer } from 'components/modals/DateTimeRangeModal/constants';
 
 const DateTimeRangeModal: FC<Props> = ({
   ButtonProps,
+  ContentWrapperProps,
+  FieldsWrapperProps,
   FromDateTimePickerProps,
   HeaderProps,
+  LocalizationProviderProps,
+  PaperProps,
+  PaperSx,
   ToDateTimePickerProps,
   ...props
 }) => (
@@ -28,13 +33,14 @@ const DateTimeRangeModal: FC<Props> = ({
       minWidth={400}
       p={4}
       position="absolute"
-      sx={{ translate: '-50% -50%' }}
+      sx={{ translate: '-50% -50%', ...PaperSx }}
       top="50%"
+      {...PaperProps}
     >
-      <Stack spacing={3}>
+      <Stack spacing={3} {...ContentWrapperProps}>
         <Typography align="center" component="h1" variant="h5" {...HeaderProps} />
-        <LocalizationProvider dateAdapter={AdapterMoment}>
-          <Stack direction="row" spacing={3}>
+        <LocalizationProvider dateAdapter={AdapterMoment} {...LocalizationProviderProps}>
+          <Stack direction="row" spacing={3} {...FieldsWrapperProps}>
             <DateTimePicker
               renderInput={(props: TextFieldProps) => <TextField {...props} />}
               {...FromDateTimePickerProps}
