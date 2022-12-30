@@ -18,7 +18,7 @@ const HomePage = () => {
   const { data: rooms } = useAxios<RoomType[]>('/api/kategorja/getAllPokoj');
   const { t } = useTranslation();
 
-  const handleRoomClick = () => setIsModalOpen(true);
+  const handleRoomBookClick = () => setIsModalOpen(true);
 
   const handleModalClose = () => setIsModalOpen(false);
 
@@ -36,9 +36,9 @@ const HomePage = () => {
           {rooms.map((room) => (
             <Grid item key={room.id} xs={3}>
               <Room
+                BookButtonProps={{ onClick: handleRoomBookClick }}
                 description={room.dodatkowa_informacja}
                 header={room.kategorja}
-                onClick={handleRoomClick}
                 peopleAmount={room.ilosc_miejsc}
                 price={room.cena}
               />

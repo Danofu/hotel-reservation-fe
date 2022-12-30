@@ -10,16 +10,30 @@ import { useTranslation } from 'react-i18next';
 import { Props } from 'components/Room/types';
 import { TPATH } from 'components/Room/constants';
 
-const Room: FC<Props> = ({ description, header, onClick, peopleAmount, price }) => {
+const Room: FC<Props> = ({
+  BookButtonProps,
+  CardActionsProps,
+  CardContentProps,
+  DescriptionProps,
+  DescriptionSx,
+  HeaderProps,
+  InfoProps,
+  RoomInfoWrapperProps,
+  description,
+  header,
+  peopleAmount,
+  price,
+  ...props
+}) => {
   const [isTextExpanded, setIsTextExpanded] = useState(false);
   const { t } = useTranslation();
 
   const handleTextExpand = () => setIsTextExpanded((prevState) => !prevState);
 
   return (
-    <Card>
-      <CardContent>
-        <Typography sx={{ mb: 2 }} variant="h6">
+    <Card {...props}>
+      <CardContent {...CardContentProps}>
+        <Typography component="h3" sx={{ mb: 2 }} variant="h6" {...HeaderProps}>
           {header}
         </Typography>
         <Typography
@@ -33,22 +47,24 @@ const Room: FC<Props> = ({ description, header, onClick, peopleAmount, price }) 
             mb: 2,
             overflow: 'hidden',
             textOverflow: 'ellipsis',
+            ...DescriptionSx,
           }}
           variant="body1"
+          {...DescriptionProps}
         >
           {description}
         </Typography>
-        <Stack direction="row" justifyContent="space-around">
-          <Typography color="text.secondary" variant="body2">
+        <Stack direction="row" justifyContent="space-around" {...RoomInfoWrapperProps}>
+          <Typography color="text.secondary" variant="body2" {...InfoProps}>
             {t(`${TPATH}.peopleAmount`, { amount: peopleAmount })}
           </Typography>
-          <Typography color="text.secondary" variant="body2">
+          <Typography color="text.secondary" variant="body2" {...InfoProps}>
             {t(`${TPATH}.price`, { price })}
           </Typography>
         </Stack>
       </CardContent>
-      <CardActions>
-        <Button onClick={onClick}>{t(`${TPATH}.book`)}</Button>
+      <CardActions {...CardActionsProps}>
+        <Button {...BookButtonProps}>{t(`${TPATH}.book`)}</Button>
       </CardActions>
     </Card>
   );
