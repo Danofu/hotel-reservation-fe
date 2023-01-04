@@ -25,6 +25,7 @@ const ReservationStepperModal: FC<Props> = ({
   StepLabelProps,
   StepProps,
   StepperProps,
+  StepperSx,
   onFinish = () => undefined,
   steps,
   ...props
@@ -83,7 +84,7 @@ const ReservationStepperModal: FC<Props> = ({
         top="50%"
         {...PaperProps}
       >
-        <Stepper activeStep={activeStep} {...StepperProps}>
+        <Stepper activeStep={activeStep} sx={{ mb: 3, ...StepperSx }} {...StepperProps}>
           {steps.map(({ label }, index) => {
             const stepProps: StepProps = { ...StepProps };
             const labelProps: StepLabelProps = { ...StepLabelProps };
@@ -104,7 +105,7 @@ const ReservationStepperModal: FC<Props> = ({
           })}
         </Stepper>
         {steps[activeStep].element}
-        <Box display="flex" pt={2} {...ActionsWrapper}>
+        <Box display="flex" mt={3} {...ActionsWrapper}>
           <Button
             color="inherit"
             disabled={activeStep === 0}

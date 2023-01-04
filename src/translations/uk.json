@@ -122,26 +122,32 @@
       "heading": "Кімнати",
       "noContent": "Немає Доступних Кімнат",
       "reservation-modal": {
-        "button": "Забронювати",
         "form": {
-          "errors": {
-            "check-in": {
-              "afterCheckOut": "Дата в'їзду повинна передувати даті виїзду",
-              "empty": "Вказати дату в'їзду",
-              "invalid": "Вказати дійсну дату в'їзду"
+          "date-time-range-field": {
+            "errors": {
+              "check-in": {
+                "afterCheckOut": "Дата в'їзду повинна передувати даті виїзду",
+                "empty": "Вказати дату в'їзду",
+                "invalid": "Вказати дійсну дату в'їзду"
+              },
+              "check-out": {
+                "beforeCheckOut": "Дата виїзду повинна бути після дати в'їзду",
+                "empty": "Вказати дату виїзду",
+                "invalid": "Вказати дійсну дату виїзду"
+              }
             },
-            "check-out": {
-              "beforeCheckOut": "Дата виїзду повинна бути після дати в'їзду",
-              "empty": "Вказати дату виїзду",
-              "invalid": "Вказати дійсну дату виїзду"
+            "header": "Оберіть дати бронювання",
+            "labels": {
+              "check-in": "В'їзд",
+              "check-out": "Виїзд"
             }
-          },
-          "labels": {
-            "check-in": "В'їзд",
-            "check-out": "Виїзд"
           }
         },
-        "header": "Оберіть час в'їзду та виїзду",
+        "stepper": {
+          "labels": {
+            "reservation-dates": "Дати Бронювання"
+          }
+        },
         "toasts": {
           "reservation": {
             "failed": "Бронювання не вдалося",

@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import { Form } from 'formik';
 import { useTranslation } from 'react-i18next';
 
-import PasswordField from 'components/PasswordField';
+import PasswordField from 'components/fields/PasswordField';
 import { Props } from 'components/forms/AuthenticationForm/InnerAuthenticationForm/types';
 import { TPATH } from 'components/forms/AuthenticationForm/InnerAuthenticationForm/constants';
 

@@ -15,13 +15,13 @@ export const translatableValidationSchema = (t: TFunction) =>
       .nullable()
       .test(
         'check-in',
-        t(`${TPATH}.reservation-modal.form.errors.check-in.empty`) || '< no translation >',
+        t(`${TPATH}.reservation-modal.form.date-time-range-field.errors.check-in.empty`) || '< no translation >',
         (value, context) => {
           if (value === null) {
             return false;
           }
           if (!isMoment(value) || !value.isValid()) {
-            return context.createError({ message: ntu(t(`${TPATH}.reservation-modal.form.errors.check-in.invalid`)) });
+            return context.createError({ message: ntu(t(`${TPATH}.reservation-modal.form.date-time-range-field.errors.check-in.invalid`)) });
           }
           if (
             isMoment(context.parent.checkOut) &&
@@ -29,7 +29,7 @@ export const translatableValidationSchema = (t: TFunction) =>
             value.isAfter(context.parent.checkOut)
           ) {
             return context.createError({
-              message: ntu(t(`${TPATH}.reservation-modal.form.errors.check-in.afterCheckOut`)),
+              message: ntu(t(`${TPATH}.reservation-modal.form.date-time-range-field.errors.check-in.afterCheckOut`)),
             });
           }
 
@@ -40,13 +40,13 @@ export const translatableValidationSchema = (t: TFunction) =>
       .nullable()
       .test(
         'check-out',
-        t(`${TPATH}.reservation-modal.form.errors.check-out.empty`) || '< no translation >',
+        t(`${TPATH}.reservation-modal.form.date-time-range-field.errors.check-out.empty`) || '< no translation >',
         (value, context) => {
           if (value === null) {
             return false;
           }
           if (!isMoment(value) || !value.isValid()) {
-            return context.createError({ message: ntu(t(`${TPATH}.reservation-modal.form.errors.check-out.invalid`)) });
+            return context.createError({ message: ntu(t(`${TPATH}.reservation-modal.form.date-time-range-field.errors.check-out.invalid`)) });
           }
           if (
             isMoment(context.parent.checkIn) &&
@@ -54,7 +54,7 @@ export const translatableValidationSchema = (t: TFunction) =>
             value.isBefore(context.parent.checkIn)
           ) {
             return context.createError({
-              message: ntu(t(`${TPATH}.reservation-modal.form.errors.check-out.beforeCheckOut`)),
+              message: ntu(t(`${TPATH}.reservation-modal.form.date-time-range-field.errors.check-out.beforeCheckOut`)),
             });
           }
 

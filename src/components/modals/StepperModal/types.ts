@@ -20,7 +20,8 @@ export type Props = OptionalKeys<ModalProps, 'children'> & {
   SkipButtonSx?: ButtonProps['sx'];
   StepLabelProps?: StepLabelProps;
   StepProps?: StepProps;
-  StepperProps?: StepperProps;
+  StepperProps?: Omit<StepperProps, 'sx'>;
+  StepperSx?: StepperProps['sx'];
   onFinish?: () => void;
   steps: { element: ReactNode; isOptional?: boolean; label: ReactNode }[];
 };

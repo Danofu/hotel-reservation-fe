@@ -122,26 +122,32 @@
       "heading": "Pokoje",
       "noContent": "Brak Dostępnych Pokojów",
       "reservation-modal": {
-        "button": "Zarezerwuj",
         "form": {
-          "errors": {
-            "check-in": {
-              "afterCheckOut": "Data przyjazdu musi być wcześniejsza niż data wyjazdu",
-              "empty": "Podaj datę przyjazdu",
-              "invalid": "Podaj poprawną datę przyjazdu"
+          "date-time-range-field": {
+            "errors": {
+              "check-in": {
+                "afterCheckOut": "Data przyjazdu musi być wcześniejsza niż data wyjazdu",
+                "empty": "Podaj datę przyjazdu",
+                "invalid": "Podaj poprawną datę przyjazdu"
+              },
+              "check-out": {
+                "beforeCheckOut": "Data wyjazdu musi być po dacie przyjazdu",
+                "empty": "Podaj datę wyjazdu",
+                "invalid": "Podaj poprawną datę wyjazdu"
+              }
             },
-            "check-out": {
-              "beforeCheckOut": "Data wyjazdu musi być po dacie przyjazdu",
-              "empty": "Podaj datę wyjazdu",
-              "invalid": "Podaj poprawną datę wyjazdu"
+            "header": "Wybierz daty rezerwacji",
+            "labels": {
+              "check-in": "Przyjazd",
+              "check-out": "Wyjazd"
             }
-          },
-          "labels": {
-            "check-in": "Przyjazd",
-            "check-out": "Wyjazd"
           }
         },
-        "header": "Wybierz daty przyjazdu i wyjazdu",
+        "stepper": {
+          "labels": {
+            "reservation-dates": "Daty Rezerwacji"
+          }
+        },
         "toasts": {
           "reservation": {
             "failed": "Rezerwacja nie powiodła się",

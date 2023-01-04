@@ -8,7 +8,8 @@ import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 
-import DateTimeRangeModal from 'components/modals/DateTimeRangeModal';
+import DateTimeRangeField from 'components/fields/DateTimeRangeField';
+import ReservationStepperModal from 'components/modals/StepperModal';
 import Room from 'components/Room';
 import { AuthContext } from 'providers/AuthProvider';
 import { LOGO_TEXT_LONG } from 'app-globals';
@@ -112,44 +113,53 @@ const HomePage = () => {
         {t(`${TPATH}.heading`)}
       </Typography>
       <Formik initialValues={modalFormInitialValues} onSubmit={handleModalSubmit} validationSchema={validationSchema}>
-        {({ errors, isSubmitting, resetForm, setFieldTouched, setFieldValue, touched, values }) => (
+        {({ errors, resetForm, setFieldTouched, setFieldValue, touched, values }) => (
           <Form>
             {pageContent}
-            <DateTimeRangeModal
-              ButtonProps={{
-                children: t(`${TPATH}.reservation-modal.button`),
-                disabled: isSubmitting,
-                loading: isSubmitting,
-                type: 'submit',
-              }}
-              FromDateTimePickerProps={{
-                InputProps: { onBlur: () => setFieldTouched('checkIn') },
-                label: t(`${TPATH}.reservation-modal.form.labels.check-in`),
-                minDateTime: moment(),
-                onChange: (value) => setFieldValue('checkIn', value),
-                value: values.checkIn,
-              }}
-              FromRenderInputProps={{
-                error: !!errors.checkIn && touched.checkIn,
-                fullWidth: true,
-                helperText: !!errors.checkIn && touched.checkIn && errors.checkIn,
-              }}
-              ToDateTimePickerProps={{
-                InputProps: { onBlur: () => setFieldTouched('checkOut') },
-                label: t(`${TPATH}.reservation-modal.form.labels.check-out`),
-                minDateTime: values.checkIn || moment(),
-                onChange: (value) => setFieldValue('checkOut', value),
-                value: values.checkOut,
-              }}
-              ToRenderInputProps={{
-                error: !!errors.checkOut && touched.checkOut,
-                fullWidth: true,
-                helperText: !!errors.checkOut && touched.checkOut && errors.checkOut,
-              }}
-              HeaderProps={{ children: t(`${TPATH}.reservation-modal.header`) }}
+            <ReservationStepperModal
+              FinishButtonProps={{ type: 'submit' }}
               disablePortal
               onClose={handleModalClose.bind(null, resetForm)}
               open={isModalOpen}
+              steps={[
+                {
+                  element: (
+                    <Fragment>
+                      <Typography component="h2" variant="h5">
+                        {t(`${TPATH}.reservation-modal.form.date-time-range-field.header`)}
+                      </Typography>
+                      <DateTimeRangeField
+                        FieldsWrapperProps={{ mt: 2 }}
+                        FromDateTimePickerProps={{
+                          InputProps: { onBlur: () => setFieldTouched('checkIn') },
+                          label: t(`${TPATH}.reservation-modal.form.date-time-range-field.labels.check-in`),
+                          minDateTime: moment(),
+                          onChange: (value) => setFieldValue('checkIn', value),
+                          value: values.checkIn,
+                        }}
+                        FromRenderInputProps={{
+                          error: !!errors.checkIn && touched.checkIn,
+                          fullWidth: true,
+                          helperText: !!errors.checkIn && touched.checkIn && errors.checkIn,
+                        }}
+                        ToDateTimePickerProps={{
+                          InputProps: { onBlur: () => setFieldTouched('checkOut') },
+                          label: t(`${TPATH}.reservation-modal.form.date-time-range-field.labels.check-out`),
+                          minDateTime: values.checkIn || moment(),
+                          onChange: (value) => setFieldValue('checkOut', value),
+                          value: values.checkOut,
+                        }}
+                        ToRenderInputProps={{
+                          error: !!errors.checkOut && touched.checkOut,
+                          fullWidth: true,
+                          helperText: !!errors.checkOut && touched.checkOut && errors.checkOut,
+                        }}
+                      />
+                    </Fragment>
+                  ),
+                  label: t(`${TPATH}.reservation-modal.stepper.labels.reservation-dates`),
+                },
+              ]}
             />
           </Form>
         )}

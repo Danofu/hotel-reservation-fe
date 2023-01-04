@@ -5,8 +5,8 @@ import InputLabel from '@mui/material/InputLabel';
 import React, { FC, MouseEvent, useId, useState } from 'react';
 
 import VisibilityButton from 'components/buttons/VisibilityButton';
-import { Props } from 'components/PasswordField/types';
-import { inputMapper } from 'components/PasswordField/constans';
+import { Props } from 'components/fields/PasswordField/types';
+import { inputMapper } from 'components/fields/PasswordField/constans';
 
 const PasswordField: FC<Props> = ({
   EndAdornmentProps,

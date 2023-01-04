@@ -122,26 +122,32 @@
       "heading": "Rooms",
       "noContent": "No Available Rooms",
       "reservation-modal": {
-        "button": "Book",
         "form": {
-          "errors": {
-            "check-in": {
-              "afterCheckOut": "Check-in date should be before the check-out date",
-              "empty": "Provide a check-in date",
-              "invalid": "Provide a valid check-in date"
+          "date-time-range-field": {
+            "errors": {
+              "check-in": {
+                "afterCheckOut": "Check-in date should be before the check-out date",
+                "empty": "Provide a check-in date",
+                "invalid": "Provide a valid check-in date"
+              },
+              "check-out": {
+                "beforeCheckOut": "Check-out date should be after the check-in date",
+                "empty": "Provide a check-out date",
+                "invalid": "Provide a valid check-out date"
+              }
             },
-            "check-out": {
-              "beforeCheckOut": "Check-out date should be after the check-in date",
-              "empty": "Provide a check-out date",
-              "invalid": "Provide a valid check-out date"
+            "header": "Choose reservation dates",
+            "labels": {
+              "check-in": "Check-in",
+              "check-out": "Check-out"
             }
-          },
-          "labels": {
-            "check-in": "Check-in",
-            "check-out": "Check-out"
           }
         },
-        "header": "Chose check-in and check-out date times",
+        "stepper": {
+          "labels": {
+            "reservation-dates": "Reservation Dates"
+          }
+        },
         "toasts": {
           "reservation": {
             "failed": "Reservation failed",
