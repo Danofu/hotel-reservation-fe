@@ -79,7 +79,19 @@
       }
     },
     "menus": {},
-    "modals": {},
+    "modals": {
+      "reservation-stepper-modal": {
+        "actions": {
+          "back": "Back",
+          "finish": "Finish",
+          "next": "Next",
+          "skip": "Skip"
+        },
+        "label": {
+          "optional": "Optional"
+        }
+      }
+    },
     "room": {
       "book": "Book",
       "peopleAmount": "People: {{amount}}",

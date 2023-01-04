@@ -79,6 +79,19 @@
       }
     },
     "menus": {},
+    "modals": {
+      "reservation-stepper-modal": {
+        "actions": {
+          "back": "Назад",
+          "finish": "Закінчити",
+          "next": "Далі",
+          "skip": "Пропустити"
+        },
+        "label": {
+          "optional": "Опційно"
+        }
+      }
+    },
     "room": {
       "book": "Забронювати",
       "peopleAmount": "Людей: {{amount}}",

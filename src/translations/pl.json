@@ -79,6 +79,19 @@
       }
     },
     "menus": {},
+    "modals": {
+      "reservation-stepper-modal": {
+        "actions": {
+          "back": "Wstecz",
+          "finish": "Zakończ",
+          "next": "Dalej",
+          "skip": "Pomiń"
+        },
+        "label": {
+          "optional": "Opcjonalnie"
+        }
+      }
+    },
     "room": {
       "book": "Zarezerwuj",
       "peopleAmount": "Osób: {{amount}}",
