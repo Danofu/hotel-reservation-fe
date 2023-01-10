@@ -122,8 +122,8 @@
       "heading": "Rooms",
       "noContent": "No Available Rooms",
       "reservation-modal": {
-        "form": {
-          "date-time-range-field": {
+        "forms": {
+          "reservation-date-form": {
             "errors": {
               "check-in": {
                 "afterCheckOut": "Check-in date should be before the check-out date",
@@ -141,10 +141,20 @@
               "check-in": "Check-in",
               "check-out": "Check-out"
             }
+          },
+          "meals-form": {
+            "header": "Select meals for the reservation (optional)",
+            "labels": {
+              "meals": "Meals"
+            },
+            "select": {
+              "empty": "None"
+            }
           }
         },
         "stepper": {
           "labels": {
+            "meals": "Pick Meal",
             "reservation-dates": "Reservation Dates"
           }
         },

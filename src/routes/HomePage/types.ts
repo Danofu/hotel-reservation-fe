@@ -9,7 +9,16 @@ export type Room = {
   kategorja: string;
 };
 
+export type Meal = {
+  menu: {
+    cena: number;
+    id: number;
+    nazwa: string;
+  }[];
+};
+
 export interface ModalFormValues {
   checkIn: Moment | null;
   checkOut: Moment | null;
+  meals: number[];
 }

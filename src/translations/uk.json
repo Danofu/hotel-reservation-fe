@@ -88,7 +88,7 @@
           "skip": "Пропустити"
         },
         "label": {
-          "optional": "Опційно"
+          "optional": "Опціонально"
         }
       }
     },
@@ -122,8 +122,8 @@
       "heading": "Кімнати",
       "noContent": "Немає Доступних Кімнат",
       "reservation-modal": {
-        "form": {
-          "date-time-range-field": {
+        "forms": {
+          "reservation-date-form": {
             "errors": {
               "check-in": {
                 "afterCheckOut": "Дата в'їзду повинна передувати даті виїзду",
@@ -141,10 +141,20 @@
               "check-in": "В'їзд",
               "check-out": "Виїзд"
             }
+          },
+          "meals-form": {
+            "header": "Виберіть страва для бронювання (опціонально)",
+            "labels": {
+              "meals": "Страви"
+            },
+            "select": {
+              "empty": "Брак"
+            }
           }
         },
         "stepper": {
           "labels": {
+            "meals": "Оберіть Страву",
             "reservation-dates": "Дати Бронювання"
           }
         },

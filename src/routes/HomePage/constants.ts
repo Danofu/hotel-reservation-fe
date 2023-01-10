@@ -7,7 +7,7 @@ import { ntu } from 'utils';
 
 export const TPATH = 'pages.home';
 
-export const modalFormInitialValues: ModalFormValues = { checkIn: null, checkOut: null };
+export const modalFormInitialValues: ModalFormValues = { checkIn: null, checkOut: null, meals: [] };
 
 export const translatableValidationSchema = (t: TFunction) =>
   Yup.object({

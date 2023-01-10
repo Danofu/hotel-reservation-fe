@@ -26,6 +26,8 @@ export type CreateRoomReservationData = {
   checkInDate: string;
   /** the check-out date of the reservation */
   checkOutDate: string;
+  /** meals of the reservation */
+  meals?: number[];
   /** the id of the room */
   roomId: number;
   /** the id of the user */
@@ -74,10 +76,17 @@ export const registerUser = async ({ email, familyName, givenName, password }: R
  *
  * @category API
  */
-export const createRoomReservation = async ({ checkInDate, checkOutDate, roomId, userId }: CreateRoomReservationData) =>
+export const createRoomReservation = async ({
+  checkInDate,
+  checkOutDate,
+  meals,
+  roomId,
+  userId,
+}: CreateRoomReservationData) =>
   AXIOS_MAIN_INSTANCE.post<{ message: string }>('/api/rezerwacja', {
     check_in: checkInDate,
     check_out: checkOutDate,
     id_pokoj: roomId,
     id_user: userId,
+    menu: meals,
   });

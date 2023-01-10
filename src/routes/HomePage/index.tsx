@@ -1,6 +1,11 @@
+import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import ListItemText from '@mui/material/ListItemText';
+import MenuItem from '@mui/material/MenuItem';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import React, { Fragment, useContext, useState } from 'react';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import moment from 'moment';
 import { Form, Formik, FormikHelpers } from 'formik';
@@ -11,9 +16,10 @@ import { useTranslation } from 'react-i18next';
 import DateTimeRangeField from 'components/fields/DateTimeRangeField';
 import ReservationStepperModal from 'components/modals/StepperModal';
 import Room from 'components/Room';
+import SelectField from 'components/fields/SelectField';
 import { AuthContext } from 'providers/AuthProvider';
 import { LOGO_TEXT_LONG } from 'app-globals';
-import { ModalFormValues, Room as RoomType } from 'routes/HomePage/types';
+import { Meal, ModalFormValues, Room as RoomType } from 'routes/HomePage/types';
 import { createRoomReservation, useAxios } from 'utils';
 import { modalFormInitialValues, TPATH, translatableValidationSchema } from 'routes/HomePage/constants';
 
@@ -21,6 +27,7 @@ const HomePage = () => {
   const [isModalClosable, setIsModalClosable] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRoomId, setSelectedRoomId] = useState<number | null>(null);
+  const { data: meals } = useAxios<Meal>('/api/jedzenie');
   const { data: rooms } = useAxios<RoomType[]>('/api/kategorja/getAllPokoj');
   const { t } = useTranslation();
   const { user } = useContext(AuthContext);
@@ -62,6 +69,7 @@ const HomePage = () => {
       const response = await createRoomReservation({
         checkInDate: values.checkIn.toISOString(),
         checkOutDate: values.checkOut.toISOString(),
+        meals: values.meals,
         roomId: selectedRoomId,
         userId: user.id,
       });
@@ -126,13 +134,57 @@ const HomePage = () => {
                   element: (
                     <Fragment>
                       <Typography component="h2" variant="h5">
-                        {t(`${TPATH}.reservation-modal.form.date-time-range-field.header`)}
+                        {t(`${TPATH}.reservation-modal.forms.meals-form.header`)}
+                      </Typography>
+                      <SelectField
+                        FormControlProps={{ fullWidth: true, sx: { mt: 2 } }}
+                        LabelProps={{ children: t(`${TPATH}.reservation-modal.forms.meals-form.labels.meals`) }}
+                        input={<OutlinedInput label={t(`${TPATH}.reservation-modal.forms.meals-form.labels.meals`)} />}
+                        multiple
+                        onChange={(event) =>
+                          setFieldValue(
+                            'meals',
+                            typeof event.target.value === 'string' ? event.target.value.split(',') : event.target.value
+                          )
+                        }
+                        renderValue={(selected) => (
+                          <Stack direction="row" flexWrap="wrap" gap={0.5}>
+                            {selected.map((value) => (
+                              <Chip key={value} label={meals?.menu.find((meal) => meal.id === value)?.nazwa} />
+                            ))}
+                          </Stack>
+                        )}
+                        value={values.meals}
+                      >
+                        {meals ? (
+                          meals.menu.map((meal) => (
+                            <MenuItem key={meal.id} value={meal.id}>
+                              <ListItemText>{meal.nazwa}</ListItemText>
+                              {'zł' + meal.cena}
+                            </MenuItem>
+                          ))
+                        ) : (
+                          <MenuItem disabled value="">
+                            {t(`${TPATH}.reservation-modal.forms.meals-form.select.empty`)}
+                          </MenuItem>
+                        )}
+                      </SelectField>
+                    </Fragment>
+                  ),
+                  isOptional: true,
+                  label: t(`${TPATH}.reservation-modal.stepper.labels.meals`),
+                },
+                {
+                  element: (
+                    <Fragment>
+                      <Typography component="h2" variant="h5">
+                        {t(`${TPATH}.reservation-modal.forms.reservation-date-form.header`)}
                       </Typography>
                       <DateTimeRangeField
                         FieldsWrapperProps={{ mt: 2 }}
                         FromDateTimePickerProps={{
                           InputProps: { onBlur: () => setFieldTouched('checkIn') },
-                          label: t(`${TPATH}.reservation-modal.form.date-time-range-field.labels.check-in`),
+                          label: t(`${TPATH}.reservation-modal.forms.reservation-date-form.labels.check-in`),
                           minDateTime: moment(),
                           onChange: (value) => setFieldValue('checkIn', value),
                           value: values.checkIn,
@@ -144,7 +196,7 @@ const HomePage = () => {
                         }}
                         ToDateTimePickerProps={{
                           InputProps: { onBlur: () => setFieldTouched('checkOut') },
-                          label: t(`${TPATH}.reservation-modal.form.date-time-range-field.labels.check-out`),
+                          label: t(`${TPATH}.reservation-modal.forms.reservation-date-form.labels.check-out`),
                           minDateTime: values.checkIn || moment(),
                           onChange: (value) => setFieldValue('checkOut', value),
                           value: values.checkOut,

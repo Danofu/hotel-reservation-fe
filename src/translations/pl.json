@@ -122,8 +122,8 @@
       "heading": "Pokoje",
       "noContent": "Brak Dostępnych Pokojów",
       "reservation-modal": {
-        "form": {
-          "date-time-range-field": {
+        "forms": {
+          "reservation-date-form": {
             "errors": {
               "check-in": {
                 "afterCheckOut": "Data przyjazdu musi być wcześniejsza niż data wyjazdu",
@@ -141,10 +141,20 @@
               "check-in": "Przyjazd",
               "check-out": "Wyjazd"
             }
+          },
+          "meals-form": {
+            "header": "Wybierz posiłki dla rezerwacji (opcjonalnie)",
+            "labels": {
+              "meals": "Posiłki"
+            },
+            "select": {
+              "empty": "Brak"
+            }
           }
         },
         "stepper": {
           "labels": {
+            "meals": "Wybierz Posiłek",
             "reservation-dates": "Daty Rezerwacji"
           }
         },
