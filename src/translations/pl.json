@@ -65,6 +65,7 @@
       "links": {
         "home": "Główna",
         "protected": "Chroniona",
+        "reservations": "Rezerwacje",
         "sign-in": "Zaloguj",
         "sign-up": "Zarejestruj"
       },
@@ -91,6 +92,11 @@
           "optional": "Opcjonalnie"
         }
       }
+    },
+    "reservation": {
+      "cancel": "Anuluj",
+      "info": "Cena: zł<1>{{price}}</1> • Osoby: <3>{{peopleAmount}}</3> • Daty: <5>{{checkIn}} – {{checkOut}}</5>",
+      "meals": "Posiłki:"
     },
     "room": {
       "book": "Zarezerwuj",
@@ -159,7 +165,7 @@
           }
         },
         "toasts": {
-          "reservation": {
+          "reservations": {
             "failed": "Rezerwacja nie powiodła się",
             "incomplete-dates": "Wybierz zarówno datę przyjazdu jak i wyjazdu",
             "no-room-selected": "Pokój nie był wybrany",
@@ -185,6 +191,18 @@
       "toast": {
         "failure": "Rejestracja nie powiodła się",
         "success": "Udało Ci się zarejestrować pomyślnie"
+      }
+    },
+    "reservations": {
+      "cancel-confirm": "Czy na pewno Chcesz anulować rezerwację ?",
+      "header": "Historia Twoich Rezerwacji",
+      "noContent": "Nie Znaleziono Żadnych Rezerwacji",
+      "title": "Rezerwacje - {{textLogo}}",
+      "toasts": {
+        "reservation-cancel": {
+          "failed": "Nie udało się anulować rezerwacji",
+          "success": "Rezerwacja została pomyślnie anulowana"
+        }
       }
     }
   }

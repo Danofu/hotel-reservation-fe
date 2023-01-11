@@ -6,13 +6,13 @@ import ProtectedRoutes from 'components/utils/ProtectedRoutes';
 import Suspense from 'components/utils/Suspense';
 import {
   LazyAppLayout,
+  LazyAuthenticationPage,
   LazyErrorPage,
   LazyHomePage,
-  LazyAuthenticationPage,
-  LazyProtectedPage,
   LazyRegistrationPage,
+  LazyReservationsPage,
 } from 'routes/constants';
-import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_PROTECTED, PATHNAME_REGISTRATION } from 'app-globals';
+import { PATHNAME_HOME, PATHNAME_LOGIN, PATHNAME_REGISTRATION, PATHNAME_RESERVATIONS } from 'app-globals';
 
 export default createBrowserRouter([
   {
@@ -21,8 +21,8 @@ export default createBrowserRouter([
       {
         children: [
           {
-            element: <Suspense Component={LazyProtectedPage} fallback={<LoadingBackdrop />} />,
-            path: PATHNAME_PROTECTED,
+            element: <Suspense Component={LazyReservationsPage} fallback={<LoadingBackdrop />} />,
+            path: PATHNAME_RESERVATIONS,
           },
         ],
         element: <ProtectedRoutes />,

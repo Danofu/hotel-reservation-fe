@@ -40,13 +40,13 @@ const Room: FC<Props> = ({
         </Typography>
         <Typography
           align="justify"
+          mb={2}
           onClick={handleTextExpand}
           sx={{
             WebkitBoxOrient: 'vertical',
             WebkitLineClamp: 3,
             cursor: 'pointer',
             display: isTextExpanded ? 'block' : '-webkit-box',
-            mb: 2,
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             ...DescriptionSx,

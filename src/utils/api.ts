@@ -90,3 +90,16 @@ export const createRoomReservation = async ({
     id_user: userId,
     menu: meals,
   });
+
+/**
+ * Deletes reservation. Throws an error if request is invalid.
+ *
+ * @param id - the id of the reservation to delete
+ *
+ * @returns A response from the requested endpoint `DELETE: /api/rezerwacja/delete` from a backend.
+ * @throws {@link https://github.com/axios/axios/blob/v1.x/index.d.ts#L357 | AxiosError} if request is invalid.
+ *
+ * @category API
+ */
+export const deleteReservation = async (id: number) =>
+  AXIOS_MAIN_INSTANCE.delete<{ message: string }>(`/api/rezerwacja/delete?id_rezerwacji=${id}`);

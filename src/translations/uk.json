@@ -65,6 +65,7 @@
       "links": {
         "home": "Головна",
         "protected": "Захищена",
+        "reservations": "Бронювання",
         "sign-in": "Увійти",
         "sign-up": "Реєстрація"
       },
@@ -91,6 +92,11 @@
           "optional": "Опціонально"
         }
       }
+    },
+    "reservation": {
+      "cancel": "Cкасувати",
+      "info": "Ціна: zł<1>{{price}}</1> • Людей: <3>{{peopleAmount}}</3> • Дати: <5>{{checkIn}} – {{checkOut}}</5>",
+      "meals": "Страви:"
     },
     "room": {
       "book": "Забронювати",
@@ -159,7 +165,7 @@
           }
         },
         "toasts": {
-          "reservation": {
+          "reservations": {
             "failed": "Бронювання не вдалося",
             "incomplete-dates": "Виберіть обидві дати в'їзду та виїзду",
             "no-room-selected": "Кімнату не обрано",
@@ -185,6 +191,18 @@
       "toast": {
         "failure": "Реєстрація не вдалася",
         "success": "Ви успішно зареєструвалися"
+      }
+    },
+    "reservations": {
+      "cancel-confirm": "Ви впевнені, що хочете скасувати бронювання ?",
+      "noContent": "Не Знайдено Жодного Бронювання",
+      "title": "Бронювання - {{textLogo}}",
+      "header": "Історія Ваших Бронювань",
+      "toasts": {
+        "reservation-cancel": {
+          "failed": "Не вдалося скасувати бронювання",
+          "success": "Бронювання успішно скасовано"
+        }
       }
     }
   }

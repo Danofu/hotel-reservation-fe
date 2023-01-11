@@ -53,5 +53,5 @@ export const useAxios = <T>(
     return () => void controller.abort();
   }, [config, instance, url]);
 
-  return { data, error, loading };
+  return { data, error, loading, setData };
 };

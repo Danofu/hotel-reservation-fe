@@ -65,6 +65,7 @@
       "links": {
         "home": "Home",
         "protected": "Protected",
+        "reservations": "Reservations",
         "sign-in": "Sing in",
         "sign-up": "Sing up"
       },
@@ -91,6 +92,11 @@
           "optional": "Optional"
         }
       }
+    },
+    "reservation": {
+      "cancel": "Cancel",
+      "info": "Price: zł<1>{{price}}</1> • People: <3>{{peopleAmount}}</3> • Dates: <5>{{checkIn}} – {{checkOut}}</5>",
+      "meals": "Meals:"
     },
     "room": {
       "book": "Book",
@@ -159,7 +165,7 @@
           }
         },
         "toasts": {
-          "reservation": {
+          "reservations": {
             "failed": "Reservation failed",
             "incomplete-dates": "Select both check-in and check-out dates",
             "no-room-selected": "Room wasn't selected",
@@ -185,6 +191,18 @@
       "toast": {
         "failure": "Registration failed",
         "success": "You're successfully registered"
+      }
+    },
+    "reservations": {
+      "cancel-confirm": "Are you sure you want to cancel the reservation ?",
+      "header": "Your Reservations History",
+      "noContent": "No Reservations Found",
+      "title": "Reservations - {{textLogo}}",
+      "toasts": {
+        "reservation-cancel": {
+          "failed": "Failed to cancel the reservation",
+          "success": "Reservation successfully canceled"
+        }
       }
     }
   }

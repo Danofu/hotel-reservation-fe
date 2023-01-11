@@ -35,6 +35,11 @@ export const PATHNAME_PROTECTED = '/protected';
  * @category URLs
  */
 export const PATHNAME_REGISTRATION = '/registration';
+/**
+ * The URL path name to reservations "page".
+ * @category URLs
+ */
+export const PATHNAME_RESERVATIONS = '/reservations';
 
 /**
  * The storage item key name for cashing an application color mode.
